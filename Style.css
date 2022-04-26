@@ -17,4 +17,13 @@ body {
     border-radius: 35px;
     padding: 7vh;
     margin: 2vh 20vh;
+    margin: auto;
+    width:80%;
+}
+.perfil{
+  border: 5px solid #0B67AB;
+  box-sizing: border-box;
+  border-radius: 100px;
+  position: absolute;
+  top: 350px;
 }

@@ -12,7 +12,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    
+
     <!-- CSS -->
     <link href="./Style.css" rel="Stylesheet" />
 
@@ -34,31 +34,78 @@
         </div>
       </nav>
       <div class="d-flex justify-content-center">
-        <img src="./Assets/Portada.png" alt="" />
+        <img
+          class="recuadro p-0 mt-4 img.fluid"
+          src="./Assets/Portada.png"
+          alt=""
+        />
       </div>
     </header>
     <main>
-      <div class="d-flex justify-content-center" style="margin: -2vh">
+      <!-- Acerca de -->
+      <div class="d-flex justify-content-center">
         <div class="recuadro">
+          <img
+            src="./Assets/perfil.png"
+            alt="imagen de perfil"
+            class="perfil img.fluid"
+          />
           <h1>Nombre y Apellido</h1>
           <p>Profesión</p>
           <h2>Acerca de:</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur aut, repellendus aperiam, quasi libero placeat assumenda molestiae veritatis ut eius voluptatem. Cupiditate totam placeat a possimus sunt! Dolorem, asperiores iure.</p>
+          <div class="card">
+            <div class="p-0 card-body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Pariatur aut, repellendus aperiam, quasi libero placeat
+                assumenda molestiae veritatis ut eius voluptatem. Cupiditate
+                totam placeat a possimus sunt! Dolorem, asperiores iure.
+              </p>
+            </div>
+            <!-- Leer más -->
+            <div>
+              <div class="collapse" id="collapseExample">
+                <div class="p-0 card-body">
+                  Some placeholder content for the collapse component. This
+                  panel is hidden by default but revealed when the user
+                  activates the relevant trigger.
+                </div>
+              </div>
+              <p>
+                <a
+                  class="btn btn-link justify-content-end"
+                  data-bs-toggle="collapse"
+                  href="#collapseExample"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  Ver más/menos...
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
-
-      <p>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Leer más...
-        </a>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      <!--Experiencia Laboral-->
+      <div class="d-flex justify-content-center">
+        <div class="recuadro m-2">
+          <h1>Experiencia Laboral</h1>
+          <div class="d-flex justify-content-between">
+            <h2>Cargo o profesión</h2>
+            <p>Fecha incio / Fecha final</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <img src="./Assets/Logo-trabajo.png" alt="" />
+            <p class="ml-3">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Explicabo architecto atque nisi nostrum amet, optio obcaecati
+              delectus consequatur, magni, id odio officia hic? Officiis quos
+              aliquam quia quae cumque ab.
+            </p>
+          </div>
         </div>
       </div>
-
     </main>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
