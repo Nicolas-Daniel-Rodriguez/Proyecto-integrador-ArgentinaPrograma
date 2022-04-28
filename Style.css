@@ -24,6 +24,5 @@ body {
   border: 5px solid #0B67AB;
   box-sizing: border-box;
   border-radius: 100px;
-  position: absolute;
-  top: 350px;
+  width: 20%;
 }
