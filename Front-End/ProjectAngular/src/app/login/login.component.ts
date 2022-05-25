@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   //Inyectamos en el constructor el FormBuilder
   constructor(private formBuilder: FormBuilder) {
+    
     //Creamos el grupo de controles para el formulario de login
     this.form= this.formBuilder.group(
       {

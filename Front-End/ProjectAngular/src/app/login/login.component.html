@@ -10,24 +10,24 @@
     </div>
     <!-- Gracias al getter que configuramos en el controlador -->
     <div *ngIf="Mail?.errors && Mail?.touched">
-        <p *ngIf="Mail?.hasError("required")" class="error">
+        <p *ngIf='Mail?.hasError("required")' class="error">
             El email es requerido.
         </p>
-        <p *ngIf="Mail?.hasError("email")" class="error">
+        <p *ngIf='Mail?.hasError("email")' class="error">
             El formato del email debe ser válido.
         </p>
     </div>
     <br>
     <div>
         <label for="exampleInputPassword1" class="form-label">Password:</label>
-        <input type="password" formControlName="password" [class.boder-danger]="Mailvalid">
+        <input type="password" formControlName="password" [class.boder-danger]="MailValid">
     </div>
      <!-- Gracias al getter que configuramos en el controlador -->
      <div *ngIf="Password?.errors  && Password?.touched">
         <p *ngIf="Password?.hasError('required')" class="error">
           El password es requerido.
         </p>
-        <p *ngIf="Password?.errors?.minlength" class="error">
+        <p class="error">
           El password debe ser de 8 o más caracteres.
         </p>
       </div>

@@ -1,0 +1,88 @@
+body {
+  background: linear-gradient(180deg, #000000 0%, #313131 100%);
+  color: white;
+  
+}
+.bordeInf {
+  border-bottom: 11px solid #FF7120;
+}
+.bordeIzq {
+  border-left: 4px solid #FF7120;
+}
+.yoprog {
+  margin: 0 10px;
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+}
+.ulnav a{
+  color: white;
+  margin: 0 10px;
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+.b{
+  border-left: 4px solid white;
+}
+.nav-link:hover {
+  color: #FF7120;
+}
+.imgPortada {
+  width:100%;
+}
+.imgPerfil {
+  border-radius: 100%;
+  box-sizing: border-box;
+  width: 330px;
+  height: 330px;
+  border: 10px solid #FF7120;
+}
+h1 {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+}
+h1 span {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  color: #FF7120;
+}
+h2 {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: right;
+}
+.link {
+  list-style: none;
+  color: #FF7120;
+  text-decoration: none;
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  display: block;
+  text-align:right;
+}
+h3 {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 45px;
+}
+p {
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: justify;
+}
