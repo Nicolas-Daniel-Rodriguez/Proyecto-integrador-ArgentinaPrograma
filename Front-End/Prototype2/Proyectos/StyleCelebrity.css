@@ -1,0 +1,33 @@
+.link a{
+    background: #424242;
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration-line: none;
+    height: 70px;
+    /* Orange */
+
+    color: #FF7120;
+}
+.imgWeb {
+    width:100%;
+    z-index: 1;
+}
+.imgX {
+    position:absolute;
+    z-index: 2;
+    top: 5%;
+    left: 73.8%;
+}
+.x {
+    display: flex;
+    justify-content:end;
+    
+}
