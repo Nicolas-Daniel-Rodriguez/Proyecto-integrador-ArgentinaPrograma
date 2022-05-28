@@ -1,0 +1,54 @@
+/* Bordered form */
+.container {
+    border: 5px solid #FF7120;
+    border-radius: 35px;
+    width:40%;
+    height:40%;
+    margin: 5% auto;
+    background: linear-gradient(180deg, #000000 0%, #313131 100%);
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 45px;
+    text-align: center;
+    color: #FFFFFF;
+    align-items: center;
+  }
+  .imgPerfil {
+    border-radius: 100%;
+    box-sizing: border-box;
+    width: 270px;
+    height: 270px;
+    border: 10px solid #FF7120;
+  }
+  .x {
+    position:absolute;
+    top:12%;
+    left: 66%;
+  }
+  h1 {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+  }
+  h1 span {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    color: #FF7120;
+  }
+  p {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .tam img{
+    width:10%;
+  }
+ 
+

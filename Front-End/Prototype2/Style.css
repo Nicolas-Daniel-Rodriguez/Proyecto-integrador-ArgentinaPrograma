@@ -83,6 +83,18 @@ h2 {
   text-align:right;
   margin: 0px 10px 20px 0px;
 }
+.fechas {
+  list-style: none;
+  color: #FF7120;
+  text-decoration: none;
+  font-family: 'Encode Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  display: block;
+  text-align:right;
+  margin: 0px 10px 20px 0px;
+}
 .link:hover {
   color: #fd8947;
 }
@@ -165,11 +177,12 @@ h4 {
   border: 2px solid #FF7120;
 }
 .anchop {
-  width: 450px;
+  width: 100%;
 }
 .cardSkill {
   text-align: center;
-  margin: 20px;
+  width: 60%;
+  margin: 10px;
   padding: 20px;
   border-radius: 30px;
 }
@@ -205,10 +218,7 @@ h4 {
 .menuProyect:hover {
   border-bottom: 15px solid #FF7120;
 }
-.anchoCard {
-  width: 80%;
-  margin: auto;
-}
+
 .anchoCardChico {
   width: 45%;
   margin: auto;
@@ -216,4 +226,16 @@ h4 {
 }
 .anchoCardChico p{
   height: 200px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 1300px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
