@@ -1,1 +1,243 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: linear-gradient(180deg, #000000 0%, #313131 100%);
+    color: white;
+    letter-spacing: 1px;
+  }
+  .cuerpo {
+    margin: 0px 10%;
+  }
+  .bordeInf {
+    border-bottom: 11px solid #FF7120;
+  }
+  .bordeIzq {
+    border-left: 4px solid #FF7120;
+    list-style: none;
+  }
+  .yoprog {
+    margin: 0 10px;
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+  }
+  .ulnav a{
+    color: white;
+    margin: 0 10px;
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .b{
+    border-left: 4px solid white;
+  }
+  .nav-link:hover {
+    color: #FF7120;
+  }
+  .imgPortada {
+    width:100%;
+  }
+  .imgPerfil {
+    border-radius: 100%;
+    box-sizing: border-box;
+    width: 270px;
+    height: 270px;
+    border: 10px solid #FF7120;
+  }
+  .imgPerfilChica {
+    border-radius: 100%;
+    box-sizing: border-box;
+    width: 83px;
+    height: 83px;
+    border: 5px solid #FF7120;
+  }
+  h1 {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+  }
+  h1 span {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    color: #FF7120;
+  }
+  h2 {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    text-align: right;
+    letter-spacing: 0px;
+  }
+  .link {
+    list-style: none;
+    color: #FF7120;
+    text-decoration: none;
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    display: block;
+    text-align:right;
+    margin: 0px 10px 20px 0px;
+  }
+  .fechas {
+    list-style: none;
+    color: #FF7120;
+    text-decoration: none;
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    display: block;
+    text-align:right;
+    margin: 0px 10px 20px 0px;
+  }
+  .link:hover {
+    color: #fd8947;
+  }
+  .linkMedio {
+    list-style: none;
+    color: #FF7120;
+    text-decoration: none;
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    display: block;
+    text-align: center;
+  }
+  .linkMedio:hover {
+    color: #fd8947;
+  }
+  h3 {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 45px;
+    margin-bottom: 0px;
+  }
+  p {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: justify;
+    letter-spacing: 0px;
+  }
+  h4 {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 40px;
+    color: #FF7120;
+  }
+  .card1 {
+    display: block;
+    text-align: right;
+    background: #424242;
+    border-radius: 15px;
+    padding: 7px;
+    align-items: center;
+  }
+  .card1 h1{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    width: 276px;
+    
+  }
+  .card1 h1 span {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .card1 h2{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .card1 a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 2px;
+  }
+  .center {
+    display: flex;
+    align-items: center;
+  }
+  .bordeImg {
+    border: 2px solid #FF7120;
+  }
+  .anchop {
+    width: 100%;
+  }
+  .cardSkill {
+    text-align: center;
+    width: 60%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 30px;
+  }
+  .cardProyect {
+    text-align: center;
+    margin: 20px;
+    padding: 4%;
+    border-radius: 30px;
+  }
+  .button {
+    background: #FF7120;
+    border: 1px solid #454343;
+    padding: 0.5% 3%;
+  }
+  .button a {
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+    letter-spacing:1px;
+  }
+  .button a:hover {
+    color: #000000;
+  }
+  .menuProyect {
+    border-bottom: 20px solid #FF7120;
+    width: 230px;
+  }
+  .menuProyect:hover {
+    border-bottom: 15px solid #FF7120;
+  }
+  
+  .anchoCardChico {
+    width: 45%;
+    margin: auto;
+    height: 750px;
+  }
+  .anchoCardChico p{
+    height: 200px;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 1300px) {
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  } 

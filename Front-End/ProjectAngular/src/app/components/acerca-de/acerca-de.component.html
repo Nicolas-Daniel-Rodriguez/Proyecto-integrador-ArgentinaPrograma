@@ -1,0 +1,30 @@
+<div>
+    <img
+      class="imgPortada bordeInf"
+      [src]="bbdd.imgPortada"
+      alt="Imágen de Portada"
+    />
+    <!-- Acerca de --> 
+    <div class="cuerpo">
+    <div class="d-flex justify-content-between m-5">
+        <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
+        <img class="imgPerfil" [src]="bbdd.imgPerfil" alt="Perfil" />
+        <div>
+            <h2 *ngFor="let ocupacion of ocupacionList">
+            {{ocupacion.a}}
+            
+            </h2>
+            <a class="link m-3" href="./Contacto.html">Información de Contacto</a>
+        </div>
+    </div>
+    <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
+    <h1 class="ms-5">{{bbdd.name}} <span>{{bbdd.surname}}</span></h1>
+    <h3 class="mt-5 mx-5"><span class="ms-5">ACERCA DE:</span></h3>
+    <div class="bordeIzq m-5 ps-4">
+        <p>
+        {{bbdd.acercaDe}}
+        </p>
+    </div>
+    <a class="link mx-5" href="">Ver más...</a>
+    </div>
+</div>
