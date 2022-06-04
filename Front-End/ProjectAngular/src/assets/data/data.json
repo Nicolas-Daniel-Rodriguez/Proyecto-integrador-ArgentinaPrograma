@@ -38,5 +38,67 @@
             "fechaEnd": "11/2011",
             "certImg": "./assets/cert.3.svg"
         }
+    ],
+    "experiencia":[
+        {
+            "titulo": "Coordinador de los Puntos Progresar",
+            "fechaStart": "02/2022",
+            "fechaEnd": "Actual",
+            "descripcion": "Estoy a cargo de la coordinación de los puntos itinerantes con equipos de trabajo por diversos lugares de la ciudad de Berisso para ayudar y asesorar en la inscripción y programas de la beca educativa Progresar.",
+            "imgExp": "./assets/PProgresar.svg"
+        },
+        {
+            "titulo": "Regente CFL Nº404 Berisso",
+            "fechaStart": "02/2019",
+            "fechaEnd": "Actual",
+            "descripcion": "- 12 personas a cargo. - Coordinar las actividades de los trayectos formativos y cursos de organización curricular en las familias profesionales.",
+            "imgExp": "./assets/CFL.svg"
+        },
+        {
+            "titulo": "Administrativo Cat.C",
+            "fechaStart": "01/2016",
+            "fechaEnd": "03/2020",
+            "descripcion": "- Cuentas corrientes, conciliación, extractos bancarios, manejo de caja, stock, precios, atención al público, gestoría, manejo de software erp, etc.",
+            "imgExp": "./assets/Madeco.svg"
+        }
+    ],
+    "skill":[
+        {
+            "titulo": "HTML",
+            "descripcion": "El esqueleto y maquetación general de este portfolio fue realizado con HTML 5.",
+            "imgSkill": "./assets/HTML.png",
+            "imgPorc": "./assets/80.svg"
+        },
+        {
+            "titulo": "CSS",
+            "descripcion": "El estilo y diseño general de este portfolio fue realizado con CSS 3.",
+            "imgSkill": "./assets/CSS.png",
+            "imgPorc": "./assets/80.svg"
+        },
+        {
+            "titulo": "Javascript",
+            "descripcion": "El comportamiento y ejecución de eventos de este portfolio fue realizado con JavaScript.",
+            "imgSkill": "./assets/Javascript.svg",
+            "imgPorc": "./assets/80.svg"
+        },
+        {
+            "titulo": "Bootstrap",
+            "descripcion": "El login y diseño de xxxxxx de este portfolio fue realizado con Bootstrap.",
+            "imgSkill": "./assets/Bootstrap.png",
+            "imgPorc": "./assets/80.svg"
+        },
+        {
+            "titulo": "TypeScript",
+            "descripcion": "La conexión de xxxxxxx de este portfolio fue realizado con TypeScript.",
+            "imgSkill": "./assets/Typescript.png",
+            "imgPorc": "./assets/80.svg"
+        },
+        {
+            "titulo": "Angular",
+            "descripcion": "El esqueleto y maquetación general de este portfolio fue realizado con HTML5 en Visual Studio Code.",
+            "imgSkill": "./assets/Angular.svg",
+            "imgPorc": "./assets/80.svg"
+        }
+        
     ]
 }

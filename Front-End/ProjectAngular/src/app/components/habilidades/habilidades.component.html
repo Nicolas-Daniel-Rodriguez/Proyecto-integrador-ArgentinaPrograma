@@ -1,96 +1,32 @@
 <!-- Habilidades -->
 <section class="cuerpo">
     <div class="d-flex justify-content-between mx-5 mt-5">
-      <h3 class="ms-5 center" id="Hab">HABILIDADES:</h3>
-      <div class="card1 d-flex justify-content-end me-5">
+      <h3 class="ms-5 center fs-5" id="ExpLab">EXPERIENCIA LABORAL:</h3>
+      <div class="card1 d-flex justify-content-end me-5 ">
         <img class="imgPerfilChica" src="./../assets/nico.png" alt="Perfil" />
         <div>
-          <h1>Nicolás Daniel <span>Rodríguez</span></h1>
-          <h2 class="ms-3">
+          <h1 class="fs-5">Nicolás Daniel <span class="fs-5">Rodríguez</span></h1>
+          <h2 class=" fs-6">
             Fullstack Web Developer Jr ‍💻<br />
-            <a class="link mt-2" href="./Contacto.html">Información de Contacto</a>
+            <a class="link mt-1 fs-6" href="./Contacto.html">Información de Contacto</a>
           </h2>
         </div>
       </div>
     </div>
 
     <!-- Skills Linea 1 -->
-    <div class="d-flex flex-container justify-content-between mx-5">
+    <ul class="d-flex flex-container justify-content-between mx-5">
       <!-- Skill 1 -->
-      <div class="bordeImg cardSkill">
+      <li *ngFor="let skill of skillList" class="bordeImg cardSkill">
         <div class="d-flex justify-content-between">
-          <img src="./../assets/HTML.png" alt="HTML" />
-          <img src="./../assets/80.svg" alt="Porcentaje" />
+          <img class="tamR" [src]="skill.imgSkill" alt="HTML" />
+          <img class="tamR" [src]="skill.imgPorc" alt="Porcentaje" />
         </div>
-        <h4>HTML</h4>
-        <p class="anchop">
-          El esqueleto y maquetación general de este portfolio fue realizado
-          con HTML 5.
+        <h4 class="fs-5">{{skill.titulo}}</h4>
+        <p class="anchop fs-6">
+          {{skill.descripcion}}
         </p>
-      </div>
-      <!-- Skill 2 -->
-      <div class="bordeImg cardSkill">
-        <div class="d-flex justify-content-between">
-          <img src="./../assets/CSS.png" alt="CSS" />
-          <img src="./../assets/80.svg" alt="Porcentaje" />
-        </div>
-        <h4>CSS</h4>
-        <p class="anchop">
-          El estilo y diseño general de este portfolio fue realizado con CSS
-          3.
-        </p>
-      </div>
-      <!-- Skill 3 -->
-      <div class="bordeImg cardSkill">
-        <div class="d-flex justify-content-between fluid">
-          <img src="./../assets/Javascript.svg" alt="Javascript" />
-          <img src="./../assets/80.svg" alt="Porcentaje" />
-        </div>
-        <h4>Javascript</h4>
-        <p class="anchop">
-          El comportamiento y ejecución de eventos de este portfolio fue
-          realizado con JavaScript.
-        </p>
-      </div>
-    </div>
-    <!-- Skills Linea 2 -->
-    <div class="d-flex flex-container justify-content-between mx-5">
-      <!-- Skill 4 -->
-      <div class="bordeImg cardSkill">
-        <div class="d-flex justify-content-between">
-          <img src="./../assets/Bootstrap.png" alt="Bootstrap" />
-          <img src="./../assets/80.svg" alt="Porcentaje" />
-        </div>
-        <h4>Bootstrap</h4>
-        <p class="anchop">
-          El login y diseño de xxxxxx de este portfolio fue realizado con
-          Bootstrap.
-        </p>
-      </div>
-      <!-- Skill 5 -->
-      <div class="bordeImg cardSkill">
-        <div class="d-flex justify-content-between">
-          <img src="./../assets/Typescript.png" alt="TypeScript" />
-          <img src="./../assets/80.svg" alt="Porcentaje" />
-        </div>
-        <h4>TypeScript</h4>
-        <p class="anchop">
-          La conexión de xxxxxxx de este portfolio fue realizado con
-          TypeScript.
-        </p>
-      </div>
-      <!-- Skill 6 -->
-      <div class="bordeImg cardSkill">
-        <div class="d-flex justify-content-between">
-          <img src="./../assets/Angular.svg" alt="Angular" />
-          <img src="./../assets/80.svg" alt="Porcentaje" />
-        </div>
-        <h4>Angular</h4>
-        <p class="anchop">
-          El esqueleto y maquetación general de este portfolio fue realizado
-          con HTML5 en Visual Studio Code.
-        </p>
-      </div>
-    </div>
-    <a class="linkMedio mt-5" href="">Mostrar todas las habilidades...</a>
+      </li>
+    </ul>
+    <a class="linkMedio mt-5 fs-6" href="">Mostrar todas las habilidades...</a>
   </section>

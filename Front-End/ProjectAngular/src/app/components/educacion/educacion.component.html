@@ -1,35 +1,35 @@
 <!-- Educación -->
 <section class="cuerpo">
     <div class="d-flex justify-content-between mx-5 mt-5">
-      <h3 class="ms-5 center" id="Edu">EDUCACIÓN:</h3>
-      <div class="card1 d-flex justify-content-end me-5">
+      <h3 class="ms-5 center fs-5" id="ExpLab">EXPERIENCIA LABORAL:</h3>
+      <div class="card1 d-flex justify-content-end me-5 ">
         <img class="imgPerfilChica" src="./../assets/nico.png" alt="Perfil" />
         <div>
-          <h1>Nicolás Daniel <span>Rodríguez</span></h1>
-          <h2 class="ms-3">
+          <h1 class="fs-5">Nicolás Daniel <span class="fs-5">Rodríguez</span></h1>
+          <h2 class=" fs-6">
             Fullstack Web Developer Jr ‍💻<br />
-            <a class="link mt-2" href="./Contacto.html">Información de Contacto</a>
+            <a class="link mt-1 fs-6" href="./Contacto.html">Información de Contacto</a>
           </h2>
         </div>
       </div>
     </div>
     <ul class="bordeIzq m-5 ps-4">
-      <!-- Educación 1 -->
+      <!-- Educación Item -->
       <li *ngFor="let educacion of educacionList">
-        <h4 class="mx-5 mt-5">{{educacion.titulo}}</h4>
-        <div class="bordeIzq mx-5 ps-4 d-flex justify-content-between">
-          <div class="m-3">
-            <p>{{educacion.lugarEstudio}}</p>
-            <p class="fechas text-start">{{educacion.fechaStart}} - {{educacion.fechaEnd}}</p>
+        <h4 class="mx-4 mt-5 fs-5">{{educacion.titulo}}</h4>
+        <div class="bordeIzq mx-4 ps-4 d-flex justify-content-between">
+          <div class="mx-4">
+            <p class="fs-6 mb-1">{{educacion.lugarEstudio}}</p>
+            <p class="fechas text-start fs-6 mb-1">{{educacion.fechaStart}} - {{educacion.fechaEnd}}</p>
           </div>
           <img
-            class="bordeImg"
+            class="bordeImg imgCert"
             [src]="educacion.certImg"
             alt="Certificado"
           />
         </div>
       </li>
 
-      <a class="linkMedio mt-5" href="">Mostrar todos los estudios...</a>
+      <a class="linkMedio mt-3 fs-6" href="">Mostrar todos los estudios...</a>
     </ul>
   </section>

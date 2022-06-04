@@ -5,7 +5,7 @@ body {
     letter-spacing: 1px;
   }
   .cuerpo {
-    margin: 0px 10%;
+    margin: 0px 5%;
   }
   .bordeInf {
     border-bottom: 11px solid #FF7120;
@@ -15,19 +15,17 @@ body {
     list-style: none;
   }
   .yoprog {
-    margin: 0 10px;
-    font-family: 'Encode Sans';
-    font-style: normal;
+    margin: auto 10px;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 18px;
   }
   .ulnav a{
     color: white;
-    margin: 0 10px;
+    margin: 0 5px;
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
   }
   .b{
     border-left: 4px solid white;
@@ -37,39 +35,39 @@ body {
   }
   .imgPortada {
     width:100%;
+    height: 270px;
   }
   .imgPerfil {
     border-radius: 100%;
     box-sizing: border-box;
-    width: 270px;
-    height: 270px;
-    border: 10px solid #FF7120;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #FF7120;
   }
   .imgPerfilChica {
     border-radius: 100%;
     box-sizing: border-box;
-    width: 83px;
-    height: 83px;
-    border: 5px solid #FF7120;
+    width: 70px;
+    height: 70px;
+    border: 3px solid #FF7120;
   }
   h1 {
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 36px;
+    font-size: 16px;
   }
   h1 span {
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
     color: #FF7120;
   }
   h2 {
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 20px;
     text-align: right;
     letter-spacing: 0px;
   }
@@ -115,6 +113,13 @@ body {
   .linkMedio:hover {
     color: #fd8947;
   }
+  .imgExp{
+    width:10%;
+  }
+  .imgCert{
+    width: 20%;
+    height: 90%;
+  }
   h3 {
     font-family: 'Encode Sans';
     font-style: normal;
@@ -145,30 +150,25 @@ body {
     text-align: right;
     background: #424242;
     border-radius: 15px;
-    padding: 7px;
+    padding: 5px;
     align-items: center;
   }
   .card1 h1{
     font-weight: 500;
-    font-size: 22px;
-    line-height: 30px;
-    width: 276px;
+    width: 230px;
     
   }
   .card1 h1 span {
     font-weight: 700;
     font-size: 22px;
-    line-height: 30px;
   }
   .card1 h2{
     font-weight: 500;
     font-size: 18px;
-    line-height: 25px;
   }
   .card1 a {
     font-weight: 500;
     font-size: 16px;
-    line-height: 20px;
     margin-bottom: 2px;
   }
   .center {
@@ -183,7 +183,7 @@ body {
   }
   .cardSkill {
     text-align: center;
-    width: 60%;
+    width: 30%;
     margin: 10px;
     padding: 20px;
     border-radius: 30px;

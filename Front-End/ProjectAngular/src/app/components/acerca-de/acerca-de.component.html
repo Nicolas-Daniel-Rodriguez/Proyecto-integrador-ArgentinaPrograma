@@ -6,25 +6,25 @@
     />
     <!-- Acerca de --> 
     <div class="cuerpo">
-    <div class="d-flex justify-content-between m-5">
+    <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
         <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
         <img class="imgPerfil" [src]="bbdd.imgPerfil" alt="Perfil" />
         <div>
-            <h2 *ngFor="let ocupacion of ocupacionList">
+            <h2 class="fs-6" *ngFor="let ocupacion of ocupacionList">
             {{ocupacion.a}}
             
             </h2>
-            <a class="link m-3" href="./Contacto.html">Información de Contacto</a>
+            <a class="link m-2 fs-6" href="./Contacto.html">Información de Contacto</a>
         </div>
     </div>
     <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
-    <h1 class="ms-5">{{bbdd.name}} <span>{{bbdd.surname}}</span></h1>
-    <h3 class="mt-5 mx-5"><span class="ms-5">ACERCA DE:</span></h3>
-    <div class="bordeIzq m-5 ps-4">
-        <p>
+    <h1 class="ms-5 fs-4">{{bbdd.name}} <span>{{bbdd.surname}}</span></h1>
+    <h3 class="mt-5 mx-5 fs-5"><span class="ms-5">ACERCA DE:</span></h3>
+    <div class="bordeIzq mx-5 my-3">
+        <p class="fs-6 ms-3">
         {{bbdd.acercaDe}}
         </p>
     </div>
-    <a class="link mx-5" href="">Ver más...</a>
+    <a class="link mx-5 fs-6" href="">Ver más...</a>
     </div>
 </div>
