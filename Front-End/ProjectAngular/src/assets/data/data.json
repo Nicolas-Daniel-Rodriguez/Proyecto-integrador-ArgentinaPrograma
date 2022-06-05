@@ -4,6 +4,9 @@
     "imgPortada":"./assets/RodriguezNicolas.png",
     "imgPerfil":"./assets/nico.png",
     "acercaDe":"Me desempeño como Regente de una institución educativa, mi labor principal es supervisar y asistir pedagógicamente a los instructores y ayudar al equipo educativo a cumplir sus tareas de la mejor forma posible.",
+    
+    "ocupacionCorta": "Fullstack Web Developer Jr ‍💻",
+    
     "ocupacion":[
         {
             "a": "Regente - Instructor de Formación Profesional 👨🏻"
@@ -100,5 +103,36 @@
             "imgPorc": "./assets/80.svg"
         }
         
+    ],
+    "proyecto":[
+        {
+            "titulo": "Página Web para Escuela de Educación Secundaria Técnica NºX - La Plata",
+            "descripcion": "Este proyecto nació con la intención de mejorar la presencia digital que tenia el establecimiento. Aun esta en proceso de finalización. Soy egresado de la institución y teniendo algo de conocimiento web me acerque a la escuela para ofrecerles este diseño por el afecto que tengo hacia ella. Cuando finalice colocare el vinculo correspondiente. En cuanto a las capacidades utilizadas para la creación de la misma, cabe destacar que en ese momento de realizar el trabajo no contaba con el suficiente conocimiento para desarrollarla con codificación por lo que utilice el editor de paginas de google.",
+            "imgProy": "./assets/LogoEscuela.svg",
+            "link":"./Proyectos/Escuela.html",
+            "id":"Proy1"
+        },
+        {
+            "titulo": "Página Web - Diseño de Logo, tarjetas y membretes",
+            "descripcion": "Este proyecto nació de la necesidad de una empresa de tener una identidad visual y web para captar mas clientes y verse mas profesional para la cartera que ya estaban manejando. Se realizó los logos, tarjetas y membretes con adobe Illustrator y photoshop. Tambien se registro la empresa en google para que aparezca en las busquedas y se realizó una web sencilla con wix.",
+            "imgProy": "./assets/LogoConlara.svg",
+            "link":"./Proyectos/Conlara.html",
+            "id":"Proy2"
+        },
+        {
+            "titulo": "Página Web - Diseño de Logo, mejora de personajes...",
+            "descripcion": "Este proyecto nació con el objetivo de realizar un juego NFT de penales con personajes famosos. Me encargue del diseño de la página junto a mi socio, animaciones, videos, infografia, mejora de personajes, logo y detalles varios.",
+            "imgProy": "./assets/LogoCelebrity.svg",
+            "link":"./Proyectos/Celebrity.html",
+            "id":"Proy3"
+        },
+        {
+            "titulo": " Diseño de Logo, imágenes y videos - Centro de Formación Laboral Nº404 Berisso",
+            "descripcion": "Realice el logo de esta institución con Illustrator y photoshop, como la edición de videos e imagenes institucionales, presentaciones de trabajo y colaboración en el desarrollo de la página web.",
+            "imgProy": "./assets/LogoCFL.svg",
+            "link":"./Proyectos/CFL.html",
+            "id":"Proy4"
+        }
+                
     ]
 }

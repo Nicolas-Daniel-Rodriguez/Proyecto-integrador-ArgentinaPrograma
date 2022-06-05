@@ -8,20 +8,20 @@
         <p class="yoprog">#YoProgramo</p>
         <div class="navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ulnav">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Inicio</a>
-            </li>
             <li class="nav-item b">
-              <a class="nav-link" href="#ExpLab">Exp.Laboral</a>
+              <a [routerLink]="['Inicio']">Inicio</a>
             </li>
-            <li class="nav-item b">
-              <a class="nav-link" href="#Edu">Educación</a>
+            <li class="nav-item b a">
+              <a [routerLink]="['Exp-Laboral']">Exp.Laboral</a>
             </li>
-            <li class="nav-item b">
-              <a class="nav-link" href="#Hab">Habilidades</a>
+            <li class="nav-item b a">
+              <a [routerLink]="['Educacion']">Educación</a>
             </li>
-            <li class="nav-item b">
-              <a class="nav-link" href="#Proy">Proyectos</a>
+            <li class="nav-item b a">
+              <a [routerLink]="['Habilidades']">Habilidades</a>
+            </li>
+            <li class="nav-item b a">
+              <a [routerLink]="['Proyectos']">Proyectos</a>
             </li>
           </ul>
           <a href="https://github.com/Nicolas-Daniel-Rodriguez/">
@@ -36,7 +36,7 @@
               src="./../assets/LinkedinIcon.svg"
               alt="Linkedin"
           /></a>
-          <a href="./login.html"><button
+          <a [routerLink]="['Login']"><button
             class="btn btn-outline-light fs-6 fw-semibold"
             data-bs-toggle="modal" data-bs-target="#Login"
             type="button"

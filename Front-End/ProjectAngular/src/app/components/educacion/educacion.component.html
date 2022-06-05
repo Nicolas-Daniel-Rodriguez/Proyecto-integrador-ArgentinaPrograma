@@ -1,24 +1,24 @@
 <!-- Educación -->
 <section class="cuerpo">
-    <div class="d-flex justify-content-between mx-5 mt-5">
-      <h3 class="ms-5 center fs-5" id="ExpLab">EXPERIENCIA LABORAL:</h3>
+    <div class="d-flex justify-content-between mt-3">
+      <h3 class="ms-5 center fs-5" id="Edu">EDUCACIÓN:</h3>
       <div class="card1 d-flex justify-content-end me-5 ">
-        <img class="imgPerfilChica" src="./../assets/nico.png" alt="Perfil" />
+        <img class="imgPerfilChica" [src]="bbdd.imgPerfil" alt="Perfil" />
         <div>
-          <h1 class="fs-5">Nicolás Daniel <span class="fs-5">Rodríguez</span></h1>
+          <h1 class="fs-5">{{bbdd.name}} <span class="fs-5">{{bbdd.surname}}</span></h1>
           <h2 class=" fs-6">
-            Fullstack Web Developer Jr ‍💻<br />
+            {{bbdd.ocupacionCorta}}<br />
             <a class="link mt-1 fs-6" href="./Contacto.html">Información de Contacto</a>
           </h2>
         </div>
       </div>
     </div>
-    <ul class="bordeIzq m-5 ps-4">
+    <ul class="bordeIzq mx-5 ps-4">
       <!-- Educación Item -->
       <li *ngFor="let educacion of educacionList">
-        <h4 class="mx-4 mt-5 fs-5">{{educacion.titulo}}</h4>
+        <h4 class="mx-4 mt-3 fs-5">{{educacion.titulo}}</h4>
         <div class="bordeIzq mx-4 ps-4 d-flex justify-content-between">
-          <div class="mx-4">
+          <div>
             <p class="fs-6 mb-1">{{educacion.lugarEstudio}}</p>
             <p class="fechas text-start fs-6 mb-1">{{educacion.fechaStart}} - {{educacion.fechaEnd}}</p>
           </div>

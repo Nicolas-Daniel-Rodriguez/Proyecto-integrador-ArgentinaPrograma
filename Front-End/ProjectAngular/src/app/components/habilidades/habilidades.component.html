@@ -1,13 +1,13 @@
 <!-- Habilidades -->
 <section class="cuerpo">
-    <div class="d-flex justify-content-between mx-5 mt-5">
-      <h3 class="ms-5 center fs-5" id="ExpLab">EXPERIENCIA LABORAL:</h3>
+    <div class="d-flex justify-content-between mx-5 mt-3">
+      <h3 class="ms-5 center fs-5" id="Hab">HABILIDADES:</h3>
       <div class="card1 d-flex justify-content-end me-5 ">
-        <img class="imgPerfilChica" src="./../assets/nico.png" alt="Perfil" />
+        <img class="imgPerfilChica" [src]="bbdd.imgPerfil" alt="Perfil" />
         <div>
-          <h1 class="fs-5">Nicolás Daniel <span class="fs-5">Rodríguez</span></h1>
+          <h1 class="fs-5">{{bbdd.name}} <span class="fs-5">{{bbdd.surname}}</span></h1>
           <h2 class=" fs-6">
-            Fullstack Web Developer Jr ‍💻<br />
+            {{bbdd.ocupacionCorta}}<br />
             <a class="link mt-1 fs-6" href="./Contacto.html">Información de Contacto</a>
           </h2>
         </div>
@@ -15,9 +15,9 @@
     </div>
 
     <!-- Skills Linea 1 -->
-    <ul class="d-flex flex-container justify-content-between mx-5">
+    <ul class="flex-container mx-5 m-auto">
       <!-- Skill 1 -->
-      <li *ngFor="let skill of skillList" class="bordeImg cardSkill">
+      <li *ngFor="let skill of skillList" class="bordeImg cardSkill puntos">
         <div class="d-flex justify-content-between">
           <img class="tamR" [src]="skill.imgSkill" alt="HTML" />
           <img class="tamR" [src]="skill.imgPorc" alt="Porcentaje" />
@@ -28,5 +28,5 @@
         </p>
       </li>
     </ul>
-    <a class="linkMedio mt-5 fs-6" href="">Mostrar todas las habilidades...</a>
+    <a class="linkMedio mb-2 fs-6" href="">Mostrar todas las habilidades...</a>
   </section>

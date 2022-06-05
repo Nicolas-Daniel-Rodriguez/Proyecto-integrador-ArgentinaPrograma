@@ -8,7 +8,7 @@ body {
     margin: 0px 5%;
   }
   .bordeInf {
-    border-bottom: 11px solid #FF7120;
+    border-bottom: 5px solid #FF7120;
   }
   .bordeIzq {
     border-left: 4px solid #FF7120;
@@ -27,10 +27,13 @@ body {
     font-weight: 500;
     font-size: 16px;
   }
-  .b{
-    border-left: 4px solid white;
+  .a{
+    border-left: 3px solid white;
   }
-  .nav-link:hover {
+  .b a{
+    text-decoration: none;
+  }
+  .b a:hover{
     color: #FF7120;
   }
   .imgPortada {
@@ -81,7 +84,7 @@ body {
     font-size: 20px;
     display: block;
     text-align:right;
-    margin: 0px 10px 20px 0px;
+    margin: 0px 5px 5px 0px;
   }
   .fechas {
     list-style: none;
@@ -93,7 +96,7 @@ body {
     font-size: 20px;
     display: block;
     text-align:right;
-    margin: 0px 10px 20px 0px;
+    margin: 3px 5px 0px 0px;
   }
   .link:hover {
     color: #fd8947;
@@ -114,35 +117,27 @@ body {
     color: #fd8947;
   }
   .imgExp{
-    width:10%;
+    width:7%;
   }
   .imgCert{
-    width: 20%;
-    height: 90%;
+    width: 15%;
+    height: 70%;
   }
   h3 {
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 28px;
-    line-height: 45px;
     margin-bottom: 0px;
   }
   p {
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 40px;
     text-align: justify;
     letter-spacing: 0px;
   }
   h4 {
     font-family: 'Encode Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 40px;
     color: #FF7120;
   }
   .card1 {
@@ -185,19 +180,19 @@ body {
     text-align: center;
     width: 30%;
     margin: 10px;
-    padding: 20px;
+    padding: 12px 10px;
     border-radius: 30px;
   }
   .cardProyect {
     text-align: center;
-    margin: 20px;
-    padding: 4%;
+    margin: 10px;
+    padding: 2%;
     border-radius: 30px;
   }
   .button {
     background: #FF7120;
     border: 1px solid #454343;
-    padding: 0.5% 3%;
+    padding: 0.2% 2%;
   }
   .button a {
     list-style: none;
@@ -214,11 +209,11 @@ body {
     color: #000000;
   }
   .menuProyect {
-    border-bottom: 20px solid #FF7120;
+    border-bottom: 10px solid #FF7120;
     width: 230px;
   }
   .menuProyect:hover {
-    border-bottom: 15px solid #FF7120;
+    border-bottom: 5px solid #FF7120;
   }
   
   .anchoCardChico {
@@ -232,12 +227,19 @@ body {
   .flex-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .puntos{
+    list-style: none;
   }
   
   /* Responsive layout - makes a one column layout instead of a two-column layout */
-  @media (max-width: 1300px) {
+  @media (max-width: 800px) {
     .flex-container {
       flex-direction: column;
       align-items: center;
+    }
+    .cardSkill {
+      width: 50%; 
     }
   } 

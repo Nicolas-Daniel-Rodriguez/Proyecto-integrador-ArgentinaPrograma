@@ -1,13 +1,13 @@
 <!-- Experiencias Laborales -->
 <section class="cuerpo">
-    <div class="d-flex justify-content-between mx-5 mt-5">
+    <div class="d-flex justify-content-between mt-3">
       <h3 class="ms-5 center fs-5" id="ExpLab">EXPERIENCIA LABORAL:</h3>
       <div class="card1 d-flex justify-content-end me-5 ">
-        <img class="imgPerfilChica" src="./../assets/nico.png" alt="Perfil" />
+        <img class="imgPerfilChica" [src]="bbdd.imgPerfil" alt="Perfil" />
         <div>
-          <h1 class="fs-5">Nicolás Daniel <span class="fs-5">Rodríguez</span></h1>
+          <h1 class="fs-5">{{bbdd.name}} <span class="fs-5">{{bbdd.surname}}</span></h1>
           <h2 class=" fs-6">
-            Fullstack Web Developer Jr ‍💻<br />
+            {{bbdd.ocupacionCorta}}<br />
             <a class="link mt-1 fs-6" href="./Contacto.html">Información de Contacto</a>
           </h2>
         </div>
@@ -16,13 +16,13 @@
     <ul class="bordeIzq ms-5">
       <!-- Experiencia 1 -->
       <li *ngFor="let experiencia of expList">
-        <div class="d-flex justify-content-between mx-5">
+        <div class="d-flex justify-content-between mt-3 mx-5 m-auto">
           <h4 class="fs-5">{{experiencia.titulo}}</h4>
           <p class="fechas fs-6">{{experiencia.fechaStart}} - {{experiencia.fechaEnd}}</p>
         </div>
-        <div class="bordeIzq mx-5 ps-4 d-flex">
+        <div class="bordeIzq mx-5 ps-4 d-flex altoExp">
           <img class="imgExp"[src]="experiencia.imgExp" alt="Trabajo" />
-          <p class="m-3 fs-6">
+          <p class="mx-3 fs-6 m-auto">
             {{experiencia.descripcion}}
           </p>
         </div>

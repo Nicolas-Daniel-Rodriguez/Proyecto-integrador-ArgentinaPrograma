@@ -8,10 +8,8 @@
 </head>
 <body>
   <app-navbar></app-navbar>
-  <app-acerca-de></app-acerca-de>
-  <app-exp-lab></app-exp-lab>
-  <app-educacion></app-educacion>
-  <app-habilidades></app-habilidades>
-  <app-proyectos></app-proyectos> 
+  <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+    <router-outlet #o="outlet"></router-outlet>
+  </main>
 </body>
 </html>
