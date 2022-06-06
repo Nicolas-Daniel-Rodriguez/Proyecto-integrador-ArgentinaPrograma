@@ -9,11 +9,14 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class NavbarComponent implements OnInit {
 
   modalSwitch:boolean = false;
+  bbdd:any;
 
-  constructor(private modalSS:PortfolioService) { }
+  constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
-    this.modalSS.$modal.subscribe((valor) => {this.modalSwitch= valor})
+    this.datosPortfolio.$modal.subscribe((valor) => {this.modalSwitch= valor})
+    this.datosPortfolio.obtenerDatos().subscribe( data => {
+      this.bbdd=data;})
   }
 
   openModal(){

@@ -1,3 +1,8 @@
+<div class="" *ngIf="modalContact == true">
+    
+    <app-contacto></app-contacto>
+
+  </div>
 <div>
     <img
       class="imgPortada bordeInf"
@@ -14,7 +19,10 @@
             {{ocupacion.a}}
             
             </h2>
-            <a class="link m-2 fs-6" href="./Contacto.html">Información de Contacto</a>
+            <p 
+            class="link m-2 fs-6 pContact" 
+            (click)="openContact()"
+            >Información de Contacto</p>
         </div>
     </div>
     <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
@@ -28,3 +36,4 @@
     <a class="link mx-5 fs-6" href="">Ver más...</a>
     </div>
 </div>
+

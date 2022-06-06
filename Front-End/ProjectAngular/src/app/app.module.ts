@@ -13,6 +13,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     EducacionComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    ContactoComponent
+    ContactoComponent,
+    CardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

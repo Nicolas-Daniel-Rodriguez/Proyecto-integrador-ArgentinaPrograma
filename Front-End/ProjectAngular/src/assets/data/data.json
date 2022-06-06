@@ -1,6 +1,12 @@
 {
     "name": "Nicolás Daniel",
     "surname":"Rodríguez",
+    "pais":"Argentina",
+    "tel":"221-559-9179",
+    "email":"ndr126@abc.gob.ar",
+    "instagram":"https://www.instagram.com/nicolas_daniel_rodriguez/",
+    "github":"https://github.com/Nicolas-Daniel-Rodriguez/",
+    "linkedin":"https://www.linkedin.com/in/nicolas-daniel-rodriguez/",
     "imgPortada":"./assets/RodriguezNicolas.png",
     "imgPerfil":"./assets/nico.png",
     "acercaDe":"Me desempeño como Regente de una institución educativa, mi labor principal es supervisar y asistir pedagógicamente a los instructores y ayudar al equipo educativo a cumplir sus tareas de la mejor forma posible.",

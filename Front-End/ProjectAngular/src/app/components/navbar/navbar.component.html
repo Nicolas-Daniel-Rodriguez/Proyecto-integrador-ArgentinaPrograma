@@ -24,13 +24,13 @@
               <a [routerLink]="['Proyectos']">Proyectos</a>
             </li>
           </ul>
-          <a href="https://github.com/Nicolas-Daniel-Rodriguez/">
+          <a [href]="bbdd.github">
             <img class="tamR" src="./../assets/GitHubIcon.svg" alt="GitHub"
           /></a>
-          <a href="https://www.instagram.com/nicolas_daniel_rodriguez/">
+          <a [href]="bbdd.instagram">
             <img class="tamR"src="./../assets/InstagramIcon.svg" alt="Instagram"
           /></a>
-          <a href="https://www.linkedin.com/in/nicolas-daniel-rodriguez/">
+          <a [href]="bbdd.linkedin">
             <img
               class="me-2 tamR"
               src="./../assets/LinkedinIcon.svg"
@@ -54,4 +54,6 @@
     <app-login></app-login>
 
   </div>
+
+ 
  

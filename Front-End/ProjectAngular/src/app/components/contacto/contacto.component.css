@@ -1,3 +1,15 @@
+.cuerpoContact{
+  position: fixed;  /*Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 3;
+  width: 100%;
+  margin: auto;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
 /* Bordered form */
 .container {
     border: 5px solid #FF7120;
@@ -9,8 +21,6 @@
     font-family: 'Encode Sans Expanded';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 45px;
     text-align: center;
     color: #FFFFFF;
     align-items: center;
@@ -18,37 +28,42 @@
   .imgPerfil {
     border-radius: 100%;
     box-sizing: border-box;
-    width: 270px;
-    height: 270px;
-    border: 10px solid #FF7120;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #FF7120;
   }
   .x {
     position:absolute;
-    top:12%;
-    left: 66%;
+    float: right;
+    top:15%;
+    left:65%;
   }
   h1 {
     font-family: 'Encode Sans';
     font-style: normal;
-    font-weight: 500;
-    font-size: 42px;
   }
   h1 span {
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 42px;
     color: #FF7120;
   }
   p {
     font-family: 'Encode Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 32px;
-    line-height: 40px;
+  }
+  .centrarContact{
+    display: flex;
+    flex-direction: column;
   }
   .tam img{
     width:10%;
   }
- 
+  .imgX:hover,
+  .imgX:focus {
+    background: #FF7120;
+    border-radius: 100%;
+    cursor: pointer;
+  }
 

@@ -2,16 +2,7 @@
 <section class="cuerpo">
     <div class="d-flex justify-content-between mt-3">
       <h3 class="ms-5 center fs-5" id="Edu">EDUCACIÓN:</h3>
-      <div class="card1 d-flex justify-content-end me-5 ">
-        <img class="imgPerfilChica" [src]="bbdd.imgPerfil" alt="Perfil" />
-        <div>
-          <h1 class="fs-5">{{bbdd.name}} <span class="fs-5">{{bbdd.surname}}</span></h1>
-          <h2 class=" fs-6">
-            {{bbdd.ocupacionCorta}}<br />
-            <a class="link mt-1 fs-6" href="./Contacto.html">Información de Contacto</a>
-          </h2>
-        </div>
-      </div>
+      <app-card></app-card>
     </div>
     <ul class="bordeIzq mx-5 ps-4">
       <!-- Educación Item -->

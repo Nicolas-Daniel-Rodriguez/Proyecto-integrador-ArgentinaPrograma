@@ -17,4 +17,7 @@ export class PortfolioService {
 
   /* observable switch */
   $modal = new EventEmitter<any>();
+
+  /* observable Contact Modal */
+  $contac = new EventEmitter<any>();
 }
