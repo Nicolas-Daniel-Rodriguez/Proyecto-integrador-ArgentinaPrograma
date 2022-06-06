@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  modalSwitch:boolean = false;
+
+  constructor(private modalSS:PortfolioService) { }
 
   ngOnInit(): void {
+    this.modalSS.$modal.subscribe((valor) => {this.modalSwitch= valor})
+  }
+
+  openModal(){
+    this.modalSwitch = true;
   }
 
 }

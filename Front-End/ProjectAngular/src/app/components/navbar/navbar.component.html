@@ -36,14 +36,22 @@
               src="./../assets/LinkedinIcon.svg"
               alt="Linkedin"
           /></a>
-          <a [routerLink]="['Login']"><button
+          <button
+            (click)="openModal()"
             class="btn btn-outline-light fs-6 fw-semibold"
             data-bs-toggle="modal" data-bs-target="#Login"
             type="button"
           >
             LOGIN
-          </button></a>
+          </button><!--<a [routerLink]="['Login']"></a>-->
         </div>
       </div>
     </nav>
   </div>
+
+  <div class="" *ngIf="modalSwitch == true">
+    
+    <app-login></app-login>
+
+  </div>
+ 

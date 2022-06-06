@@ -7,6 +7,8 @@ import { fadeAnimation } from './animation';
   styleUrls: ['./app.component.css'],
   animations: [fadeAnimation]
 })
-export class AppComponent {
+export class AppComponent{
   title = 'ProjectAngular';
+
 }
+

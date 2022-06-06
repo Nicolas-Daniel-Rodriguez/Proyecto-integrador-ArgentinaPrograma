@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -13,4 +14,7 @@ export class PortfolioService {
   obtenerDatos():Observable<any> {  
     return this.http.get('./assets/data/data.json');
   }
+
+  /* observable switch */
+  $modal = new EventEmitter<any>();
 }

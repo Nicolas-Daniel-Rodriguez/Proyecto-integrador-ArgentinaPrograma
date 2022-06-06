@@ -1,7 +1,131 @@
-.error{
-    color:red
+.cuerpo{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 3;
+  width: 100%;
+  margin: auto;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Bordered form */
+form {
+  border: 3px solid #FF7120;
+  border-radius: 35px;
+  width:50%;
+  height:40%;
+  margin: 1% auto;
+  background: linear-gradient(180deg, #000000 0%, #313131 100%);
+  font-family: 'Encode Sans Expanded';
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  color: #FFFFFF;
+  align-items: center;
+}
+.x {
+  position:absolute;
+  float: right;
+  top:12%;
+  left:68%;
+}
+.imgX:hover,
+.imgX:focus {
+  background: #FF7120;
+  border-radius: 100%;
+  cursor: pointer;
+}
+h1 {
+  font-family: 'Encode Sans Expanded';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  font-family: 'Encode Sans Expanded';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background:#D8D8D8;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #FF7120;
+  font-family: 'Encode Sans Expanded';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 14px 20px;
+  margin: auto;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  margin-bottom: 3%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+
+/* Avatar image */
+img.avatar {
+  width: 110px;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 5px;
+}
+
+/* The "Forgot password" text */
+.psw {
+  float: right;
+  padding-top: 16px;
+  font-family: 'Encode Sans Expanded';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  align-items: center;
+  /* Orange */
+  color: #FF7120;
+}
+
+.contPswCheck{
+  margin: 0 20%;
+}
+
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
   }
-  
-  .border-danger{
-    border-color: red;
-  }
+}
