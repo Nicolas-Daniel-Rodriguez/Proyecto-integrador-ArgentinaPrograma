@@ -9,7 +9,7 @@
     "linkedin":"https://www.linkedin.com/in/nicolas-daniel-rodriguez/",
     "imgPortada":"./assets/RodriguezNicolas.png",
     "imgPerfil":"./assets/nico.png",
-    "acercaDe":"Me desempeño como Regente de una institución educativa, mi labor principal es supervisar y asistir pedagógicamente a los instructores y ayudar al equipo educativo a cumplir sus tareas de la mejor forma posible.",
+    "acercaDe":"Deseo poder brindar grandes soluciones a empresas y personas por medio de la programación. Cada vez que veo o desempeño una tarea automáticamente mi cabeza piensa como mejorar el proceso, como hacerlo mas eficiente, mas entendible y mas productivo. Mientras mas aprendo a programar mas me entusiasmo en el potencial de lo que se puede crear, en como se pueden mejorar la calidad de vida de la gente y del trabajo, mejorando procesos diarios, simplificando tareas tediosas, agregándole calidad a productos, etc. Actualmente me desempeño como Regente de una institución educativa, mi labor principal es supervisar y asistir pedagógicamente a los instructores y ayudar al equipo educativo a cumplir sus tareas de la mejor forma posible. Soy el puente entre la conducción general de la institución y los instructores. Siempre buscando empatizar con las partes y analizando como alcanzar el mayor objetivo. También estoy a cargo de la Coordinación de los Puntos Progresar en la Ciudad de Berisso donde gestionamos diferentes puntos itinerantes para ayudar y asesorar a todos los jóvenes que quieran inscribirse a la beca o tengan algún inconveniente. Estoy diseñando una web para una escuela ad honorem para que pueda difundir su información de una manera mas adecuada y atractiva para sus alumnos. A su vez, hago ediciones graficas, logos, banner, flyer, presentaciones y videos.",
     
     "ocupacionCorta": "Fullstack Web Developer Jr ‍💻",
     
@@ -60,7 +60,7 @@
             "titulo": "Regente CFL Nº404 Berisso",
             "fechaStart": "02/2019",
             "fechaEnd": "Actual",
-            "descripcion": "- 12 personas a cargo. - Coordinar las actividades de los trayectos formativos y cursos de organización curricular en las familias profesionales.",
+            "descripcion": "- 12 personas a cargo. - Coordinar las actividades de los trayectos formativos y cursos de organización curricular en las familias profesionales. - Efectuar el seguimiento del desarrollo de la actividad institucional, informar y proponer estrategias de intervención al equipo de conducción de acuerdo con sus observaciones. - Asistir pedagógicamente a los maestros de ciclo y los docentes a cargo de área en el desarrollo de sus planificaciones y proyectos. - Etc.",
             "imgExp": "./assets/CFL.svg"
         },
         {
@@ -113,7 +113,7 @@
     "proyecto":[
         {
             "titulo": "Página Web para Escuela de Educación Secundaria Técnica NºX - La Plata",
-            "descripcion": "Este proyecto nació con la intención de mejorar la presencia digital que tenia el establecimiento. Aun esta en proceso de finalización. Soy egresado de la institución y teniendo algo de conocimiento web me acerque a la escuela para ofrecerles este diseño por el afecto que tengo hacia ella. Cuando finalice colocare el vinculo correspondiente. En cuanto a las capacidades utilizadas para la creación de la misma, cabe destacar que en ese momento de realizar el trabajo no contaba con el suficiente conocimiento para desarrollarla con codificación por lo que utilice el editor de paginas de google.",
+            "descripcion": "Ante la búsqueda de escuela secundaria para uno de mis hijos, me encuentro con una escuela la cual le tengo mucho aprecio y su página web. La misma se había hecho con mucho esfuerzo y sin conocimiento técnico y de diseño. Realmente se encontraba desordenada, poco intuitiva y sin diseño. No daba una buena impresión del establecimiento. Dada está situación decido crear una página web institucional con buen diseño y la información accesible e intuitiva para los estudiantes. Una vez semi terminado un bosquejo casi total y con la página oculta a la comunidad me acerco a la escuela y ofrezco mí proyecto comentando que lo hago sin cargo, si les gusta sin compromiso pueden aceptar mí donación a la institución. Realmente contentos por la iniciativa y el trabajo realizado empezamos a trabajar en conjunto, agregarle funcionalidades según las necesidades de la institución, formas de actualizar el contenido y cuestiones de seguridad básica. Por temas administrativos aún no largamos y está detenido el proyecto. Espero que pronto pueda publicarse. La idea es ir actualizando la calidad del trabajo con lo aprendido en Argentina Programa. Cabe mencionar que la página web tiene más trabajo de diseño que de codificación al momento.",
             "imgProy": "./assets/LogoEscuela.svg",
             "link":"Próximamente Link",
             "id":"Proy1",
