@@ -1,5 +1,5 @@
       <!-- Proyectos -->
-      <section class="cuerpo">
+      <section class="cuerpo mb-5">
         <div class="d-flex justify-content-between mx-5 mt-3">
           <h3 class="ms-5 center fs-5" id="Proy">PROYECTOS:</h3>
           <app-card></app-card>
@@ -7,7 +7,7 @@
 
         <!-- Proyecto -->
         <ul>
-          <li *ngFor="let proyecto of proyList" class="puntos bordeImg cardProyect anchoCard mx-5" [id]="proyecto.id">
+          <li *ngFor="let proyecto of proyList" class="puntos bordeImg cardProyect anchoCard mx-5 mb-4" [id]="proyecto.id">
             <div class="d-flex justify-content-center">
               <img class="tamR ms-5" [src]="proyecto.imgProy" alt="LogoEmpresa" />
               <h4 class="m-5 fs-4" >
@@ -17,6 +17,7 @@
             <p class="mt-3 mx-5 fs-6">
               {{proyecto.descripcion}}
             </p>
+            <img class="d-block m-auto tamImg my-3" [src]="proyecto.imgDemo" alt="Imagen de Proyecto">
             <button class="button">
               <a class="fs-6" [href]="proyecto.link">Ver Proyecto...</a>
             </button>
@@ -24,10 +25,6 @@
         </ul>
        
         </section>
-        <!-- Menu de proyectos-->
-        <div class="d-flex justify-content-center m-5">
-          <a class="mx-5 menuProyect" href="#Proy1"></a>
-          <a class="mx-5 menuProyect" href="#Proy2"></a>
-          <a class="mx-5 menuProyect" href="#Proy3"></a>
-          <a class="mx-5 menuProyect" href="#Proy4"></a>
-        </div>
+
+       
+          

@@ -16,7 +16,7 @@
     border-radius: 35px;
     width:40%;
     height:40%;
-    margin: 5% auto;
+    margin: 7% auto;
     background: linear-gradient(180deg, #000000 0%, #313131 100%);
     font-family: 'Encode Sans Expanded';
     font-style: normal;
@@ -35,8 +35,8 @@
   .x {
     position:absolute;
     float: right;
-    top:15%;
-    left:65%;
+    top:19%;
+    left:64.5%;
   }
   h1 {
     font-family: 'Encode Sans';

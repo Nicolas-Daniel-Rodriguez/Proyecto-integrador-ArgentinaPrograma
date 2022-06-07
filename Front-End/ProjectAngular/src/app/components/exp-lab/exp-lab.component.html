@@ -1,5 +1,5 @@
 <!-- Experiencias Laborales -->
-<section class="cuerpo">
+<section class="cuerpo mb-5">
     <div class="d-flex justify-content-between mt-3">
       <h3 class="ms-5 center fs-5" id="ExpLab">EXPERIENCIA LABORAL:</h3>
       <app-card></app-card>
@@ -7,18 +7,20 @@
     <ul class="bordeIzq ms-5">
       <!-- Experiencia 1 -->
       <li *ngFor="let experiencia of expList">
-        <div class="d-flex justify-content-between mt-3 mx-5 m-auto">
+        <div class="d-flex justify-content-between mt-3 mx-3 m-auto">
           <h4 class="fs-5">{{experiencia.titulo}}</h4>
           <p class="fechas fs-6">{{experiencia.fechaStart}} - {{experiencia.fechaEnd}}</p>
         </div>
-        <div class="bordeIzq mx-5 ps-4 d-flex altoExp">
-          <img class="imgExp"[src]="experiencia.imgExp" alt="Trabajo" />
+        <div class="bordeIzq mx-3 mb-3 d-flex altoExp">
+          <img class="imgExp ms-2"[src]="experiencia.imgExp" alt="Trabajo" />
           <p class="mx-3 fs-6 m-auto">
             {{experiencia.descripcion}}
           </p>
         </div>
-        <a class="link me-5 fs-6" href="">Ver más...</a>
+        <!-- <a class="link me-5 fs-6" href="">Ver más...</a> -->
       </li>
-      <a class="linkMedio fs-6" href="">Mostrar todas las experiencias...</a>
+      <!-- <a class="linkMedio fs-6" href="">Mostrar todas las experiencias...</a> -->
     </ul>
   </section>
+
+  

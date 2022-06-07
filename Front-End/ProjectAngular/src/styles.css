@@ -2,7 +2,17 @@
 body {
     background: linear-gradient(180deg, #000000 0%, #313131 100%);
     color: white;
-    letter-spacing: 1px;
+    letter-spacing: 1px;  
+  }
+  section {
+    padding-top:60px;
+  }
+  .navfijo{
+    position:fixed;
+    top: 0;
+    width:100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 10;
   }
   .cuerpo {
     margin: 0px 5%;
@@ -208,14 +218,6 @@ body {
   .button a:hover {
     color: #000000;
   }
-  .menuProyect {
-    border-bottom: 10px solid #FF7120;
-    width: 230px;
-  }
-  .menuProyect:hover {
-    border-bottom: 5px solid #FF7120;
-  }
-  
   .anchoCardChico {
     width: 45%;
     margin: auto;
@@ -241,5 +243,9 @@ body {
     }
     .cardSkill {
       width: 50%; 
+    }
+  } @media (max-width: 992px) {
+    section {
+      padding-top:230px;
     }
   } 

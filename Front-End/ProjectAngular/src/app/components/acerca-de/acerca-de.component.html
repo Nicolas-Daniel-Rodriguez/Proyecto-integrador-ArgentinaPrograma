@@ -3,7 +3,7 @@
     <app-contacto></app-contacto>
 
   </div>
-<div>
+<section>
     <img
       class="imgPortada bordeInf"
       [src]="bbdd.imgPortada"
@@ -27,13 +27,13 @@
     </div>
     <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
     <h1 class="ms-5 fs-4">{{bbdd.name}} <span>{{bbdd.surname}}</span></h1>
-    <h3 class="mt-4 mx-5 fs-5"><span class="ms-5">ACERCA DE:</span></h3>
-    <div class="bordeIzq mx-5 my-3">
+    <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
+    <div class="bordeIzq mx-5 my-3 mb-4">
         <p class="fs-6 ms-3">
         {{bbdd.acercaDe}}
         </p>
     </div>
-    <a class="link mx-5 fs-6" href="">Ver más...</a>
+    <!-- <a class="link mx-5 fs-6" href="">Ver más...</a> -->
     </div>
-</div>
+</section>
 

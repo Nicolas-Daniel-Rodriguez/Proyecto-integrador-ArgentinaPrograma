@@ -76,37 +76,37 @@
             "titulo": "HTML",
             "descripcion": "El esqueleto y maquetación general de este portfolio fue realizado con HTML 5.",
             "imgSkill": "./assets/HTML.png",
-            "imgPorc": "./assets/80.svg"
+            "porc": "90"
         },
         {
             "titulo": "CSS",
             "descripcion": "El estilo y diseño general de este portfolio fue realizado con CSS 3.",
             "imgSkill": "./assets/CSS.png",
-            "imgPorc": "./assets/80.svg"
+            "porc": "90"
         },
         {
             "titulo": "Javascript",
             "descripcion": "El comportamiento y ejecución de eventos de este portfolio fue realizado con JavaScript.",
             "imgSkill": "./assets/Javascript.svg",
-            "imgPorc": "./assets/80.svg"
+            "porc": "60"
         },
         {
             "titulo": "Bootstrap",
             "descripcion": "El login y diseño de xxxxxx de este portfolio fue realizado con Bootstrap.",
             "imgSkill": "./assets/Bootstrap.png",
-            "imgPorc": "./assets/80.svg"
+            "porc": "75"
         },
         {
             "titulo": "TypeScript",
             "descripcion": "La conexión de xxxxxxx de este portfolio fue realizado con TypeScript.",
             "imgSkill": "./assets/Typescript.png",
-            "imgPorc": "./assets/80.svg"
+            "porc": "70"
         },
         {
             "titulo": "Angular",
             "descripcion": "El esqueleto y maquetación general de este portfolio fue realizado con HTML5 en Visual Studio Code.",
             "imgSkill": "./assets/Angular.svg",
-            "imgPorc": "./assets/80.svg"
+            "porc": "70"
         }
         
     ],
@@ -115,29 +115,33 @@
             "titulo": "Página Web para Escuela de Educación Secundaria Técnica NºX - La Plata",
             "descripcion": "Este proyecto nació con la intención de mejorar la presencia digital que tenia el establecimiento. Aun esta en proceso de finalización. Soy egresado de la institución y teniendo algo de conocimiento web me acerque a la escuela para ofrecerles este diseño por el afecto que tengo hacia ella. Cuando finalice colocare el vinculo correspondiente. En cuanto a las capacidades utilizadas para la creación de la misma, cabe destacar que en ese momento de realizar el trabajo no contaba con el suficiente conocimiento para desarrollarla con codificación por lo que utilice el editor de paginas de google.",
             "imgProy": "./assets/LogoEscuela.svg",
-            "link":"./Proyectos/Escuela.html",
-            "id":"Proy1"
+            "link":"Próximamente Link",
+            "id":"Proy1",
+            "imgDemo": "./assets/Escuela.svg"
         },
         {
             "titulo": "Página Web - Diseño de Logo, tarjetas y membretes",
             "descripcion": "Este proyecto nació de la necesidad de una empresa de tener una identidad visual y web para captar mas clientes y verse mas profesional para la cartera que ya estaban manejando. Se realizó los logos, tarjetas y membretes con adobe Illustrator y photoshop. Tambien se registro la empresa en google para que aparezca en las busquedas y se realizó una web sencilla con wix.",
             "imgProy": "./assets/LogoConlara.svg",
-            "link":"./Proyectos/Conlara.html",
-            "id":"Proy2"
+            "link":"https://conlaraservicios.wixsite.com/inicio",
+            "id":"Proy2",
+            "imgDemo": "./assets/WEBCONLARA.svg"
         },
         {
             "titulo": "Página Web - Diseño de Logo, mejora de personajes...",
             "descripcion": "Este proyecto nació con el objetivo de realizar un juego NFT de penales con personajes famosos. Me encargue del diseño de la página junto a mi socio, animaciones, videos, infografia, mejora de personajes, logo y detalles varios.",
             "imgProy": "./assets/LogoCelebrity.svg",
-            "link":"./Proyectos/Celebrity.html",
-            "id":"Proy3"
+            "link":"https://celebritysoccernft.wixsite.com/my-site",
+            "id":"Proy3",
+            "imgDemo": "./assets/Celebrity.svg"
         },
         {
             "titulo": " Diseño de Logo, imágenes y videos - Centro de Formación Laboral Nº404 Berisso",
             "descripcion": "Realice el logo de esta institución con Illustrator y photoshop, como la edición de videos e imagenes institucionales, presentaciones de trabajo y colaboración en el desarrollo de la página web.",
             "imgProy": "./assets/LogoCFL.svg",
-            "link":"./Proyectos/CFL.html",
-            "id":"Proy4"
+            "link":"https://educacionberisso.wixsite.com/cfp404",
+            "id":"Proy4",
+            "imgDemo": "./assets/CFLWEB.svg"
         }
                 
     ]

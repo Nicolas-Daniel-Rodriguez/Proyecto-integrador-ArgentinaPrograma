@@ -16,7 +16,7 @@ form {
   border-radius: 35px;
   width:50%;
   height:40%;
-  margin: 1% auto;
+  margin: 7% auto;
   background: linear-gradient(180deg, #000000 0%, #313131 100%);
   font-family: 'Encode Sans Expanded';
   font-style: normal;
@@ -28,8 +28,8 @@ form {
 .x {
   position:absolute;
   float: right;
-  top:12%;
-  left:68%;
+  top:18%;
+  left:69%;
 }
 .imgX:hover,
 .imgX:focus {

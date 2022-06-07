@@ -1,5 +1,5 @@
 <!-- Habilidades -->
-<section class="cuerpo">
+<section class="cuerpo mb-5">
     <div class="d-flex justify-content-between mx-5 mt-3">
       <h3 class="ms-5 center fs-5" id="Hab">HABILIDADES:</h3>
       <app-card></app-card>
@@ -11,7 +11,7 @@
       <li *ngFor="let skill of skillList" class="bordeImg cardSkill puntos">
         <div class="d-flex justify-content-between">
           <img class="tamR" [src]="skill.imgSkill" alt="HTML" />
-          <img class="tamR" [src]="skill.imgPorc" alt="Porcentaje" />
+          <div role="progressbar" [attr.aria-valuenow]="skill.porc" aria-valuemin="0" aria-valuemax="100" style="--value:{{skill.porc}}"></div>
         </div>
         <h4 class="fs-5">{{skill.titulo}}</h4>
         <p class="anchop fs-6">
@@ -19,5 +19,7 @@
         </p>
       </li>
     </ul>
-    <a class="linkMedio mb-2 fs-6" href="">Mostrar todas las habilidades...</a>
+    <!-- <a class="linkMedio mb-2 fs-6" href="">Mostrar todas las habilidades...</a> -->
   </section>
+
+  
