@@ -1,0 +1,148 @@
+{
+    "name": "Nicolás Daniel",
+    "surname":"Rodríguez",
+    "pais":"Argentina",
+    "tel":"221-559-9179",
+    "email":"ndr126@abc.gob.ar",
+    "instagram":"https://www.instagram.com/nicolas_daniel_rodriguez/",
+    "github":"https://github.com/Nicolas-Daniel-Rodriguez/",
+    "linkedin":"https://www.linkedin.com/in/nicolas-daniel-rodriguez/",
+    "imgPortada":"./assets/RodriguezNicolas.png",
+    "imgPerfil":"./assets/nico.png",
+    "acercaDe":"Deseo poder brindar grandes soluciones a empresas y personas por medio de la programación. Cada vez que veo o desempeño una tarea automáticamente mi cabeza piensa como mejorar el proceso, como hacerlo mas eficiente, mas entendible y mas productivo. Mientras mas aprendo a programar mas me entusiasmo en el potencial de lo que se puede crear, en como se pueden mejorar la calidad de vida de la gente y del trabajo, mejorando procesos diarios, simplificando tareas tediosas, agregándole calidad a productos, etc. Actualmente me desempeño como Regente de una institución educativa, mi labor principal es supervisar y asistir pedagógicamente a los instructores y ayudar al equipo educativo a cumplir sus tareas de la mejor forma posible. Soy el puente entre la conducción general de la institución y los instructores. Siempre buscando empatizar con las partes y analizando como alcanzar el mayor objetivo. También estoy a cargo de la Coordinación de los Puntos Progresar en la Ciudad de Berisso donde gestionamos diferentes puntos itinerantes para ayudar y asesorar a todos los jóvenes que quieran inscribirse a la beca o tengan algún inconveniente. Estoy diseñando una web para una escuela ad honorem para que pueda difundir su información de una manera mas adecuada y atractiva para sus alumnos. A su vez, hago ediciones graficas, logos, banner, flyer, presentaciones y videos.",
+    
+    "ocupacionCorta": "Fullstack Web Developer Jr ‍💻",
+    
+    "ocupacion":[
+        {
+            "a": "Regente - Instructor de Formación Profesional 👨🏻"
+         },
+         {
+            "a": "Coordinador de los Puntos Progresar Berisso 🤵🏻"
+         }, 
+         {
+            "a": "Estudiante de Fullstack Web Developer Jr ‍💻"
+         }
+    ],
+
+    "educacion":[
+        {
+            "titulo": "DESARROLLADOR WEB FULLSTACK JR",
+            "lugarEstudio": "Ministerio de Desarrollo Productivo - CESSI - INTI",
+            "fechaStart": "10/2021",
+            "fechaEnd": "08/2022",
+            "certImg": "./assets/cert.1.svg"
+        },
+        {
+            "titulo": "INSTRUCTOR DE FORMACIÓN PROFESIONAL",
+            "lugarEstudio": "Centro de Formación en Administración Pública Nº 440",
+            "fechaStart": "07/2020",
+            "fechaEnd": "08/2021",
+            "certImg": "./assets/cert.1.svg"
+        },
+        {
+            "titulo": "BACHILLER Y TÉCNICO ELECTRONICO",
+            "lugarEstudio": "Escuela Industrial N°6 Alberth Thomas",
+            "fechaStart": "03/2005",
+            "fechaEnd": "11/2011",
+            "certImg": "./assets/cert.3.svg"
+        }
+    ],
+    "experiencia":[
+        {
+            "titulo": "Coordinador de los Puntos Progresar",
+            "fechaStart": "02/2022",
+            "fechaEnd": "Actual",
+            "descripcion": "Estoy a cargo de la coordinación de los puntos itinerantes con equipos de trabajo por diversos lugares de la ciudad de Berisso para ayudar y asesorar en la inscripción y programas de la beca educativa Progresar.",
+            "imgExp": "./assets/PProgresar.svg"
+        },
+        {
+            "titulo": "Regente CFL Nº404 Berisso",
+            "fechaStart": "02/2019",
+            "fechaEnd": "Actual",
+            "descripcion": "- 12 personas a cargo. - Coordinar las actividades de los trayectos formativos y cursos de organización curricular en las familias profesionales. - Efectuar el seguimiento del desarrollo de la actividad institucional, informar y proponer estrategias de intervención al equipo de conducción de acuerdo con sus observaciones. - Asistir pedagógicamente a los maestros de ciclo y los docentes a cargo de área en el desarrollo de sus planificaciones y proyectos. - Etc.",
+            "imgExp": "./assets/CFL.svg"
+        },
+        {
+            "titulo": "Administrativo Cat.C",
+            "fechaStart": "01/2016",
+            "fechaEnd": "03/2020",
+            "descripcion": "- Cuentas corrientes, conciliación, extractos bancarios, manejo de caja, stock, precios, atención al público, gestoría, manejo de software erp, etc.",
+            "imgExp": "./assets/Madeco.svg"
+        }
+    ],
+    "skill":[
+        {
+            "titulo": "HTML",
+            "descripcion": "El esqueleto y maquetación general de este portfolio fue realizado con HTML 5.",
+            "imgSkill": "./assets/HTML.png",
+            "porc": "90"
+        },
+        {
+            "titulo": "CSS",
+            "descripcion": "El estilo y diseño general de este portfolio fue realizado con CSS 3.",
+            "imgSkill": "./assets/CSS.png",
+            "porc": "90"
+        },
+        {
+            "titulo": "Javascript",
+            "descripcion": "El comportamiento y ejecución de eventos de este portfolio fue realizado con JavaScript.",
+            "imgSkill": "./assets/Javascript.svg",
+            "porc": "60"
+        },
+        {
+            "titulo": "Bootstrap",
+            "descripcion": "El login y diseño de xxxxxx de este portfolio fue realizado con Bootstrap.",
+            "imgSkill": "./assets/Bootstrap.png",
+            "porc": "75"
+        },
+        {
+            "titulo": "TypeScript",
+            "descripcion": "La conexión de xxxxxxx de este portfolio fue realizado con TypeScript.",
+            "imgSkill": "./assets/Typescript.png",
+            "porc": "70"
+        },
+        {
+            "titulo": "Angular",
+            "descripcion": "El esqueleto y maquetación general de este portfolio fue realizado con HTML5 en Visual Studio Code.",
+            "imgSkill": "./assets/Angular.svg",
+            "porc": "70"
+        }
+        
+    ],
+    "proyecto":[
+        {
+            "titulo": "Página Web para Escuela de Educación Secundaria Técnica NºX - La Plata",
+            "descripcion": "Ante la búsqueda de escuela secundaria para uno de mis hijos, me encuentro con una escuela la cual le tengo mucho aprecio y su página web. La misma se había hecho con mucho esfuerzo y sin conocimiento técnico y de diseño. Realmente se encontraba desordenada, poco intuitiva y sin diseño. No daba una buena impresión del establecimiento. Dada está situación decido crear una página web institucional con buen diseño y la información accesible e intuitiva para los estudiantes. Una vez semi terminado un bosquejo casi total y con la página oculta a la comunidad me acerco a la escuela y ofrezco mí proyecto comentando que lo hago sin cargo, si les gusta sin compromiso pueden aceptar mí donación a la institución. Realmente contentos por la iniciativa y el trabajo realizado empezamos a trabajar en conjunto, agregarle funcionalidades según las necesidades de la institución, formas de actualizar el contenido y cuestiones de seguridad básica. Por temas administrativos aún no largamos y está detenido el proyecto. Espero que pronto pueda publicarse. La idea es ir actualizando la calidad del trabajo con lo aprendido en Argentina Programa. Cabe mencionar que la página web tiene más trabajo de diseño que de codificación al momento.",
+            "imgProy": "./assets/LogoEscuela.svg",
+            "link":"Próximamente Link",
+            "id":"Proy1",
+            "imgDemo": "./assets/Escuela.svg"
+        },
+        {
+            "titulo": "Página Web - Diseño de Logo, tarjetas y membretes",
+            "descripcion": "Este proyecto nació de la necesidad de una empresa de tener una identidad visual y web para captar mas clientes y verse mas profesional para la cartera que ya estaban manejando. Se realizó los logos, tarjetas y membretes con adobe Illustrator y photoshop. Tambien se registro la empresa en google para que aparezca en las busquedas y se realizó una web sencilla con wix.",
+            "imgProy": "./assets/LogoConlara.svg",
+            "link":"https://conlaraservicios.wixsite.com/inicio",
+            "id":"Proy2",
+            "imgDemo": "./assets/WEBCONLARA.svg"
+        },
+        {
+            "titulo": "Página Web - Diseño de Logo, mejora de personajes...",
+            "descripcion": "Este proyecto nació con el objetivo de realizar un juego NFT de penales con personajes famosos. Me encargue del diseño de la página junto a mi socio, animaciones, videos, infografia, mejora de personajes, logo y detalles varios.",
+            "imgProy": "./assets/LogoCelebrity.svg",
+            "link":"https://celebritysoccernft.wixsite.com/my-site",
+            "id":"Proy3",
+            "imgDemo": "./assets/Celebrity.svg"
+        },
+        {
+            "titulo": " Diseño de Logo, imágenes y videos - Centro de Formación Laboral Nº404 Berisso",
+            "descripcion": "Realice el logo de esta institución con Illustrator y photoshop, como la edición de videos e imagenes institucionales, presentaciones de trabajo y colaboración en el desarrollo de la página web.",
+            "imgProy": "./assets/LogoCFL.svg",
+            "link":"https://educacionberisso.wixsite.com/cfp404",
+            "id":"Proy4",
+            "imgDemo": "./assets/CFLWEB.svg"
+        }
+                
+    ]
+}
