@@ -5,8 +5,9 @@ import com.ProjectAP.NDR.model.Persona;
 import com.ProjectAP.NDR.repository.PersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class PersonaService implements IPersonaService {
 
     @Autowired
