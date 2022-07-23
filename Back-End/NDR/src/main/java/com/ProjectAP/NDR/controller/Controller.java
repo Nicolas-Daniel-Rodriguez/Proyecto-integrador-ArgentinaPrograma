@@ -1,43 +1,41 @@
 
 package com.ProjectAP.NDR.controller;
 
-import com.ProjectAP.NDR.model.Educacion;
-import java.util.ArrayList;
+
+import com.ProjectAP.NDR.model.Persona;
+import com.ProjectAP.NDR.service.IPersonaService;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
  
-    List<Educacion> listaEducacion = new ArrayList();
+    @Autowired
+    private IPersonaService persoServ;
     
-    @GetMapping ("/hola")
-    public String decirHola(@RequestParam String nombre,
-                            @RequestParam String apellido){
-        return "hola mundo " + nombre + " " + apellido ;
-    }
-    
-    @PostMapping ("/nueva/educacion")
-    public void agregarEducacion (@RequestBody Educacion edu){
-        listaEducacion.add(edu);
+    @PostMapping ("/nueva/persona")
+    public void agregarPersona (@RequestBody Persona pers){
+        persoServ.crearPersona(pers);
     }
      
-    @GetMapping ("/ver/educacion")
+    @GetMapping ("/ver/personas")
     @ResponseBody
-    public List<Educacion> verEducacion(){
-        return listaEducacion;
+    public List<Persona> verPersonas(){
+        return persoServ.verPersonas();
     }
-    /*revisar*/
-    @DeleteMapping ("/eliminar/educacion")
-    public void eliminarEducacion (@RequestParam Long id, 
-                                   @RequestBody Educacion edu){
-        listaEducacion.remove(id);
+    
+    @DeleteMapping ("/eliminar/{id}")
+    public void eliminarPersona (@PathVariable Long id){
+        persoServ.eliminarPersona(id);
     }
-    /*Agregar metodo put*/
-}
+    
+    
+    
+}   
