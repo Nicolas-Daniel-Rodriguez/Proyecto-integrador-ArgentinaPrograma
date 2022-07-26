@@ -19,28 +19,28 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControllerEd {
     
     @Autowired
-    private IEducacionServicio EduServ;
+    private IEducacionServicio eduServ;
     
     @PostMapping ("/nueva/educacion")
     public void agregarPersona (@RequestBody Educacion Edu){
-        EduServ.crearEducacion(Edu);
+        eduServ.crearEducacion(Edu);
     }
      
     @GetMapping ("/ver/educacion")
     @ResponseBody
     public List<Educacion> verEducacion(){
-        return EduServ.verEducacion();
+        return eduServ.verEducacion();
     }
     
-    @DeleteMapping ("/eliminar/{id}")
+    @DeleteMapping ("/eliminar/educacion/{id}")
     public void eliminarEducacion (@PathVariable Long id){
-        EduServ.eliminarEducacion(id);
+        eduServ.eliminarEducacion(id);
     }
     
     @GetMapping ("/buscar/educacion/{id}")
     @ResponseBody
     public Educacion buscarEducacion(@PathVariable Long id){
-        return EduServ.buscarEducacion(id);
+        return eduServ.buscarEducacion(id);
     }
     
     @PutMapping ("/modificar/educacion/{id}")
@@ -51,7 +51,7 @@ public class ControllerEd {
                                     @RequestParam("fechaFin") String nuevaFechaFin,
                                     @RequestParam("certificado") String nuevoCertificado){
         
-        Educacion educacion = EduServ.buscarEducacion(id);
+        Educacion educacion = eduServ.buscarEducacion(id);
         
         educacion.setTitulo(nuevoTitulo);
         educacion.setLugarEstudio(nuevoLugarEstudio);
@@ -59,7 +59,7 @@ public class ControllerEd {
         educacion.setFechaFin(nuevaFechaFin);
         educacion.setCertificado(nuevoCertificado);
         
-        EduServ.crearEducacion(educacion);
+        eduServ.crearEducacion(educacion);
         return educacion;       
         
     }

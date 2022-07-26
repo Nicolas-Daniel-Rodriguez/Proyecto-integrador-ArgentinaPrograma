@@ -11,26 +11,26 @@ import org.springframework.stereotype.Service;
 public class EducacionServicio implements IEducacionServicio{
     
     @Autowired
-    EducacionRepository EduRepo;
+    EducacionRepository eduRepo;
     
     @Override
     public List<Educacion> verEducacion() {
-        return EduRepo.findAll();
+        return eduRepo.findAll();
     }
 
     @Override
     public void crearEducacion(Educacion edu) {
-        EduRepo.save(edu);
+        eduRepo.save(edu);
     }
 
     @Override
     public void eliminarEducacion(Long id) {
-        EduRepo.deleteById(id);
+        eduRepo.deleteById(id);
     }
 
     @Override
     public Educacion buscarEducacion(Long id) {
-        return EduRepo.findById(id).orElse(null);
+        return eduRepo.findById(id).orElse(null);
     }
     
 }
