@@ -27,11 +27,12 @@ public class Persona {
     private String imgPerfil;
     private String ocupacionCorta;
     private String ocupacion;
+    private String acercaDe;
     
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido, String pais, String telefono, String email, String instagram, String github, String linkedin, String imgPortada, String imgPerfil, String ocupacionCorta, String ocupacion) {
+    public Persona(Long id, String nombre, String apellido, String pais, String telefono, String email, String instagram, String github, String linkedin, String imgPortada, String imgPerfil, String ocupacionCorta, String ocupacion, String acercaDe) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -45,6 +46,9 @@ public class Persona {
         this.imgPerfil = imgPerfil;
         this.ocupacionCorta = ocupacionCorta;
         this.ocupacion = ocupacion;
+        this.acercaDe = acercaDe;
     }
+
+    
     
 }
