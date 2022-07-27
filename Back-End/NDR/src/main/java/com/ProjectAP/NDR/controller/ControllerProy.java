@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,4 +42,20 @@ public class ControllerProy {
         return proyServ.buscarProyecto(id);
     }
     
+    @PutMapping ("/modificar/proyectos/{id}")
+    public Proyectos modificarProyecto (@PathVariable Long id,
+                                    @RequestBody Proyectos proy){
+        
+        Proyectos proyecto = proyServ.buscarProyecto(id);
+        
+        proyecto.setTitulo(proy.getTitulo());
+        proyecto.setDescripcion(proy.getDescripcion());
+        proyecto.setLogoProy(proy.getLogoProy());
+        proyecto.setLink(proy.getLink());
+        proyecto.setNum(proy.getNum());
+        proyecto.setImgDemo(proy.getImgDemo());
+        
+        proyServ.crearProyecto(proyecto);
+        return proyecto;       
+    }
 }

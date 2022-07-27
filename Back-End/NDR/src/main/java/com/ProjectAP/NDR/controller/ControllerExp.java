@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,4 +42,19 @@ public class ControllerExp {
         return expServ.buscarExperiencia(id);
     }
     
+    @PutMapping ("/modificar/experiencia/{id}")
+    public ExperienciaLaboral modificarExperiencia (@PathVariable Long id,
+                                    @RequestBody ExperienciaLaboral exp){
+        
+        ExperienciaLaboral experiencia = expServ.buscarExperiencia(id);
+        
+        experiencia.setTitulo(exp.getTitulo());
+        experiencia.setFechaInicio(exp.getFechaInicio());
+        experiencia.setFechaFin(exp.getFechaFin());
+        experiencia.setDescripcion(exp.getDescripcion());
+        experiencia.setImgExp(exp.getImgExp());
+        
+        expServ.crearExperiencia(experiencia);
+        return experiencia;       
+    }
 }

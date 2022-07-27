@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,27 +42,6 @@ public class ControllerEd {
         return eduServ.buscarEducacion(id);
     }
     
-    /*
-    @PutMapping ("/modificar/educacion/{id}")
-    public Educacion modificarEducacion (@PathVariable Long id,
-                                    @RequestParam("titulo") String nuevoTitulo,
-                                    @RequestParam("lugarEstudio") String nuevoLugarEstudio,
-                                    @RequestParam("fechaInicio") String nuevaFechaInicio,
-                                    @RequestParam("fechaFin") String nuevaFechaFin,
-                                    @RequestParam("certificado") String nuevoCertificado){
-        
-        Educacion educacion = eduServ.buscarEducacion(id);
-        
-        educacion.setTitulo(nuevoTitulo);
-        educacion.setLugarEstudio(nuevoLugarEstudio);
-        educacion.setFechaInicio(nuevaFechaInicio);
-        educacion.setFechaFin(nuevaFechaFin);
-        educacion.setCertificado(nuevoCertificado);
-        
-        eduServ.crearEducacion(educacion);
-        return educacion;       
-        
-    }*/
     @PutMapping ("/modificar/educacion/{id}")
     public Educacion modificarEducacion (@PathVariable Long id,
                                     @RequestBody Educacion educ){
@@ -78,6 +56,5 @@ public class ControllerEd {
         
         eduServ.crearEducacion(educacion);
         return educacion;       
-        
     }
 }
