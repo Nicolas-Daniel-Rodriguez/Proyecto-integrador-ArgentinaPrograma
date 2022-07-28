@@ -11,6 +11,7 @@ import { ContactoComponent } from '../components/contacto/contacto.component'
 
 const routes: Routes= [ 
   {path:"Inicio", component:AcercaDeComponent},
+  /*{path:"Inicio", component:AcercaDeComponent, canActivate:[GuardsGuard]},*/
   {path:"Exp-Laboral", component:ExpLabComponent},
   {path:"Educacion", component:EducacionComponent},
   {path:"Habilidades", component:HabilidadesComponent},

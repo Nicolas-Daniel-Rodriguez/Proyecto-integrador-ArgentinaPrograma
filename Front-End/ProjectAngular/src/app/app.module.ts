@@ -10,10 +10,12 @@ import { ExpLabComponent } from './components/exp-lab/exp-lab.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardComponent } from './components/card/card.component';
+import { PortfolioService } from './servicios/portfolio.service';
+import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   imports: [
@@ -36,7 +38,7 @@ import { CardComponent } from './components/card/card.component';
     ContactoComponent,
     CardComponent
   ],
-  providers: [],
+  providers: [PortfolioService, { provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

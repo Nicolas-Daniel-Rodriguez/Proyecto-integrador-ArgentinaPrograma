@@ -15,7 +15,7 @@ export class AcercaDeComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe( data => {
-      this.bbdd=data;
+      this.bbdd=data[0];
       this.ocupacionList=data.ocupacion;
     });
     this.datosPortfolio.$contac.subscribe((valor) => {this.modalContact= valor})

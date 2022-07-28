@@ -8,11 +8,12 @@ import { EventEmitter } from '@angular/core';
 })
 export class PortfolioService {
 
+  url:string="http://";
   constructor(private http:HttpClient) { }
 
   /* en el json va a ir una url de la base de datos */
   obtenerDatos():Observable<any> {  
-    return this.http.get('./assets/data/data.json');
+    return this.http.get<any>(this.url + "ver/personas");
   }
 
   /* observable switch */
