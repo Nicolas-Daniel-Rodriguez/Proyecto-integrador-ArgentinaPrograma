@@ -5,6 +5,7 @@ import com.ProjectAP.NDR.model.Proyectos;
 import com.ProjectAP.NDR.service.IProyectosServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ public class ControllerProy {
     @Autowired
     private IProyectosServicio proyServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/nueva/proyecto")
     public void agregarProyecto (@RequestBody Proyectos proy){
         proyServ.crearProyecto(proy);
@@ -31,6 +33,7 @@ public class ControllerProy {
         return proyServ.verProyectos();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/eliminar/proyecto/{id}")
     public void eliminarProyecto (@PathVariable Long id){
         proyServ.eliminarProyecto(id);
@@ -42,6 +45,7 @@ public class ControllerProy {
         return proyServ.buscarProyecto(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/modificar/proyectos/{id}")
     public Proyectos modificarProyecto (@PathVariable Long id,
                                     @RequestBody Proyectos proy){

@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package security.enums;
 
-/**
- *
- * @author user
- */
-public class RolNombre {
-    
+
+public enum RolNombre {
+    // Tendremos dos roles, admin (tiene todos los permisos CRUD) y user (vista general).
+    ROLE_ADMIN, ROLE_USER
 }

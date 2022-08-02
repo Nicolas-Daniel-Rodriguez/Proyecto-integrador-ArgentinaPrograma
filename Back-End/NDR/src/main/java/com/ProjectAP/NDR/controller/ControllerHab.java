@@ -5,6 +5,7 @@ import com.ProjectAP.NDR.model.Habilidades;
 import com.ProjectAP.NDR.service.IHabilidadesServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ public class ControllerHab {
     @Autowired
     private IHabilidadesServicio habServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/nueva/habilidad")
     public void agregarHabilidad (@RequestBody Habilidades hab){
         habServ.crearHabilidad(hab);
@@ -31,6 +33,7 @@ public class ControllerHab {
         return habServ.verHabilidades();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/eliminar/habilidad/{id}")
     public void eliminarHabilidad (@PathVariable Long id){
         habServ.eliminarHabilidad(id);
@@ -42,6 +45,7 @@ public class ControllerHab {
         return habServ.buscarHabilidad(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/modificar/habilidades/{id}")
     public Habilidades modificarHabilidad (@PathVariable Long id,
                                     @RequestBody Habilidades hab){

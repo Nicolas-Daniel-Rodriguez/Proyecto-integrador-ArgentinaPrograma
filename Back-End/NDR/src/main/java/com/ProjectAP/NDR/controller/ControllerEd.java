@@ -5,6 +5,7 @@ import com.ProjectAP.NDR.model.Educacion;
 import com.ProjectAP.NDR.service.IEducacionServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ public class ControllerEd {
     @Autowired
     private IEducacionServicio eduServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/nueva/educacion")
     public void agregarEducacion (@RequestBody Educacion Edu){
         eduServ.crearEducacion(Edu);
@@ -31,6 +33,7 @@ public class ControllerEd {
         return eduServ.verEducacion();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/eliminar/educacion/{id}")
     public void eliminarEducacion (@PathVariable Long id){
         eduServ.eliminarEducacion(id);
@@ -42,6 +45,7 @@ public class ControllerEd {
         return eduServ.buscarEducacion(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/modificar/educacion/{id}")
     public Educacion modificarEducacion (@PathVariable Long id,
                                     @RequestBody Educacion educ){
