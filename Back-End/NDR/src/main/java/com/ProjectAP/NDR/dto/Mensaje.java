@@ -1,7 +1,6 @@
 package com.ProjectAP.NDR.dto;
 
 
-//Clase para mostrar mensajes por pantalla en el cliente (front)
 public class Mensaje {
 
     private String mensaje;

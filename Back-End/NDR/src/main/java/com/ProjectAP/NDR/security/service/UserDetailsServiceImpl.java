@@ -1,20 +1,17 @@
 
-package security.service;
+package com.ProjectAP.NDR.security.service;
 
-import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import security.entity.Usuario;
-import security.entity.UsuarioMain;
 
+import javax.transaction.Transactional;
+import com.ProjectAP.NDR.security.entity.Usuario;
+import com.ProjectAP.NDR.security.entity.UsuarioMain;
 
-/**
- * Clase que convierte la clase usuario en un UsuarioMain
- * UserDetailsService es propia de Spring Security
- */
 @Service
 @Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {

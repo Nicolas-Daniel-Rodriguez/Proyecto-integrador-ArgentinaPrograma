@@ -1,10 +1,8 @@
 
-package security.controller;
+package com.ProjectAP.NDR.security.controller;
+
 
 import com.ProjectAP.NDR.dto.Mensaje;
-import java.util.HashSet;
-import java.util.Set;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,20 +13,21 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import security.dto.JwtDto;
-import security.dto.LoginUsuario;
-import security.dto.NuevoUsuario;
-import security.entity.Rol;
-import security.entity.Usuario;
-import security.enums.RolNombre;
-import security.jwt.JwtProvider;
-import security.service.RolService;
-import security.service.UsuarioService;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.HashSet;
+import java.util.Set;
+import org.springframework.security.access.prepost.PreAuthorize;
+import com.ProjectAP.NDR.security.dto.JwtDto;
+import com.ProjectAP.NDR.security.dto.LoginUsuario;
+import com.ProjectAP.NDR.security.dto.NuevoUsuario;
+import com.ProjectAP.NDR.security.entity.Rol;
+import com.ProjectAP.NDR.security.entity.Usuario;
+import com.ProjectAP.NDR.security.enums.RolNombre;
+import com.ProjectAP.NDR.security.jwt.JwtProvider;
+import com.ProjectAP.NDR.security.service.RolService;
+import com.ProjectAP.NDR.security.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
@@ -50,7 +49,7 @@ public class AuthController {
     @Autowired
     JwtProvider jwtProvider;
 
-    //Espera un json y lo convierte a tipo clase NuevoUsuario
+
     @PostMapping("/nuevoUsuario")
     public ResponseEntity<?> nuevoUsuario(@Valid @RequestBody NuevoUsuario nuevoUsuario,
                                           BindingResult bindingResult){

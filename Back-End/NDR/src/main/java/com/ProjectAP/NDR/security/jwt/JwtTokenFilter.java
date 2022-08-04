@@ -1,5 +1,6 @@
 
-package security.jwt;
+package com.ProjectAP.NDR.security.jwt;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,13 +15,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import security.service.UserDetailsServiceImpl;
+import com.ProjectAP.NDR.security.service.UserDetailsServiceImpl;
 
-/**
- * Se ejecuta por cada petición, comprueba que sea valido el token
- * Utiliza el provider para validar que sea valido
- * Si es valido permite acceso al recurso si no lanza una excepción
- */
 public class JwtTokenFilter extends OncePerRequestFilter {
 
     private final static Logger logger = LoggerFactory.getLogger(JwtTokenFilter.class);
@@ -31,10 +27,6 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 
-    // El token esta formado por:
-     // cabecera --> Authorization: Bearer token
-    //Hace las comprobaciones
-    // Este metodo se hace cada vez que se le haga una peticion al sever
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
@@ -59,7 +51,6 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     }
 
 
-    //Obtenemos el token sin Bearer + el espacio
     private String getToken(HttpServletRequest request){
 
         String header = request.getHeader("Authorization");

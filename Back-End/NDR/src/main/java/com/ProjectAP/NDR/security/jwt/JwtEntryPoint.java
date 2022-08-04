@@ -1,5 +1,5 @@
 
-package security.jwt;
+package com.ProjectAP.NDR.security.jwt;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,16 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-/**
- * Comprueba si existe un token si no devuelve un 401 no autorizado
- */
 @Component
 public class JwtEntryPoint implements AuthenticationEntryPoint {
 
-    // Implementamos un logger para ver cual metodo da error en caso de falla
     private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
 
-  //Metodo implementado de AuthenticationEntryPoint
     @Override
     public void commence(HttpServletRequest request,
                          HttpServletResponse response,

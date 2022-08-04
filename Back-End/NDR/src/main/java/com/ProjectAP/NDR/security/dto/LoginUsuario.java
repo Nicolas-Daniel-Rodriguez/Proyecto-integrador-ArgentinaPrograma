@@ -1,8 +1,8 @@
 
-package security.dto;
+package com.ProjectAP.NDR.security.dto;
+
 
 import javax.validation.constraints.NotBlank;
-
 
 public class LoginUsuario {
 

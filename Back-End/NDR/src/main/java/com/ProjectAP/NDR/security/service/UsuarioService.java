@@ -1,5 +1,5 @@
 
-package security.service;
+package com.ProjectAP.NDR.security.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Optional;
-import security.entity.Usuario;
-import security.repository.UsuarioRepository;
+import com.ProjectAP.NDR.security.entity.Usuario;
+import com.ProjectAP.NDR.security.repository.UsuarioRepository;
 
 @Service
 @Transactional
