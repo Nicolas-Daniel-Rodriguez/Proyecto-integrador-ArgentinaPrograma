@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import com.ProjectAP.NDR.security.entity.UsuarioMain;
+import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.security.core.GrantedAuthority;
 
 
 @Component
@@ -27,20 +30,22 @@ public class JwtProvider {
 
     public String generateToken(Authentication authentication){
         UsuarioMain usuarioMain = (UsuarioMain) authentication.getPrincipal();
+        List<String> roles = usuarioMain.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
         return Jwts.builder().setSubject(usuarioMain.getUsername())
+                .claim("roles", roles)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + expiration * 1000))
-                .signWith(SignatureAlgorithm.HS512, secret)
+                .signWith(SignatureAlgorithm.HS512, secret.getBytes())
                 .compact();
     }
 
     public String getNombreUsuarioFromToken(String token){
-           return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
+           return Jwts.parser().setSigningKey(secret.getBytes()).parseClaimsJws(token).getBody().getSubject();
     }
 
     public Boolean validateToken(String token){
         try {
-            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
+            Jwts.parser().setSigningKey(secret.getBytes()).parseClaimsJws(token);
             return true;
         }catch (MalformedJwtException e){
             logger.error("Token mal formado");

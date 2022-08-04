@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
-import org.springframework.security.access.prepost.PreAuthorize;
 import com.ProjectAP.NDR.security.dto.JwtDto;
 import com.ProjectAP.NDR.security.dto.LoginUsuario;
 import com.ProjectAP.NDR.security.dto.NuevoUsuario;

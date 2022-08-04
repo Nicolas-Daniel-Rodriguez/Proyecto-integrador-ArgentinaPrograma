@@ -10,7 +10,7 @@ import com.ProjectAP.NDR.security.enums.RolNombre;
 import com.ProjectAP.NDR.security.service.RolService;
 
 // Comentar o borrar clase despues del primer run de la aplicación
-@Component
+/*@Component
 public class CreateRoles implements CommandLineRunner {
 
     @Autowired
@@ -23,4 +23,4 @@ public class CreateRoles implements CommandLineRunner {
         rolService.save(rolAdmin);
         rolService.save(rolUser);
     }
-} 
+} */
