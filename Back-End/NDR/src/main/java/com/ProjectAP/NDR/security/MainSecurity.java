@@ -18,6 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.ProjectAP.NDR.security.jwt.JwtEntryPoint;
 import com.ProjectAP.NDR.security.jwt.JwtTokenFilter;
 import com.ProjectAP.NDR.security.service.UserDetailsServiceImpl;
+import org.springframework.http.HttpMethod;
 
 @Configuration
 @EnableWebSecurity
@@ -61,6 +62,11 @@ public class MainSecurity extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/auth/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/persona/all").permitAll()
+                .antMatchers(HttpMethod.GET, "/experiencia/all").permitAll()
+                .antMatchers(HttpMethod.GET, "/estudios/all").permitAll()    
+                .antMatchers(HttpMethod.GET, "/habilidades/all").permitAll()
+                .antMatchers(HttpMethod.GET, "/proyectos/all").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
