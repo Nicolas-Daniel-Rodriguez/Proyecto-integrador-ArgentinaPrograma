@@ -4,12 +4,12 @@
 
 </div>
 <div>
-<div class="card1 d-flex justify-content-end me-5 ">
-    <img class="imgPerfilChica" [src]="bbdd.imgPerfil" alt="Perfil" />
+<div class="card1 d-flex justify-content-end me-5 " *ngFor="let persona of personas">
+    <img class="imgPerfilChica" [src]="persona.imgPerfil" alt="Perfil" />
     <div>
-      <h1 class="fs-5">{{bbdd.name}} <span class="fs-5">{{bbdd.surname}}</span></h1>
+      <h1 class="fs-5">{{persona.nombre}} <span class="fs-5">{{persona.apellido}}</span></h1>
       <h2 class=" fs-6">
-        {{bbdd.ocupacionCorta}}<br />
+        {{persona.ocupacionCorta}}<br />
         <p class="link mt-1 fs-6 pContact" (click)="openContact()">Información de Contacto</p>
       </h2>
     </div>

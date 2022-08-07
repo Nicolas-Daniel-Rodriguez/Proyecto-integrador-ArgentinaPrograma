@@ -6,16 +6,16 @@
     </div>
     <ul class="bordeIzq mx-5 ps-4">
       <!-- Educación Item -->
-      <li *ngFor="let educacion of educacionList">
+      <li *ngFor="let educacion of educacion">
         <h4 class="mx-4 mt-3 fs-5">{{educacion.titulo}}</h4>
         <div class="bordeIzq mx-4 ps-4 d-flex justify-content-between">
           <div>
             <p class="fs-6 mb-1">{{educacion.lugarEstudio}}</p>
-            <p class="fechas text-start fs-6 mb-1">{{educacion.fechaStart}} - {{educacion.fechaEnd}}</p>
+            <p class="fechas text-start fs-6 mb-1">{{educacion.fechaInicio}} - {{educacion.fechaFin}}</p>
           </div>
           <img
             class="bordeImg imgCert"
-            [src]="educacion.certImg"
+            [src]="educacion.certificado"
             alt="Certificado"
           />
         </div>

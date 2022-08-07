@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardComponent } from './components/card/card.component';
 import { personaService } from './servicios/persona.service';
+import { educacionService } from './servicios/educacion.service';
 
 @NgModule({
   imports: [
@@ -37,7 +38,7 @@ import { personaService } from './servicios/persona.service';
     ContactoComponent,
     CardComponent,
   ],
-  providers: [personaService],
+  providers: [personaService, educacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

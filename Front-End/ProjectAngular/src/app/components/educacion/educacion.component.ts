@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { personaService } from 'src/app/servicios/persona.service';
+import { educacionService } from 'src/app/servicios/educacion.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Educacion } from '../../interfaces/educacion/educacion.component';
 
 @Component({
   selector: 'app-educacion',
@@ -7,15 +9,24 @@ import { personaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-  educacionList: any;
-  bbdd:any;
+  public educacion!: Educacion[];
+  roles!: string[];
+  isAdmin: boolean = false;
 
-  constructor(private personaService:personaService) { }
+  constructor(private educacionService: educacionService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersonas().subscribe( data => {
-      this.bbdd=data;
-    })
+    this.getEducacion();
   }
 
+  public getEducacion(): void {
+    this.educacionService.getEducacion().subscribe(
+      (response: Educacion[]) => {
+        this.educacion = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
 }

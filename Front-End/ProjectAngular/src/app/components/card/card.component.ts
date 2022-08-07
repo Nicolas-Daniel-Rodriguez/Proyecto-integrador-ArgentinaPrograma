@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { personaService } from 'src/app/servicios/persona.service';
+import { Persona } from '../../interfaces/persona/persona.component';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-card',
@@ -8,19 +11,30 @@ import { personaService } from 'src/app/servicios/persona.service';
 })
 export class CardComponent implements OnInit {
 
-  bbdd:any;
+  public personas!: Persona[];
+  roles!: string[];
+  isAdmin: boolean = false;
   modalContact:boolean =false;  
   
   constructor(private personaService:personaService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersonas().subscribe( data => {
-      this.bbdd=data;
-    } )
+    this.getPersonas();
     this.personaService.$contac.subscribe((valor) => {this.modalContact= valor})
   }
 
   openContact(){
     this.modalContact = true;
+  }
+
+  public getPersonas(): void {
+    this.personaService.getPersonas().subscribe(
+      (response: Persona[]) => {
+        this.personas = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }

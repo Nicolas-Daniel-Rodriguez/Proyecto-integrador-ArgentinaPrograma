@@ -2,7 +2,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../../interfaces/persona/persona.component';
 import { personaService } from 'src/app/servicios/persona.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-acerca-de',

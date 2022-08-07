@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpErrorResponse } from '@angular/common/http';
 import { personaService } from '../../servicios/persona.service';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Persona } from '../../interfaces/persona/persona.component';
 
 @Component({
@@ -10,7 +10,6 @@ import { Persona } from '../../interfaces/persona/persona.component';
 })
 export class ContactoComponent implements OnInit {
 
-  bbdd:any;
   public personas!: Persona[];
   roles!: string[];
   isAdmin: boolean = false;
