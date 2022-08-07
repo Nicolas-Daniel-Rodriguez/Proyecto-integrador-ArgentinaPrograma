@@ -1,39 +1,38 @@
 <div class="" *ngIf="modalContact == true">
-    
-    <app-contacto></app-contacto>
+  <app-contacto></app-contacto>
+</div>
 
-  </div>
-<section>
-    <img
-      class="imgPortada bordeInf"
-      [src]="bbdd.imgPortada"
-      alt="Imágen de Portada"
-    />
-    <!-- Acerca de --> 
-    <div class="cuerpo">
+<section *ngFor="let persona of personas">
+  <img
+    class="imgPortada bordeInf"
+    [src]="persona.imgPortada"
+    alt="Imágen de Portada"
+  />
+  
+  <!-- Acerca de -->
+  <div class="cuerpo">
     <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
-        <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
-        <img class="imgPerfil" [src]="bbdd.imgPerfil" alt="Perfil" />
-        <div>
-            <h2 class="fs-6" *ngFor="let ocupacion of ocupacionList">
-            {{ocupacion.a}}
-            
-            </h2>
-            <p 
-            class="link m-2 fs-6 pContact" 
-            (click)="openContact()"
-            >Información de Contacto</p>
-        </div>
+      <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
+      <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
+      <div>
+        <h2 class="fs-6">
+          {{ persona.ocupacion }}
+        </h2>
+        <p class="link m-2 fs-6 pContact" (click)="openContact()">
+          Información de Contacto
+        </p>
+      </div>
     </div>
     <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
-    <h1 class="ms-5 fs-4">{{bbdd.name}} <span>{{bbdd.surname}}</span></h1>
+    <h1 class="ms-5 fs-4">
+      {{ persona.nombre }} <span>{{ persona.apellido }}</span>
+    </h1>
     <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
     <div class="bordeIzq mx-5 my-3 mb-4">
-        <p class="fs-6 ms-3">
-        {{bbdd.acercaDe}}
-        </p>
+      <p class="fs-6 ms-3">
+        {{ persona.acercaDe }}
+      </p>
     </div>
     <!-- <a class="link mx-5 fs-6" href="">Ver más...</a> -->
-    </div>
+  </div>
 </section>
-

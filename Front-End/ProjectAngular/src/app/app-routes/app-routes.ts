@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
-import { AcercaDeComponent } from '../components/acerca-de/acerca-de.component';
+import { AcercadeComponent } from '../components/acerca-de/acerca-de.component';
 import { EducacionComponent } from '../components/educacion/educacion.component';
 import { ExpLabComponent } from '../components/exp-lab/exp-lab.component';
 import { HabilidadesComponent } from '../components/habilidades/habilidades.component'; 
@@ -10,7 +10,7 @@ import { LoginComponent } from '../login/login.component';
 import { ContactoComponent } from '../components/contacto/contacto.component'
 
 const routes: Routes= [ 
-  {path:"Inicio", component:AcercaDeComponent},
+  {path:"Inicio", component:AcercadeComponent},
   /*{path:"Inicio", component:AcercaDeComponent, canActivate:[GuardsGuard]},*/
   {path:"Exp-Laboral", component:ExpLabComponent},
   {path:"Educacion", component:EducacionComponent},

@@ -1,7 +1,7 @@
  <!-- Navbar -->
  <div class="navfijo">
     <nav class="navbar navbar-expand-lg bordeInf">
-      <div class="container-fluid">
+      <div class="container-fluid" *ngFor="let persona of personas">
         <a class="navbar-brand width" href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa">
           <img class="width" src="./../assets/Logo-Arg-Prog.png" alt="Argentina Programa"
         /></a>
@@ -24,13 +24,13 @@
               <a [routerLink]="['Proyectos']">Proyectos</a>
             </li>
           </ul>
-          <a [href]="bbdd.github">
+          <a [href]="persona.github">
             <img class="tamR" src="./../assets/GitHubIcon.svg" alt="GitHub"
           /></a>
-          <a [href]="bbdd.instagram">
+          <a [href]="persona.instagram">
             <img class="tamR"src="./../assets/InstagramIcon.svg" alt="Instagram"
           /></a>
-          <a [href]="bbdd.linkedin">
+          <a [href]="persona.linkedin">
             <img
               class="me-2 tamR"
               src="./../assets/LinkedinIcon.svg"

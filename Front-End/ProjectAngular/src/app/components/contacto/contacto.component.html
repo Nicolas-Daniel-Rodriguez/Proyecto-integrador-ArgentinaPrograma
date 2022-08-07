@@ -1,25 +1,25 @@
-<div class="cuerpoContact">
+<div class="cuerpoContact" *ngFor="let persona of personas">
   <div class="container">
     <p class="x" (click)="closeContact()">
       <img class="imgX" src="./../../../assets/X.svg" alt="Exit" />
     </p>
-    <img class="mt-3 mb-3 imgPerfil" [src]="bbdd.imgPerfil" alt="Perfil" />
+    <img class="mt-3 mb-3 imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
     <h1 class="fs-5">
-      {{ bbdd.name }} <span>{{ bbdd.surname }}</span>
+      {{ persona.nombre }} <span>{{ persona.apellido }}</span>
     </h1>
     <div class="centrarContact">
-      <p class="fs-6 m-auto">{{ bbdd.pais }}</p>
-      <p class="fs-6 m-auto">{{ bbdd.tel }}</p>
-      <p class="fs-6 m-auto">{{ bbdd.email }}</p>
+      <p class="fs-6 m-auto">{{ persona.pais }}</p>
+      <p class="fs-6 m-auto">{{ persona.telefono }}</p>
+      <p class="fs-6 m-auto">{{ persona.email }}</p>
     </div>
     <div class="m-3 tam">
-      <a [href]="bbdd.github">
+      <a [href]="persona.github">
         <img src="./../../../assets/GitHubIcon.svg" alt="GitHub"
       /></a>
-      <a [href]="bbdd.instagram">
+      <a [href]="persona.instagram">
         <img src="./../../../assets/InstagramIcon.svg" alt="Instagram"
       /></a>
-      <a [href]="bbdd.linkedin">
+      <a [href]="persona.linkedin">
         <img
           class="me-2"
           src="./../../../assets/LinkedinIcon.svg"

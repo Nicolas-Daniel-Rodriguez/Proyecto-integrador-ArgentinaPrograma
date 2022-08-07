@@ -1,6 +1,6 @@
 <div class="cuerpo">
         
-    <form [formGroup]="form" method="post" (ngSubmit)="onEnviar($event)"> 
+    <form method="post" (ngSubmit)="onLogin()" novalidate> 
       <p class="x" (click)="closeModal()">
         <img class="imgX" src="./../../assets/X.svg" alt="Exit">
       </p>
@@ -9,29 +9,11 @@
         </div>
         <h1 class="fs-4">Inicio de Sesión</h1>
         <div class="container">
-          <label for="email"></label>
-          <input  class="fs-5" type="email" formControlName="email" placeholder="Email" name="Email" required
-          [ngClass]="{'in-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}">
-          <div *ngIf="Email?.errors && Email?.touched">
-            <p *ngIf="Email?.hasError('required')" class="text-danger">
-              El email es requerido.
-            </p>
-            <p *ngIf="Email?.hasError('email')" class="text-danger">
-              Ingrese un email valido.
-            </p>
-          </div>
+          <label for="usuario"></label>
+          <input  class="fs-5" type="usuario" formControlName="usuario" placeholder="Usuario" name="nombreUsuario" required>
 
           <label for="password"></label>
-          <input  class="fs-5" type="password" formControlName="password" placeholder="Contraseña" name="password" required
-          [ngClass]="{'in-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
-          <div *ngIf="Password?.errors && Password?.touched">
-            <p *ngIf="Password?.hasError('required')" class="text-danger">
-              La contraseña es requerida.
-            </p>
-            <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
-              La contraseña debe ser de 8 o mas caracteres.
-            </p>
-          </div>
+          <input  class="fs-5" type="password" formControlName="password" placeholder="Contraseña" name="password" required>
 
             <div class="">
               <div class="d-flex justify-content-between contPswCheck">

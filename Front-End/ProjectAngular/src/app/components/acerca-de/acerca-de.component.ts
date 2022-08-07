@@ -1,27 +1,41 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { Persona } from '../../interfaces/persona/persona.component';
+import { personaService } from 'src/app/servicios/persona.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-acerca-de',
   templateUrl: './acerca-de.component.html',
-  styleUrls: ['./acerca-de.component.css']
+  styleUrls: ['./acerca-de.component.css'],
 })
-export class AcercaDeComponent implements OnInit {
-  bbdd:any;
-  ocupacionList:any;
-  modalContact:boolean = false;
+export class AcercadeComponent implements OnInit {
+  public personas!: Persona[];
+  roles!: string[];
+  isAdmin: boolean = false;
+  modalContact: boolean = false;
 
-  constructor(private datosPortfolio:PortfolioService,) { }
+  constructor(private personaService: personaService) {}
 
-  ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe( data => {
-      this.bbdd=data[0];
-      this.ocupacionList=data.ocupacion;
+  ngOnInit() {
+    this.getPersonas();
+    this.personaService.$contac.subscribe((valor) => {
+      this.modalContact = valor;
     });
-    this.datosPortfolio.$contac.subscribe((valor) => {this.modalContact= valor})
   }
 
-  openContact(){
+  openContact() {
     this.modalContact = true;
+  }
+
+  public getPersonas(): void {
+    this.personaService.getPersonas().subscribe(
+      (response: Persona[]) => {
+        this.personas = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }

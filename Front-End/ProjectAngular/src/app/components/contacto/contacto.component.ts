@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { personaService } from '../../servicios/persona.service';
+import { Persona } from '../../interfaces/persona/persona.component';
 
 @Component({
   selector: 'app-contacto',
@@ -9,16 +11,28 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class ContactoComponent implements OnInit {
 
   bbdd:any;
+  public personas!: Persona[];
+  roles!: string[];
+  isAdmin: boolean = false;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private personaService:personaService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe( data => {
-      this.bbdd=data;
-    });
+    this.getPersonas();
   }
 
   closeContact(){
-    this.datosPortfolio.$contac.emit(false);
+    this.personaService.$contac.emit(false);
+  }
+
+  public getPersonas(): void {
+    this.personaService.getPersonas().subscribe(
+      (response: Persona[]) => {
+        this.personas = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }

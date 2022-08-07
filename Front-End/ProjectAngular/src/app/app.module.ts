@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LoginComponent} from "./login/login.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { AcercadeComponent } from './components/acerca-de/acerca-de.component';
 import { ExpLabComponent } from './components/exp-lab/exp-lab.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
@@ -14,8 +14,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardComponent } from './components/card/card.component';
-import { PortfolioService } from './servicios/portfolio.service';
-import { InterceptorService } from './servicios/interceptor.service';
+import { personaService } from './servicios/persona.service';
 
 @NgModule({
   imports: [
@@ -30,15 +29,15 @@ import { InterceptorService } from './servicios/interceptor.service';
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    AcercaDeComponent,
+    AcercadeComponent,
     ExpLabComponent,
     EducacionComponent,
     HabilidadesComponent,
     ProyectosComponent,
     ContactoComponent,
-    CardComponent
+    CardComponent,
   ],
-  providers: [PortfolioService, { provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi: true}],
+  providers: [personaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

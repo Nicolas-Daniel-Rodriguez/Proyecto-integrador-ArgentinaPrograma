@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { personaService } from 'src/app/servicios/persona.service';
+import { Persona } from '../../interfaces/persona/persona.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-navbar',
@@ -7,16 +9,30 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  public personas!: Persona[];
+  roles!: string[];
+  isAdmin: boolean = false;
   modalSwitch:boolean = false;
   bbdd:any;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private personaService:personaService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.$modal.subscribe((valor) => {this.modalSwitch= valor})
-    this.datosPortfolio.obtenerDatos().subscribe( data => {
+    this.getPersonas();
+    this.personaService.$modal.subscribe((valor) => {this.modalSwitch= valor})
+    this.personaService.getPersonas().subscribe( data => {
       this.bbdd=data;})
+  }
+
+  public getPersonas(): void {
+    this.personaService.getPersonas().subscribe(
+      (response: Persona[]) => {
+        this.personas = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
   openModal(){

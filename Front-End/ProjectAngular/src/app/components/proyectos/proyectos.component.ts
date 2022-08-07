@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { personaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -10,11 +10,10 @@ export class ProyectosComponent implements OnInit {
   proyList:any;
   bbdd:any;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private personaService:personaService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe( data => {
-      this.proyList=data.proyecto;
+    this.personaService.getPersonas().subscribe( data => {
       this.bbdd=data;
     })
   }
