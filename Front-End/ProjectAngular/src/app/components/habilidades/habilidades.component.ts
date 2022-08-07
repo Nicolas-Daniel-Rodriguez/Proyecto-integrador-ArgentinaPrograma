@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { personaService } from 'src/app/servicios/persona.service';
+import { habilidadesService } from 'src/app/servicios/habilidades.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Habilidades } from '../../interfaces/habilidades/habilidades.component';
 
 @Component({
   selector: 'app-habilidades',
@@ -7,15 +9,24 @@ import { personaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  skillList:any;
-  bbdd:any;
+  public habilidades!: Habilidades[];
+  roles!: string[];
+  isAdmin: boolean = false;
 
-  constructor(private personaService:personaService) { }
+  constructor(private habilidadesService:habilidadesService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersonas().subscribe( data => {
-      this.bbdd=data;
-    })
+    this.getHabilidades();
   }
 
+  public getHabilidades(): void {
+    this.habilidadesService.getHabilidades().subscribe(
+      (response: Habilidades[]) => {
+        this.habilidades = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
 }

@@ -36,7 +36,7 @@ import { educacionService } from './servicios/educacion.service';
     HabilidadesComponent,
     ProyectosComponent,
     ContactoComponent,
-    CardComponent,
+    CardComponent
   ],
   providers: [personaService, educacionService],
   bootstrap: [AppComponent]

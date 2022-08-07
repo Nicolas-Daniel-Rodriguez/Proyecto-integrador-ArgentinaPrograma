@@ -48,7 +48,7 @@ public class ControllerHab {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping ("/modificar/habilidades/{id}")
+    @PutMapping ("/modificar/habilidad/{id}")
     public Habilidades modificarHabilidad (@PathVariable Long id,
                                     @RequestBody Habilidades hab){
         

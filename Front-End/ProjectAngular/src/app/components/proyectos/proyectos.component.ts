@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { personaService } from 'src/app/servicios/persona.service';
+import { proyectosService } from 'src/app/servicios/proyectos.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Proyectos } from '../../interfaces/proyectos/proyectos.component';
 
 @Component({
   selector: 'app-proyectos',
@@ -7,15 +9,24 @@ import { personaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-  proyList:any;
-  bbdd:any;
+  public proyectos!: Proyectos[];
+  roles!: string[];
+  isAdmin: boolean = false;
 
-  constructor(private personaService:personaService) { }
+  constructor(private proyectosService:proyectosService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersonas().subscribe( data => {
-      this.bbdd=data;
-    })
+    this.getProyectos();
   }
 
+  public getProyectos(): void {
+    this.proyectosService.getProyectos().subscribe(
+      (response: Proyectos[]) => {
+        this.proyectos = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
 }

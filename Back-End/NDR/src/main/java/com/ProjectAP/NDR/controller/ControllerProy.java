@@ -24,7 +24,7 @@ public class ControllerProy {
     private IProyectosServicio proyServ;
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping ("/nueva/proyecto")
+    @PostMapping ("/nuevo/proyecto")
     public void agregarProyecto (@RequestBody Proyectos proy){
         proyServ.crearProyecto(proy);
     }
@@ -48,7 +48,7 @@ public class ControllerProy {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping ("/modificar/proyectos/{id}")
+    @PutMapping ("/modificar/proyecto/{id}")
     public Proyectos modificarProyecto (@PathVariable Long id,
                                     @RequestBody Proyectos proy){
         
