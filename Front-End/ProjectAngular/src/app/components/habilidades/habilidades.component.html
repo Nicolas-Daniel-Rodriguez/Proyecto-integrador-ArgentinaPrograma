@@ -8,10 +8,10 @@
     <!-- Skills Linea 1 -->
     <ul class="flex-container mx-5 m-auto">
       <!-- Skill 1 -->
-      <li *ngFor="let skill of skillList" class="bordeImg cardSkill puntos">
+      <li *ngFor="let skill of habilidades" class="bordeImg cardSkill puntos">
         <div class="d-flex justify-content-between">
-          <img class="tamR" [src]="skill.imgSkill" alt="HTML" />
-          <div role="progressbar" [attr.aria-valuenow]="skill.porc" aria-valuemin="0" aria-valuemax="100" style="--value:{{skill.porc}}"></div>
+          <img class="tamR" [src]="skill.imgHab" alt="HTML" />
+          <div role="progressbar" [attr.aria-valuenow]="skill.porcentaje" aria-valuemin="0" aria-valuemax="100" style="--value:{{skill.porcentaje}}"></div>
         </div>
         <h4 class="fs-5">{{skill.titulo}}</h4>
         <p class="anchop fs-6">

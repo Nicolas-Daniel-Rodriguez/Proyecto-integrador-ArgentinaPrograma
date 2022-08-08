@@ -16,6 +16,9 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardComponent } from './components/card/card.component';
 import { personaService } from './servicios/persona.service';
 import { educacionService } from './servicios/educacion.service';
+import { experienciaService } from './servicios/experiencia.service';
+import { habilidadesService } from './servicios/habilidades.service';
+import { proyectosService } from './servicios/proyectos.service';
 
 @NgModule({
   imports: [
@@ -38,7 +41,7 @@ import { educacionService } from './servicios/educacion.service';
     ContactoComponent,
     CardComponent
   ],
-  providers: [personaService, educacionService],
+  providers: [personaService, educacionService, experienciaService, habilidadesService, proyectosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

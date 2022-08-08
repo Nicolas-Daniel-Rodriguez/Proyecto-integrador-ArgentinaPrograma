@@ -7,9 +7,9 @@
 
         <!-- Proyecto -->
         <ul>
-          <li *ngFor="let proyecto of proyList" class="puntos bordeImg cardProyect anchoCard mx-5 mb-4" [id]="proyecto.id">
+          <li *ngFor="let proyecto of proyectos" class="puntos bordeImg cardProyect anchoCard mx-5 mb-4" [id]="proyecto.id">
             <div class="d-flex justify-content-center">
-              <img class="tamR ms-5" [src]="proyecto.imgProy" alt="LogoEmpresa" />
+              <img class="tamR ms-5" [src]="proyecto.logoProy" alt="LogoEmpresa" />
               <h4 class="m-5 fs-4" >
                 {{proyecto.titulo}}
               </h4>

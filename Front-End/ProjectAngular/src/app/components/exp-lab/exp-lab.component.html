@@ -6,10 +6,10 @@
     </div>
     <ul class="bordeIzq ms-5">
       <!-- Experiencia 1 -->
-      <li *ngFor="let experiencia of expList">
+      <li *ngFor="let experiencia of experiencia">
         <div class="d-flex justify-content-between mt-3 mx-3 m-auto">
           <h4 class="fs-5">{{experiencia.titulo}}</h4>
-          <p class="fechas fs-6">{{experiencia.fechaStart}} - {{experiencia.fechaEnd}}</p>
+          <p class="fechas fs-6">{{experiencia.fechaInicio}} - {{experiencia.fechaFin}}</p>
         </div>
         <div class="bordeIzq mx-3 mb-3 d-flex altoExp">
           <img class="imgExp ms-2"[src]="experiencia.imgExp" alt="Trabajo" />
