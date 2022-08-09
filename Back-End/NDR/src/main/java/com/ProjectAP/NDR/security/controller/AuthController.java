@@ -29,8 +29,8 @@ import com.ProjectAP.NDR.security.service.RolService;
 import com.ProjectAP.NDR.security.service.UsuarioService;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/auth")
-@CrossOrigin(origins = "*")
 public class AuthController {
 
     @Autowired

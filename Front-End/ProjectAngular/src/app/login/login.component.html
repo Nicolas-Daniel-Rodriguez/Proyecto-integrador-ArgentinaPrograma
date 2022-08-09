@@ -1,31 +1,60 @@
 <div class="cuerpo">
-        
-    <form method="post" (ngSubmit)="onLogin()" novalidate> 
+  <div class="text-center" *ngIf="isLogged; else loggedOut">
+    <h2>Ya has iniciado sesión</h2>
+  </div>
+
+  <ng-template #loggedOut>
+    <form #form="ngForm" (ngSubmit)="onLogin()" novalidate>
       <p class="x" (click)="closeModal()">
-        <img class="imgX" src="./../../assets/X.svg" alt="Exit">
+        <img class="imgX" src="./../../assets/X.svg" alt="Exit" />
       </p>
-        <div class="imgcontainer">
-          <img src="./../../assets/perfilLogin.svg" alt="Perfil Login" class="avatar">
-        </div>
-        <h1 class="fs-4">Inicio de Sesión</h1>
-        <div class="container">
-          <label for="usuario"></label>
-          <input  class="fs-5" type="usuario" formControlName="usuario" placeholder="Usuario" name="nombreUsuario" required>
+      <div class="imgcontainer">
+        <img
+          src="./../../assets/perfilLogin.svg"
+          alt="Perfil Login"
+          class="avatar"
+        />
+      </div>
+      <h1 class="fs-4">Inicio de Sesión</h1>
+      <div class="container">
+        <label for="usuario"></label>
+        <input
+          class="fs-5 form-control"
+          type="usuario"
+          placeholder="Usuario"
+          name="nombreUsuario"
+          required
+        />
 
-          <label for="password"></label>
-          <input  class="fs-5" type="password" formControlName="password" placeholder="Contraseña" name="password" required>
+        <label for="password"></label>
+        <input
+          class="fs-5 form-control"
+          type="password"
+          placeholder="Contraseña"
+          name="password"
+          required
+        />
 
-            <div class="">
-              <div class="d-flex justify-content-between contPswCheck">
-          <label >
-            <input class="fs-6" type="checkbox" checked="checked" name="remember"> Recuerdame
-          </label>
+        <div class="">
+          <div class="d-flex justify-content-between contPswCheck">
+            <label>
+              <input
+                class="fs-6"
+                type="checkbox"
+                checked="checked"
+                name="remember"
+              />
+              Recuerdame
+            </label>
 
-          <a class="fs-6 psw" href="#">Olvide mi contraseña</a>
+            <a class="fs-6 psw" href="#">Olvide mi contraseña</a>
+          </div>
         </div>
-        </div>
-          <button class="fs-5" type="submit">Ingresar</button>
-        </div>
-      </form>
+        <button class="fs-5" type="submit">Ingresar</button>
+      </div>
+    </form>
+    <div *ngIf="form.submitted && isLoginFail" class="alert alert-danger mt-3">
+      Error de login
+    </div>
+  </ng-template>
 </div>
-

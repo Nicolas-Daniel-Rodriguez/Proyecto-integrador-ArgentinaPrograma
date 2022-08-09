@@ -19,6 +19,7 @@ import { educacionService } from './servicios/educacion.service';
 import { experienciaService } from './servicios/experiencia.service';
 import { habilidadesService } from './servicios/habilidades.service';
 import { proyectosService } from './servicios/proyectos.service';
+import { interceptorProvider } from './servicios/interceptor.service'
 
 @NgModule({
   imports: [
@@ -41,7 +42,7 @@ import { proyectosService } from './servicios/proyectos.service';
     ContactoComponent,
     CardComponent
   ],
-  providers: [personaService, educacionService, experienciaService, habilidadesService, proyectosService],
+  providers: [personaService, educacionService, experienciaService, habilidadesService, proyectosService, interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

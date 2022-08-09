@@ -15,6 +15,7 @@
       <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
       <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
       <div>
+        <h2 *ngIf="isAdmin">Estoy logueado</h2>
         <h2 class="fs-6">
           {{ persona.ocupacion }}
         </h2>

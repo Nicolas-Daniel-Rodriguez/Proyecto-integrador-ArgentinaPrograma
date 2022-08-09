@@ -19,6 +19,7 @@ import com.ProjectAP.NDR.security.jwt.JwtEntryPoint;
 import com.ProjectAP.NDR.security.jwt.JwtTokenFilter;
 import com.ProjectAP.NDR.security.service.UserDetailsServiceImpl;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 
 @Configuration
 @EnableWebSecurity
@@ -58,9 +59,17 @@ public class MainSecurity extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    public void configure(WebSecurity web) throws Exception 
+    {
+        // Allow Login API to be accessed without authentication
+        web.ignoring().antMatchers("/login").antMatchers(HttpMethod.OPTIONS, "/**"); 
+    }
+    
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
+                .antMatchers("**").permitAll()
                 .antMatchers("/auth/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/ver/personas").permitAll()
                 .antMatchers(HttpMethod.GET, "/ver/experiencia").permitAll()
