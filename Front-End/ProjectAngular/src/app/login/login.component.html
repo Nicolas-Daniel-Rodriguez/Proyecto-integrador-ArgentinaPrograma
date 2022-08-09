@@ -1,10 +1,10 @@
 <div class="cuerpo">
-  <div class="text-center" *ngIf="isLogged; else loggedOut">
+  <div class="text-center mt-5" *ngIf="isLogged; else loggedOut">
     <h2>Ya has iniciado sesión</h2>
   </div>
 
   <ng-template #loggedOut>
-    <form #form="ngForm" (ngSubmit)="onLogin()" novalidate>
+    <form #form="ngForm" (ngSubmit)="onLogin()">
       <p class="x" (click)="closeModal()">
         <img class="imgX" src="./../../assets/X.svg" alt="Exit" />
       </p>
@@ -23,6 +23,8 @@
           type="usuario"
           placeholder="Usuario"
           name="nombreUsuario"
+          id="nombreUsuario"
+          [(ngModel)]="nombreUsuario"
           required
         />
 
@@ -32,6 +34,8 @@
           type="password"
           placeholder="Contraseña"
           name="password"
+          id="password"
+          [(ngModel)]="password"
           required
         />
 

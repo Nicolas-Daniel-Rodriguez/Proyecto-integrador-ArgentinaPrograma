@@ -1,6 +1,6 @@
 export interface JwtDTO{
   token: string;
-  type: string;
+  bearer: string;
   nombreUsuario: string;
   authorities: string[];
 }

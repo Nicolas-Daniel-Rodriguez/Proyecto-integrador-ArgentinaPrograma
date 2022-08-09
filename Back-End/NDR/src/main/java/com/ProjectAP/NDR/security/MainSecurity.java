@@ -57,19 +57,11 @@ public class MainSecurity extends WebSecurityConfigurerAdapter {
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
-
-    @Override
-    public void configure(WebSecurity web) throws Exception 
-    {
-        // Allow Login API to be accessed without authentication
-        web.ignoring().antMatchers("/login").antMatchers(HttpMethod.OPTIONS, "/**"); 
-    }
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers("**").permitAll()
                 .antMatchers("/auth/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/ver/personas").permitAll()
                 .antMatchers(HttpMethod.GET, "/ver/experiencia").permitAll()

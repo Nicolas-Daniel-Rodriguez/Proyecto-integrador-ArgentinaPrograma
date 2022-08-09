@@ -17,7 +17,6 @@ export class InterceptorService {
                 headers: req.headers.set('Authorization','Bearer'+token)
             });
         }
-        console.log("interceptor esta corriendo " + JSON.stringify(token));
         return next.handle(intReq);
     }
 }

@@ -7,7 +7,8 @@ import { ExpLabComponent } from '../components/exp-lab/exp-lab.component';
 import { HabilidadesComponent } from '../components/habilidades/habilidades.component'; 
 import { ProyectosComponent } from '../components/proyectos/proyectos.component';
 import { LoginComponent } from '../login/login.component';
-import { ContactoComponent } from '../components/contacto/contacto.component'
+import { ContactoComponent } from '../components/contacto/contacto.component';
+import { RegistroComponent } from '../components/registro/registro.component';
 
 const routes: Routes= [ 
   {path:"Inicio", component:AcercadeComponent},
@@ -17,6 +18,7 @@ const routes: Routes= [
   {path:"Habilidades", component:HabilidadesComponent},
   {path:"Proyectos", component:ProyectosComponent},
   {path:"Login", component:LoginComponent},
+  {path:"Registro", component:RegistroComponent},
   {path:"Contacto", component:ContactoComponent},
   {path:"**", pathMatch: 'full', redirectTo: 'Inicio'}
 ];
