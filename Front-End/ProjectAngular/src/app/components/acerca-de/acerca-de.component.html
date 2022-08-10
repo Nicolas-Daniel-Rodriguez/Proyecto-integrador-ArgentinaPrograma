@@ -8,14 +8,17 @@
     [src]="persona.imgPortada"
     alt="Imágen de Portada"
   />
-  
+    <i *ngIf="isLogged" (click)="editButton()" class="fa-solid fa-pencil">boton lapiz</i>
+    <div *ngIf="edit">
+      <h2>Muestro el Formulario</h2>
+    </div>
   <!-- Acerca de -->
   <div class="cuerpo">
     <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
       <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
       <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
       <div>
-        <h2 *ngIf="isAdmin">Estoy logueado</h2>
+        <h2 *ngIf="isLogged">Estoy logueado</h2>
         <h2 class="fs-6">
           {{ persona.ocupacion }}
         </h2>

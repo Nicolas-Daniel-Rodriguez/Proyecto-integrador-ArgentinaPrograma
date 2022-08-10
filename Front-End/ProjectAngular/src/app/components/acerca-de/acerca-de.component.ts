@@ -10,6 +10,10 @@ import { TokenService } from '../../servicios/token.service';
   styleUrls: ['./acerca-de.component.css'],
 })
 export class AcercadeComponent implements OnInit {
+  isLogged = false;
+
+  edit = false;
+
   public personas: Persona[] = [];
   roles!: string[];
   isAdmin: boolean = false;
@@ -19,11 +23,11 @@ export class AcercadeComponent implements OnInit {
 
   ngOnInit() {
     this.getPersonas();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(role => {
-      if (role === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }})
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
     this.personaService.$contac.subscribe((valor) => {
       this.modalContact = valor;
     });
@@ -31,6 +35,10 @@ export class AcercadeComponent implements OnInit {
 
   openContact() {
     this.modalContact = true;
+  }
+
+  editButton() {
+    this.edit = !this.edit;
   }
 
   public getPersonas(): void {
