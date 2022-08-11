@@ -5,11 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter @Setter
+@Table(name = "educacion")
 public class Educacion {
     
     @Id
@@ -33,6 +35,16 @@ public class Educacion {
         this.certificado = certificado;
     }
 
-    
+    @Override
+    public String toString(){
+        return "Educacion {" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", lugarEstudio=" + lugarEstudio + '\'' +
+                ", fechaInicio=" + fechaInicio + '\'' +
+                ", fechaFin=" + fechaFin + '\'' +
+                ", certificado=" + certificado + '\'' +
+                '}';
+    }
     
 }

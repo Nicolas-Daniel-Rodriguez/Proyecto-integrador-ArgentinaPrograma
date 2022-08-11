@@ -1,12 +1,11 @@
 
 package com.ProjectAP.NDR.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+import javax.persistence.*;
 
 @Getter @Setter
 @Entity
@@ -14,6 +13,7 @@ public class Persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false, unique = true)
     private Long id;
     private String nombre;
     private String apellido;
@@ -28,6 +28,26 @@ public class Persona {
     private String ocupacionCorta;
     private String ocupacion;
     private String acercaDe;
+    
+    @JsonIgnoreProperties("persona")
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Educacion.class)
+    @JoinColumn(name = "ed_fk", referencedColumnName = "id")
+    private List<Educacion> educacionList;
+
+    @JsonIgnoreProperties("persona")
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = ExperienciaLaboral.class)
+    @JoinColumn(name = "ex_fk", referencedColumnName = "id")
+    private List<ExperienciaLaboral> experienciaList;
+
+    @JsonIgnoreProperties("persona")
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Habilidades.class)
+    @JoinColumn(name = "sk_fk", referencedColumnName = "id")
+    private List<Habilidades> habilidadesList;
+
+    @JsonIgnoreProperties("persona")
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Proyectos.class)
+    @JoinColumn(name = "pr_fk", referencedColumnName = "id")
+    private List<Proyectos> proyectosList;
     
     public Persona() {
     }
@@ -49,6 +69,24 @@ public class Persona {
         this.acercaDe = acercaDe;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", pais='" + pais + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", instagram='" + instagram + '\'' +
+                ", github='" + github + '\'' +
+                ", linkedin='" + linkedin + '\'' +
+                ", imgPortada='" + imgPortada + '\'' +
+                ", imgPerfil='" + imgPerfil + '\'' +
+                ", ocupacionCorta='" + ocupacionCorta + '\'' +
+                ", ocupacion='" + ocupacion + '\'' +
+                ", acercaDe='" + acercaDe + '\'' +
+                '}';
+    }
     
 }

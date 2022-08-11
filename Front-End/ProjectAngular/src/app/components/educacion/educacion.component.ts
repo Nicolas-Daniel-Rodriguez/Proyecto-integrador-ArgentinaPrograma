@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { educacionService } from 'src/app/servicios/educacion.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Educacion } from '../../interfaces/educacion/educacion.component';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
@@ -18,6 +18,8 @@ export class EducacionComponent implements OnInit {
   roles!: string[];
   isAdmin: boolean = false;
 
+  name = new FormControl(''); 
+  
   constructor(private educacionService: educacionService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
@@ -99,7 +101,7 @@ export class EducacionComponent implements OnInit {
       this.editEducacion = educacion;
       button.setAttribute('data-target', '#modificarEducacionModal');
     }
-    if (mode === 'delete') {
+    if (mode === 'eliminar') {
       this.elimEducacion = educacion;
       button.setAttribute('data-target', '#eliminarEducacionModal');
     }
