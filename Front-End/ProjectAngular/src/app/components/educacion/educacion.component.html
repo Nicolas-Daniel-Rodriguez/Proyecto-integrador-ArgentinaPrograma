@@ -195,7 +195,7 @@
         </div>
         <div class="modal-body">
           <p>
-            Esta acción eliminará "{{ elimEducacion.titulo }}". ¿Desea
+            Esta acción eliminará "{{ educacion.titulo }}". ¿Desea
             continuar?
           </p>
         </div>
@@ -219,7 +219,7 @@
   <!-- Modal para editar Educacion -->
   <div
     *ngFor="let educacion of educacion"
-    class="modal fade cuerpo"
+    class="modal fade"
     id="modificarEducacionModal"
     data-backdrop="static"
     data-keyboard="false"
@@ -245,7 +245,7 @@
             <input type="hidden" name="id" ngModel="{{ educacion.id }} " />
             <label for="titulo">Título</label><br />
             <input
-              ngModel="{{ educacion.titulo }} "
+              ngModel="{{ educacion.titulo }}"
               type="text"
               name="titulo"
               value="{{ educacion.titulo }}"
