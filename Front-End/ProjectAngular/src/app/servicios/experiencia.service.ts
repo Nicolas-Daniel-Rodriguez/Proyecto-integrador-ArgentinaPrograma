@@ -25,7 +25,7 @@ constructor(private http: HttpClient) { }
   }
 
   public eliminarExperiencia(experienciaId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiBaseUrl}/eliminar/${experienciaId}`);
+    return this.http.delete<void>(`${this.apiBaseUrl}/eliminar/experiencia/${experienciaId}`);
   }
 
 }

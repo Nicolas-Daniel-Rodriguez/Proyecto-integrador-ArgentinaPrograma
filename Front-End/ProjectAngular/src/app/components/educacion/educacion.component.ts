@@ -16,7 +16,7 @@ export class EducacionComponent implements OnInit {
   public elimEducacion!: Educacion;
   isLogged = false;
   roles!: string[];
-  isAdmin: boolean = false;
+  
 
   name = new FormControl(''); 
   
@@ -47,12 +47,10 @@ export class EducacionComponent implements OnInit {
     document.getElementById('nueva-educacion-modal')?.click();
     this.educacionService.nuevaEducacion(addForm.value).subscribe(
       (response: Educacion) => {
-        console.log(response);
         this.getEducacion();
         addForm.reset();
       },
       (error: HttpErrorResponse) => {
-        console.log(addForm.value)
         alert(error.message);
         addForm.reset();
       }
@@ -63,7 +61,6 @@ export class EducacionComponent implements OnInit {
   public modificarEducacion(id : number, educacion: Educacion):void {
       this.educacionService.modificarEducacion(id,educacion).subscribe(
       (response: Educacion) => {
-        console.log(response);
         this.getEducacion();
         
       },
@@ -77,7 +74,6 @@ export class EducacionComponent implements OnInit {
   public eliminarEducacion(id: number):void {
     this.educacionService.eliminarEducacion(id).subscribe(
     (response: void) => {
-      console.log(response);
       this.getEducacion();
       
     },
