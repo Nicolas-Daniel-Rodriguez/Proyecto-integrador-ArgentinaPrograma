@@ -4,6 +4,7 @@ import { Persona } from '../../interfaces/persona/persona.component';
 import { personaService } from 'src/app/servicios/persona.service';
 import { TokenService } from '../../servicios/token.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-acerca-de',
@@ -12,16 +13,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AcercadeComponent implements OnInit {
   isLogged = false;
-  personaC : Persona[] = [];
-
-  public personas: Persona[] = [];
+  public personas!: Persona[];
+  public editPersona!: Persona;
   roles!: string[];
-  isAdmin: boolean = false;
+
+  imgPortada = false;
+  datosPersonales = false;
+  acercaDe = false;
+  imgPerfil = false;
+  
   modalContact: boolean = false;
 
+  name = new FormControl(''); 
+
   constructor(private personaService: personaService, 
-              private tokenService: TokenService,         
-              private activRouter : ActivatedRoute) {}
+              private tokenService: TokenService) {}
 
   ngOnInit() {
     this.getPersonas();
@@ -39,24 +45,15 @@ export class AcercadeComponent implements OnInit {
     this.modalContact = true;
   }
 
-  editarImgPortadaC() {
-    
-  }
-
-  editarImgPerfilC() {
-    
-  }
-
-  editarOcupacionC() {
-
-  }
-
-  editarNombreApellidoC(id: number, personaC: Persona):void {
-      
-  }
-
-  editarAcercaDeC() {
-
+  public modificarPersona(id : number, persona: Persona):void {
+    this.personaService.modificarPersona(id,persona).subscribe(
+    (response: Persona) => {
+      this.getPersonas();
+    },
+    (error: HttpErrorResponse) => {
+      alert(error.message);
+    }
+   )
   }
 
   public getPersonas(): void {
@@ -68,5 +65,38 @@ export class AcercadeComponent implements OnInit {
         alert(error.message);
       }
     );
+  }
+
+  public onOpenModal(persona: Persona, mode: string): void{
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+    if (mode === 'editar') {
+      this.editPersona = persona;
+      button.setAttribute('data-target', '#modificarPersonaModal');
+    }
+    container?.appendChild(button);
+    button.click();
+  }
+
+  ImgPor(){
+    this.imgPortada = true;
+  }
+  verDatosPersonales(){
+    this.datosPersonales = true;
+  }
+  verAcercaDe(){
+    this.acercaDe = true;
+  }
+  verImgPerfil(){
+    this.imgPerfil = true;
+  }
+  restaurarVar(){
+    this.imgPortada = false;
+    this.imgPerfil = false;
+    this.datosPersonales = false;
+    this.acercaDe = false;
   }
 }

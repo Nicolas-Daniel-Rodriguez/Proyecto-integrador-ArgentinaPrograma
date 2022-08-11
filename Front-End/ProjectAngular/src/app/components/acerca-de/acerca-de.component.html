@@ -8,344 +8,245 @@
     [src]="persona.imgPortada"
     alt="Imágen de Portada"
   />
-  <!-- Editar Imagen de Portada -->
-  <div>
-    <!-- Button Editar -->
+
+  <!-- Boton Editar Imagen de Portada -->
+  <div id="editar-persona" *ngIf="isLogged">
     <button
-      *ngIf="isLogged"
+      (click)="onOpenModal(persona, 'editar')"
       type="button"
-      class="btn btn-primary"
+      class="ms-5"
+      title="editar"
+      (click)="ImgPor()"
       data-bs-toggle="modal"
-      data-bs-target="#editarPortada"
+      data-bs-target="#modificarPersonaModal"
     >
-      Editar
+      <i class="fa-solid fa-pen">Editar</i>
     </button>
-
-    <!-- Modal Editar -->
-    <div
-      class="modal fade"
-      id="editarPortada"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Cambiar Foto de Portada
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <label for=""></label>
-            <input
-              accept="image/png,image/jpeg"
-              type="file"
-              name="imgPortadaC"
-            />
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              (click)="editarImgPortadaC()"
-            >
-              Guardar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-  <!-- Acerca de -->
-  <div class="cuerpo">
-    <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
-      <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
-      <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
-      <!-- Editar Imagen de Perfil -->
-      <div>
-        <!-- Button Editar -->
-        <button
-          *ngIf="isLogged"
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#editarPerfil"
-        >
-          Editar
-        </button>
 
-        <!-- Modal Editar -->
-        <div
-          class="modal fade"
-          id="editarPerfil"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Cambiar Foto de Perfil
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <label for="imgPerfilC"></label>
-                <input
-                  accept="image/png,image/jpeg"
-                  type="file"
-                  name="imgPerfilC"
-                />
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cerrar
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  (click)="editarImgPerfilC()"
-                >
-                  Guardar
-                </button>
-              </div>
-            </div>
-          </div>
+    <!-- Acerca de -->
+    <div class="cuerpo">
+      <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
+        <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
+        <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
+        <div>
+          <h2 class="fs-6">
+            {{ persona.ocupacion }}
+          </h2>
         </div>
-      </div>
-      <div>
-        <h2 class="fs-6">
-          {{ persona.ocupacion }}
-        </h2>
-        <!-- Editar Ocupacion -->
-      <div>
-        <!-- Button Editar Ocupacion -->
-        <button
-          *ngIf="isLogged"
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#editarOcupacion"
-        >
-          Editar
-        </button>
-
-        <!-- Modal Editar -->
-        <div
-          class="modal fade"
-          id="editarOcupacion"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Editar Ocupación
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <label for="OcupacionC">Ingrese su Ocupación actual </label>
-                <input
-                  type="text"
-                  name="OcupacionC"
-                />
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cerrar
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  (click)="editarOcupacionC()"
-                >
-                  Guardar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
         <p class="link m-2 fs-6 pContact" (click)="openContact()">
           Información de Contacto
         </p>
       </div>
+
+      <!-- Button Editar Imagen de Perfil -->
+      <div id="editar-persona" *ngIf="isLogged">
+        <button
+          (click)="onOpenModal(persona, 'editar')"
+          type="button"
+          class="ms-5"
+          title="editar"
+          (click)="verImgPerfil()"
+          data-bs-toggle="modal"
+          data-bs-target="#modificarPersonaModal"
+        >
+          <i class="fa-solid fa-pen">Editar</i>
+        </button>
+      </div>
+      
     </div>
     <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
     <h1 class="ms-5 fs-4">
       {{ persona.nombre }} <span>{{ persona.apellido }}</span>
     </h1>
-     <!-- Editar Nombre y Apellido -->
-     <div>
-      <!-- Button Editar Nombre y Apellido  + id-->
-      <button
-        *ngIf="isLogged"
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#editarNombreApellido"
-      >
-        Editar
-      </button>
 
-      <!-- Modal Editar -->
-      <div
-        class="modal fade"
-        id="editarNombreApellido"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
+    <!-- Button Editar Nombre y Apellido  + id-->
+    <div id="editar-persona" *ngIf="isLogged">
+      <button
+        (click)="onOpenModal(persona, 'editar')"
+        type="button"
+        class="ms-5"
+        title="editar"
+        (click)="verDatosPersonales()"
+        data-bs-toggle="modal"
+        data-bs-target="#modificarPersonaModal"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Editar Nombre y Apellido 
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <label for="NombreC">Ingrese su Nombre</label>
-              <input
-                type="text"
-                name="NombreC"
-                
-              />
-              <label for="ApellidoC">Ingrese su Apellido </label>
-              <input
-                type="text"
-                name="ApellidoC"
-                
-              />
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="editarNombreApellidoC(1, persona)"
-              >
-                Guardar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+        <i class="fa-solid fa-pen">Editar</i>
+      </button>
     </div>
+
     <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
     <div class="bordeIzq mx-5 my-3 mb-4">
       <p class="fs-6 ms-3">
         {{ persona.acercaDe }}
       </p>
-       <!-- Editar Acerca De -->
-     <div>
-      <!-- Button Editar Acerca De -->
-      <button
-        *ngIf="isLogged"
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#editarAcercaDe"
-      >
-        Editar
-      </button>
+        <!-- Button Editar Acerca De -->
+        <div id="editar-persona" *ngIf="isLogged">
+          <button
+            (click)="onOpenModal(persona, 'editar')"
+            type="button"
+            class="ms-5"
+            title="editar"
+            (click)="verAcercaDe()"
+            data-bs-toggle="modal"
+            data-bs-target="#modificarPersonaModal"
+          >
+            <i class="fa-solid fa-pen">Editar</i>
+          </button>
 
-      <!-- Modal Editar -->
-      <div
-        class="modal fade"
-        id="editarAcercaDe"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Editar Descripción Personal 
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <label for="AcercaDeC">Ingrese una breve descripción de usted y sus objetivos. </label><br>
-              <textarea
-                name="AcercaDeC"
-                rows="4" cols="60"
-              ></textarea>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="editarAcercaDeC()"
-              >
-                Guardar
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-    </div>
     <!-- <a class="link mx-5 fs-6" href="">Ver más...</a> -->
+  
+
+  <!-- Modal para editar Persona -->
+  <div
+  class="modal fade"
+  id="modificarPersonaModal"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modificarPersonaModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">
+          Editar
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="restaurarVar()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <input type="hidden" name="id" ngModel="{{ persona.id }} " />
+          <div *ngIf="datosPersonales">
+          <label for="nombre">Nombre</label><br />
+          <input
+            ngModel="{{ persona.nombre }}"
+            type="text"
+            name="nombre"
+            class="form-control"
+          />
+          <label for="apellido">Apellido</label><br />
+          <input
+            ngModel="{{ persona.apellido }}"
+            type="text"
+            name="apellido"
+            class="form-control"
+          />
+          <label for="pais">País</label><br />
+          <input
+            ngModel="{{ persona.pais }}"
+            type="text"
+            name="pais"
+            class="form-control"
+          />
+          <label for="telefono">Teléfono</label><br />
+          <input
+            ngModel="{{ persona.telefono }}"
+            type="text"
+            name="telefono"
+            class="form-control"
+          />
+          <label for="email">Email</label><br />
+          <input
+            ngModel="{{ persona.email }}"
+            type="text"
+            name="email"
+            class="form-control"
+          />
+          <label for="instagram">Instagram</label><br />
+          <input
+            ngModel="{{ persona.instagram }}"
+            type="text"
+            name="instagram"
+            class="form-control"
+          />
+          <label for="github">Github</label><br />
+          <input
+            ngModel="{{ persona.github }}"
+            type="text"
+            name="github"
+            class="form-control"
+          />
+          <label for="linkedin">Linkedin</label><br />
+          <input
+            ngModel="{{ persona.linkedin }}"
+            type="text"
+            name="linkedin"
+            class="form-control"
+          />
+          <label for="ocupacionCorta">Ocupacion Principal</label><br />
+          <input
+            ngModel="{{ persona.ocupacionCorta }}"
+            type="text"
+            name="ocupacionCorta"
+            class="form-control"
+          />
+          <label for="ocupacion">Otros Cargos</label><br />
+          <input
+            ngModel="{{ persona.ocupacion }}"
+            type="text"
+            name="ocupacion"
+            class="form-control"
+          /></div>
+          <div *ngIf="imgPortada">
+            <label for="imgPortada">Imágen de Portada</label><br />
+            <input
+              ngModel="{{ persona.imgPortada }}"
+              type="text"
+              name="imgPortada"
+              class="form-control"
+            /></div>
+            <div *ngIf="imgPerfil">
+            <label for="imgPerfil">Imágen de Perfil</label><br />
+            <input
+              ngModel="{{ persona.imgPerfil }}"
+              type="text"
+              name="imgPerfil"
+              class="form-control"
+            /></div>
+            <div *ngIf="acercaDe">
+          <label for="acercaDe">Acerca De</label><br />
+          <input
+            ngModel="{{ persona.acercaDe }}"
+            type="text"
+            name="acercaDe"
+            class="form-control"
+          /></div>
+          <br />
+          <div class="modal-footer">
+            <button
+              id="modificar-persona-modal"
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              (click)="restaurarVar()"
+            >
+              Cancelar
+            </button>
+            <button
+              (click)="modificarPersona(editPersona.id, editForm.value)"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="restaurarVar()"
+            >
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 </section>
