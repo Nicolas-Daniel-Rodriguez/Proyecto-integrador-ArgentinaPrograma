@@ -1,26 +1,171 @@
 <!-- Educación -->
 <section class="cuerpo mb-5">
-    <div class="d-flex justify-content-between mt-3">
-      <h3 class="ms-5 center fs-5" id="Edu">EDUCACIÓN:</h3>
-      <app-card></app-card>
-    </div>
-    <ul class="bordeIzq mx-5 ps-4">
-      <!-- Educación Item -->
-      <li *ngFor="let educacion of educacion">
-        <h4 class="mx-4 mt-3 fs-5">{{educacion.titulo}}</h4>
-        <div class="bordeIzq mx-4 ps-4 d-flex justify-content-between">
-          <div>
-            <p class="fs-6 mb-1">{{educacion.lugarEstudio}}</p>
-            <p class="fechas text-start fs-6 mb-1">{{educacion.fechaInicio}} - {{educacion.fechaFin}}</p>
-          </div>
-          <img
-            class="bordeImg imgCert"
-            [src]="educacion.certificado"
-            alt="Certificado"
-          />
+  <div class="d-flex justify-content-between mt-3">
+    <h3 class="ms-5 center fs-5" id="Edu">EDUCACIÓN:</h3>
+    <app-card></app-card>
+  </div>
+  <button
+    (click)="onOpenModal(null!, 'nuevo')"
+    type="button"
+    class="ms-5"
+    *ngIf="isLogged"
+    title="Nuevo"
+    data-bs-toggle="modal"
+    data-bs-target="#nuevaEducacionModal"
+  >
+    <i class="fa-solid fa-plus"></i>Nueva Educacion
+  </button>
+  <ul class="bordeIzq mx-5 ps-4">
+    <!-- Educación Item -->
+    <li *ngFor="let educacion of educacion">
+      <h4 class="mx-4 mt-3 fs-5">{{ educacion.titulo }}</h4>
+      <div class="bordeIzq mx-4 ps-4 d-flex justify-content-between">
+        <div>
+          <p class="fs-6 mb-1">{{ educacion.lugarEstudio }}</p>
+          <p class="fechas text-start fs-6 mb-1">
+            {{ educacion.fechaInicio }} - {{ educacion.fechaFin }}
+          </p>
         </div>
-      </li>
+        <img
+          class="bordeImg imgCert"
+          [src]="educacion.certificado"
+          alt="Certificado"
+        />
+      </div>
+      <div id="eliminar-editar-estudios" *ngIf="isLogged">
+        <button
+          (click)="onOpenModal(educacion, 'editar')"
+          type="button"
+          class="ms-5"
+          title="editar"
+          data-bs-toggle="modal"
+          data-bs-target="#modificarEducacionModal"
+        >
+          <i class="fa-solid fa-pen">Editar</i>
+        </button>
+        <button
+          (click)="onOpenModal(educacion, 'eliminar')"
+          type="button"
+          class="ms-5"
+          title="borrar"
+          data-bs-toggle="modal"
+          data-bs-target="#eliminarEducacionModal"
+        >
+          <i class="fa-solid fa-eraser">Eliminar</i>
+        </button>
+      </div>
+    </li>
 
-      <!-- <a class="linkMedio mt-3 fs-6" href="">Mostrar todos los estudios...</a> -->
-    </ul>
-  </section>
+    <!-- <a class="linkMedio mt-3 fs-6" href="">Mostrar todos los estudios...</a> -->
+  </ul>
+
+  <!-- Modal Nueva Educacion -->
+  <div
+    class="modal fade"
+    id="nuevaEducacionModal"
+    role="dialog"
+    data-backdrop="static"
+    data-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="nuevaEducacionModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="nuevaEducacionModalLabel">
+            Agregar Educacion
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="nuevaEducacion(addForm)">
+            <div class="form-group">
+              <input
+                type="number"
+                ngModel
+                name="id"
+                class="form-control"
+                id="id"
+                placeholder="Id"
+              />
+              <label for="titulo">Título</label>
+              <input
+                type="text"
+                ngModel
+                name="titulo"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lugarEstudio">Lugar de estudio </label>
+              <input
+                type="text"
+                ngModel
+                name="lugarEstudio"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="fechaInicio">Fecha de Inicio</label>
+              <input
+                type="text"
+                ngModel
+                name="fechaInicio"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="fechaFin">Fecha de Finalización</label>
+              <input
+                type="text"
+                ngModel
+                name="fechaFin"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="certificado">Certificado</label>
+              <input
+                type="text"
+                ngModel
+                name="certificado"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                id="nueva-educacion-modal"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                [disabled]="addForm.invalid"
+                type="submit"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Agregar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../../interfaces/persona/persona.component';
 import { personaService } from 'src/app/servicios/persona.service';
 import { TokenService } from '../../servicios/token.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-acerca-de',
@@ -11,15 +12,16 @@ import { TokenService } from '../../servicios/token.service';
 })
 export class AcercadeComponent implements OnInit {
   isLogged = false;
-
-  edit = false;
+  personaC : Persona[] = [];
 
   public personas: Persona[] = [];
   roles!: string[];
   isAdmin: boolean = false;
   modalContact: boolean = false;
 
-  constructor(private personaService: personaService, private tokenService: TokenService) {}
+  constructor(private personaService: personaService, 
+              private tokenService: TokenService,         
+              private activRouter : ActivatedRoute) {}
 
   ngOnInit() {
     this.getPersonas();
@@ -37,8 +39,24 @@ export class AcercadeComponent implements OnInit {
     this.modalContact = true;
   }
 
-  editButton() {
-    this.edit = !this.edit;
+  editarImgPortadaC() {
+    
+  }
+
+  editarImgPerfilC() {
+    
+  }
+
+  editarOcupacionC() {
+
+  }
+
+  editarNombreApellidoC(id: number, personaC: Persona):void {
+      
+  }
+
+  editarAcercaDeC() {
+
   }
 
   public getPersonas(): void {

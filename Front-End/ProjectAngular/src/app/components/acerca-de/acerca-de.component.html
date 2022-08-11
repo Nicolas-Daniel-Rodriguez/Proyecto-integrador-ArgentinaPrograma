@@ -8,20 +8,200 @@
     [src]="persona.imgPortada"
     alt="Imágen de Portada"
   />
-    <i *ngIf="isLogged" (click)="editButton()" class="fa-solid fa-pencil">boton lapiz</i>
-    <div *ngIf="edit">
-      <h2>Muestro el Formulario</h2>
+  <!-- Editar Imagen de Portada -->
+  <div>
+    <!-- Button Editar -->
+    <button
+      *ngIf="isLogged"
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#editarPortada"
+    >
+      Editar
+    </button>
+
+    <!-- Modal Editar -->
+    <div
+      class="modal fade"
+      id="editarPortada"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Cambiar Foto de Portada
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <label for=""></label>
+            <input
+              accept="image/png,image/jpeg"
+              type="file"
+              name="imgPortadaC"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="editarImgPortadaC()"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
   <!-- Acerca de -->
   <div class="cuerpo">
     <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
       <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
       <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
+      <!-- Editar Imagen de Perfil -->
       <div>
-        <h2 *ngIf="isLogged">Estoy logueado</h2>
+        <!-- Button Editar -->
+        <button
+          *ngIf="isLogged"
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#editarPerfil"
+        >
+          Editar
+        </button>
+
+        <!-- Modal Editar -->
+        <div
+          class="modal fade"
+          id="editarPerfil"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Cambiar Foto de Perfil
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <label for="imgPerfilC"></label>
+                <input
+                  accept="image/png,image/jpeg"
+                  type="file"
+                  name="imgPerfilC"
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="editarImgPerfilC()"
+                >
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
         <h2 class="fs-6">
           {{ persona.ocupacion }}
         </h2>
+        <!-- Editar Ocupacion -->
+      <div>
+        <!-- Button Editar Ocupacion -->
+        <button
+          *ngIf="isLogged"
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#editarOcupacion"
+        >
+          Editar
+        </button>
+
+        <!-- Modal Editar -->
+        <div
+          class="modal fade"
+          id="editarOcupacion"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Editar Ocupación
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <label for="OcupacionC">Ingrese su Ocupación actual </label>
+                <input
+                  type="text"
+                  name="OcupacionC"
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="editarOcupacionC()"
+                >
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
         <p class="link m-2 fs-6 pContact" (click)="openContact()">
           Información de Contacto
         </p>
@@ -31,11 +211,140 @@
     <h1 class="ms-5 fs-4">
       {{ persona.nombre }} <span>{{ persona.apellido }}</span>
     </h1>
+     <!-- Editar Nombre y Apellido -->
+     <div>
+      <!-- Button Editar Nombre y Apellido  + id-->
+      <button
+        *ngIf="isLogged"
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#editarNombreApellido"
+      >
+        Editar
+      </button>
+
+      <!-- Modal Editar -->
+      <div
+        class="modal fade"
+        id="editarNombreApellido"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Editar Nombre y Apellido 
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <label for="NombreC">Ingrese su Nombre</label>
+              <input
+                type="text"
+                name="NombreC"
+                
+              />
+              <label for="ApellidoC">Ingrese su Apellido </label>
+              <input
+                type="text"
+                name="ApellidoC"
+                
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="editarNombreApellidoC(1, persona)"
+              >
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
     <div class="bordeIzq mx-5 my-3 mb-4">
       <p class="fs-6 ms-3">
         {{ persona.acercaDe }}
       </p>
+       <!-- Editar Acerca De -->
+     <div>
+      <!-- Button Editar Acerca De -->
+      <button
+        *ngIf="isLogged"
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#editarAcercaDe"
+      >
+        Editar
+      </button>
+
+      <!-- Modal Editar -->
+      <div
+        class="modal fade"
+        id="editarAcercaDe"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Editar Descripción Personal 
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <label for="AcercaDeC">Ingrese una breve descripción de usted y sus objetivos. </label><br>
+              <textarea
+                name="AcercaDeC"
+                rows="4" cols="60"
+              ></textarea>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="editarAcercaDeC()"
+              >
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     <!-- <a class="link mx-5 fs-6" href="">Ver más...</a> -->
   </div>
