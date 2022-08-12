@@ -2,32 +2,33 @@
   <app-contacto></app-contacto>
 </div>
 
-<section *ngFor="let persona of personas">
-  <img
+<section *ngFor="let persona of personas" >
+  <img *ngFor="let imgPortada of imgPortada"
     class="imgPortada bordeInf"
-    [src]="persona.imgPortada"
+    [src]="imgPortada.imgPortada"
     alt="Imágen de Portada"
   />
 
   <!-- Boton Editar Imagen de Portada -->
-  <div class="d-flex flex-row-reverse me-5" id="editar-persona" *ngIf="isLogged">
+  <div class="d-flex flex-row-reverse me-5" id="editar-imgportada" *ngIf="isLogged">
     <button
-      (click)="onOpenModal(persona, 'editar')"
+    *ngFor="let ImgPortada of imgPortada"
+      (click)="onOpenModalImgPortada(ImgPortada, 'editar')"
       type="button"
       class="ms-5 btn btn-primary mt-2"
       title="editar"
       data-bs-toggle="modal"
-      data-bs-target="#modificarPersonaModal"
+      data-bs-target="#modificarImgPortadaModal"
     >
       <i class="fa-solid fa-pen">Editar Portada</i>
     </button>
   </div>
 
     <!-- Acerca de -->
-    <div class="cuerpo">
+    <div class="cuerpo" *ngFor="let imgPerfil of imgPerfil">
       <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
         <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
-        <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
+        <img class="imgPerfil" [src]="imgPerfil.imgPerfil" alt="Perfil" />
         <div>
         <div>
           <h2 class="fs-6">
@@ -41,14 +42,14 @@
       </div>
 
       <!-- Button Editar Imagen de Perfil -->
-      <div id="editar-persona" *ngIf="isLogged">
-        <button
-          (click)="onOpenModal(persona, 'editar')"
+      <div id="editar-imgPerfil" *ngIf="isLogged">
+        <button *ngFor="let ImgPerfil of imgPerfil"
+          (click)="onOpenModalImgPerfil(ImgPerfil, 'editar')"
           type="button"
           class="ms-5 btn btn-primary fs-6 mb-2"
           title="editar"
           data-bs-toggle="modal"
-          data-bs-target="#modificarPersonaModal"
+          data-bs-target="#modificarImgPerfilModal"
         >
           <i class="fa-solid fa-pen">Editar Foto de Perfil</i>
         </button>
@@ -75,19 +76,19 @@
     </div>
 
     <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
-    <div class="bordeIzq mx-5 my-3 mb-4">
+    <div *ngFor="let acercade of acercaDe" class="bordeIzq mx-5 my-3 mb-4">
       <p class="fs-6 ms-3">
-        {{ persona.acercaDe }}
+        {{ acercade.acercaDe }}
       </p>
         <!-- Button Editar Acerca De -->
-        <div class="d-flex flex-row-reverse me-5" id="editar-persona" *ngIf="isLogged">
-          <button
-            (click)="onOpenModal(persona, 'editar')"
+        <div class="d-flex flex-row-reverse me-5" id="editar-acercade" *ngIf="isLogged">
+          <button *ngFor="let AcercaDe of acercaDe"
+            (click)="onOpenModalAcercaDe(AcercaDe, 'editar')"
             type="button"
             class="ms-5 btn-primary"
             title="editar"
             data-bs-toggle="modal"
-            data-bs-target="#modificarPersonaModal"
+            data-bs-target="#modificarAcercaDeModal"
           >
             <i class="fa-solid fa-pen">Editar</i>
           </button>
@@ -195,27 +196,6 @@
             name="ocupacion"
             class="form-control"
           />
-            <label for="imgPortada">Imágen de Portada</label><br />
-            <input
-              ngModel="{{ persona.imgPortada }}"
-              type="text"
-              name="imgPortada"
-              class="form-control"
-            />
-            <label for="imgPerfil">Imágen de Perfil</label><br />
-            <input
-              ngModel="{{ persona.imgPerfil }}"
-              type="text"
-              name="imgPerfil"
-              class="form-control"
-            />
-          <label for="acercaDe">Acerca De</label><br />
-          <input
-            ngModel="{{ persona.acercaDe }}"
-            type="text"
-            name="acercaDe"
-            class="form-control"
-          />
           <br />
           <div class="modal-footer">
             <button
@@ -241,4 +221,186 @@
   </div>
 </div>
 
+ <!-- Modal para editar AcercaDe -->
+ <div
+ *ngFor="let AcercaDe of acercaDe"
+ class="modal fade mt-5"
+ id="modificarAcercaDeModal"
+ data-backdrop="static"
+ data-keyboard="false"
+ tabindex="-1"
+ aria-labelledby="modificarAcercaDeModal"
+ aria-hidden="true"
+>
+ <div class="modal-dialog">
+   <div class="modal-content fondo">
+     <div class="modal-header">
+       <h5 class="modal-title" id="staticBackdropLabel">
+         Editar
+       </h5>
+       <button
+         type="button"
+         class="close botonMenu"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       >
+         <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <form #editForm="ngForm">
+         <input type="hidden" name="id" ngModel="{{ AcercaDe.id }} " />
+         <label for="acercaDe">Acerca De</label><br />
+         <input
+           ngModel="{{ AcercaDe.acercaDe }}"
+           type="text"
+           name="acercaDe"
+           class="form-control"
+         />
+         <br />
+         <div class="modal-footer">
+           <button
+             id="modificar-acercade-modal"
+             type="button"
+             class="btn btn-danger"
+             data-bs-dismiss="modal"
+           >
+             Cancelar
+           </button>
+           <button
+             (click)="modificarAcercaDe(editAcercaDe.id, editForm.value)"
+             type="button"
+             class="btn btn-primary"
+             data-bs-dismiss="modal"
+           >
+             Guardar cambios
+           </button>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
+</div>
+
+ <!-- Modal para editar ImgPerfil -->
+ <div
+ *ngFor="let ImgPerfil of imgPerfil"
+ class="modal fade mt-5"
+ id="modificarImgPerfilModal"
+ data-backdrop="static"
+ data-keyboard="false"
+ tabindex="-1"
+ aria-labelledby="modificarImgPerfilModal"
+ aria-hidden="true"
+>
+ <div class="modal-dialog">
+   <div class="modal-content fondo">
+     <div class="modal-header">
+       <h5 class="modal-title" id="staticBackdropLabel">
+         Editar
+       </h5>
+       <button
+         type="button"
+         class="close botonMenu"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       >
+         <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <form #editForm="ngForm">
+         <input type="hidden" name="id" ngModel="{{ ImgPerfil.id }} " />
+           <label for="imgPerfil">Imágen de Perfil</label><br />
+           <input
+             ngModel="{{ ImgPerfil.imgPerfil }}"
+             type="text"
+             name="imgPerfil"
+             class="form-control"
+           />
+         <br />
+         <div class="modal-footer">
+           <button
+             id="modificar-imgperfil-modal"
+             type="button"
+             class="btn btn-danger"
+             data-bs-dismiss="modal"
+           >
+             Cancelar
+           </button>
+           <button
+             (click)="modificarImgPerfil(editImgPerfil.id, editForm.value)"
+             type="button"
+             class="btn btn-primary"
+             data-bs-dismiss="modal"
+           >
+             Guardar cambios
+           </button>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
+</div>
+
+ <!-- Modal para editar ImgPortada -->
+ <div
+ *ngFor="let ImgPortada of imgPortada"
+ class="modal fade mt-5"
+ id="modificarImgPortadaModal"
+ data-backdrop="static"
+ data-keyboard="false"
+ tabindex="-1"
+ aria-labelledby="modificarImgPortadaModal"
+ aria-hidden="true"
+>
+ <div class="modal-dialog">
+   <div class="modal-content fondo">
+     <div class="modal-header">
+       <h5 class="modal-title" id="staticBackdropLabel">
+         Editar
+       </h5>
+       <button
+         type="button"
+         class="close botonMenu"
+         data-bs-dismiss="modal"
+         aria-label="Close"
+       >
+         <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <form #editForm="ngForm">
+         <input type="hidden" name="id" ngModel="{{ ImgPortada.id }} " />
+           <label for="imgPortada">Imágen de Portada</label><br />
+           <input
+             ngModel="{{ ImgPortada.imgPortada }}"
+             type="text"
+             name="imgPortada"
+             class="form-control"
+           />
+         <br />
+         <div class="modal-footer">
+           <button
+             id="modificar-imgportada-modal"
+             type="button"
+             class="btn btn-danger"
+             data-bs-dismiss="modal"
+           >
+             Cancelar
+           </button>
+           <button
+             (click)="modificarImgPortada(editImgPortada.id, editForm.value)"
+             type="button"
+             class="btn btn-primary"
+             data-bs-dismiss="modal"
+           >
+             Guardar cambios
+           </button>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
+</div>
 </section>

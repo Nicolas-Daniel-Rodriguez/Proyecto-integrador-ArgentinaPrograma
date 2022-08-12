@@ -21,6 +21,9 @@ import { habilidadesService } from './servicios/habilidades.service';
 import { proyectosService } from './servicios/proyectos.service';
 import { interceptorProvider } from './servicios/interceptor.service';
 import { RegistroComponent } from './components/registro/registro.component';
+import { acercaDeService } from './servicios/acerca-de.service';
+import { ImgPortadaService } from './servicios/img-portada.service';
+import { ImgPerfilService } from './servicios/img-perfil.service';
 
 @NgModule({
   imports: [
@@ -44,7 +47,7 @@ import { RegistroComponent } from './components/registro/registro.component';
     CardComponent,
     RegistroComponent
   ],
-  providers: [personaService, educacionService, experienciaService, habilidadesService, proyectosService, interceptorProvider],
+  providers: [personaService, acercaDeService, ImgPortadaService, ImgPerfilService,educacionService, experienciaService, habilidadesService, proyectosService, interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

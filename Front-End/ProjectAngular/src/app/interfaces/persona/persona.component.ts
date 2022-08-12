@@ -8,9 +8,6 @@ export interface Persona{
     instagram: String;
     github: String;
     linkedin: String;
-    imgPortada: String;
-    imgPerfil: String;
     ocupacionCorta: String;
     ocupacion: String;
-    acercaDe: String;
 }
