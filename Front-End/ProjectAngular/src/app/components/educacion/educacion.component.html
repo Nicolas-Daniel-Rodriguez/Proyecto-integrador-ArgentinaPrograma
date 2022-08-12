@@ -7,7 +7,7 @@
   <button
     (click)="onOpenModal(null!, 'nuevo')"
     type="button"
-    class="ms-5"
+    class="ms-5 btn-primary"
     *ngIf="isLogged"
     title="Nuevo"
     data-bs-toggle="modal"
@@ -32,11 +32,11 @@
           alt="Certificado"
         />
       </div>
-      <div id="eliminar-editar-estudios" *ngIf="isLogged">
+      <div id="eliminar-editar-educacion" *ngIf="isLogged">
         <button
           (click)="onOpenModal(educacion, 'editar')"
           type="button"
-          class="ms-5"
+          class="ms-5 btn-primary"
           title="editar"
           data-bs-toggle="modal"
           data-bs-target="#modificarEducacionModal"
@@ -46,7 +46,7 @@
         <button
           (click)="onOpenModal(educacion, 'eliminar')"
           type="button"
-          class="ms-5"
+          class="ms-5 btn-primary"
           title="borrar"
           data-bs-toggle="modal"
           data-bs-target="#eliminarEducacionModal"
@@ -71,18 +71,18 @@
     aria-hidden="true"
   >
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content fondo">
         <div class="modal-header">
           <h5 class="modal-title" id="nuevaEducacionModalLabel">
             Agregar Educacion
           </h5>
           <button
             type="button"
-            class="close"
+            class="close botonMenu"
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
           </button>
         </div>
         <div class="modal-body">
@@ -181,20 +181,20 @@
     aria-hidden="true"
   >
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content fondo">
         <div class="modal-header">
           <h5 class="modal-title" id="eliminarEducacionModalLabel"></h5>
           <button
             type="button"
-            class="close"
+            class="close botonMenu"
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
           </button>
         </div>
         <div class="modal-body">
-          <p>
+          <p class="fs-5">
             Esta acción eliminará "{{ educacion.titulo }}". ¿Desea
             continuar?
           </p>
@@ -228,16 +228,16 @@
     aria-hidden="true"
   >
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content fondo">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Editar Educacion</h5>
           <button
             type="button"
-            class="close"
+            class="close botonMenu"
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
           </button>
         </div>
         <div class="modal-body">

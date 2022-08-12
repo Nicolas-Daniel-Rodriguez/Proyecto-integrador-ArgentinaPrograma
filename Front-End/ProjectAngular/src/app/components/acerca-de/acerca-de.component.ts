@@ -16,11 +16,6 @@ export class AcercadeComponent implements OnInit {
   public personas!: Persona[];
   public editPersona!: Persona;
   roles!: string[];
-
-  imgPortada = false;
-  datosPersonales = false;
-  acercaDe = false;
-  imgPerfil = false;
   
   modalContact: boolean = false;
 
@@ -79,24 +74,5 @@ export class AcercadeComponent implements OnInit {
     }
     container?.appendChild(button);
     button.click();
-  }
-
-  ImgPor(){
-    this.imgPortada = true;
-  }
-  verDatosPersonales(){
-    this.datosPersonales = true;
-  }
-  verAcercaDe(){
-    this.acercaDe = true;
-  }
-  verImgPerfil(){
-    this.imgPerfil = true;
-  }
-  restaurarVar(){
-    this.imgPortada = false;
-    this.imgPerfil = false;
-    this.datosPersonales = false;
-    this.acercaDe = false;
   }
 }

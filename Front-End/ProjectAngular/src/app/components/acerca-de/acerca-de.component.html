@@ -10,17 +10,16 @@
   />
 
   <!-- Boton Editar Imagen de Portada -->
-  <div id="editar-persona" *ngIf="isLogged">
+  <div class="d-flex flex-row-reverse me-5" id="editar-persona" *ngIf="isLogged">
     <button
       (click)="onOpenModal(persona, 'editar')"
       type="button"
-      class="ms-5"
+      class="ms-5 btn btn-primary mt-2"
       title="editar"
-      (click)="ImgPor()"
       data-bs-toggle="modal"
       data-bs-target="#modificarPersonaModal"
     >
-      <i class="fa-solid fa-pen">Editar</i>
+      <i class="fa-solid fa-pen">Editar Portada</i>
     </button>
   </div>
 
@@ -30,6 +29,7 @@
         <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
         <img class="imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
         <div>
+        <div>
           <h2 class="fs-6">
             {{ persona.ocupacion }}
           </h2>
@@ -38,25 +38,25 @@
           Información de Contacto
         </p>
       </div>
+      </div>
 
       <!-- Button Editar Imagen de Perfil -->
       <div id="editar-persona" *ngIf="isLogged">
         <button
           (click)="onOpenModal(persona, 'editar')"
           type="button"
-          class="ms-5"
+          class="ms-5 btn btn-primary fs-6 mb-2"
           title="editar"
-          (click)="verImgPerfil()"
           data-bs-toggle="modal"
           data-bs-target="#modificarPersonaModal"
         >
-          <i class="fa-solid fa-pen">Editar</i>
+          <i class="fa-solid fa-pen">Editar Foto de Perfil</i>
         </button>
       </div>
-      
+
     </div>
     <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
-    <h1 class="ms-5 fs-4">
+    <h1 class="ms-5 fs-4 my-2">
       {{ persona.nombre }} <span>{{ persona.apellido }}</span>
     </h1>
 
@@ -65,13 +65,12 @@
       <button
         (click)="onOpenModal(persona, 'editar')"
         type="button"
-        class="ms-5"
+        class="ms-5 btn-primary"
         title="editar"
-        (click)="verDatosPersonales()"
         data-bs-toggle="modal"
         data-bs-target="#modificarPersonaModal"
       >
-        <i class="fa-solid fa-pen">Editar</i>
+        <i class="fa-solid fa-pen">Editar Datos Personales</i>
       </button>
     </div>
 
@@ -81,13 +80,12 @@
         {{ persona.acercaDe }}
       </p>
         <!-- Button Editar Acerca De -->
-        <div id="editar-persona" *ngIf="isLogged">
+        <div class="d-flex flex-row-reverse me-5" id="editar-persona" *ngIf="isLogged">
           <button
             (click)="onOpenModal(persona, 'editar')"
             type="button"
-            class="ms-5"
+            class="ms-5 btn-primary"
             title="editar"
-            (click)="verAcercaDe()"
             data-bs-toggle="modal"
             data-bs-target="#modificarPersonaModal"
           >
@@ -101,7 +99,7 @@
 
   <!-- Modal para editar Persona -->
   <div
-  class="modal fade"
+  class="modal fade mt-5"
   id="modificarPersonaModal"
   data-backdrop="static"
   data-keyboard="false"
@@ -110,25 +108,23 @@
   aria-hidden="true"
 >
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content fondo">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">
           Editar
         </h5>
         <button
           type="button"
-          class="close"
+          class="close botonMenu"
           data-bs-dismiss="modal"
           aria-label="Close"
-          (click)="restaurarVar()"
         >
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
         </button>
       </div>
       <div class="modal-body">
         <form #editForm="ngForm">
           <input type="hidden" name="id" ngModel="{{ persona.id }} " />
-          <div *ngIf="datosPersonales">
           <label for="nombre">Nombre</label><br />
           <input
             ngModel="{{ persona.nombre }}"
@@ -198,31 +194,28 @@
             type="text"
             name="ocupacion"
             class="form-control"
-          /></div>
-          <div *ngIf="imgPortada">
+          />
             <label for="imgPortada">Imágen de Portada</label><br />
             <input
               ngModel="{{ persona.imgPortada }}"
               type="text"
               name="imgPortada"
               class="form-control"
-            /></div>
-            <div *ngIf="imgPerfil">
+            />
             <label for="imgPerfil">Imágen de Perfil</label><br />
             <input
               ngModel="{{ persona.imgPerfil }}"
               type="text"
               name="imgPerfil"
               class="form-control"
-            /></div>
-            <div *ngIf="acercaDe">
+            />
           <label for="acercaDe">Acerca De</label><br />
           <input
             ngModel="{{ persona.acercaDe }}"
             type="text"
             name="acercaDe"
             class="form-control"
-          /></div>
+          />
           <br />
           <div class="modal-footer">
             <button
@@ -230,7 +223,6 @@
               type="button"
               class="btn btn-danger"
               data-bs-dismiss="modal"
-              (click)="restaurarVar()"
             >
               Cancelar
             </button>
@@ -239,7 +231,6 @@
               type="button"
               class="btn btn-primary"
               data-bs-dismiss="modal"
-              (click)="restaurarVar()"
             >
               Guardar cambios
             </button>
@@ -249,4 +240,5 @@
     </div>
   </div>
 </div>
+
 </section>

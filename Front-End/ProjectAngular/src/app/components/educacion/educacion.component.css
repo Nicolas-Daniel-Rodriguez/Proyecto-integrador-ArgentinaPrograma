@@ -1,5 +1,20 @@
-.fondoModel{
+.fondo{
     background: linear-gradient(180deg, #000000 0%, #313131 100%);
-    color: white;
-    letter-spacing: 1px;  
-}
+    border: 3px solid #FF7120;
+    border-radius: 35px;
+  }
+  
+  .botonMenu {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .imgX:hover,
+  .imgX:focus {
+    background: #FF7120;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  input{
+    background:#D8D8D8;
+  }
