@@ -25,10 +25,11 @@
   </div>
 
     <!-- Acerca de -->
-    <div class="cuerpo" *ngFor="let imgPerfil of imgPerfil">
+    <div class="cuerpo">
       <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
         <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
-        <img class="imgPerfil" [src]="imgPerfil.imgPerfil" alt="Perfil" />
+        <img *ngFor="let ImgPerfil of imgPerfil"
+        class="imgPerfil" [src]="ImgPerfil.imgPerfil" alt="Perfil" />
         <div>
         <div>
           <h2 class="fs-6">
