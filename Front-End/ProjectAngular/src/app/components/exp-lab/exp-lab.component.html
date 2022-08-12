@@ -7,7 +7,7 @@
     <button
     (click)="onOpenModal(null!, 'nuevo')"
     type="button"
-    class="ms-5"
+    class="ms-5 btn-primary"
     *ngIf="isLogged"
     title="Nuevo"
     data-bs-toggle="modal"
@@ -32,7 +32,7 @@
           <button
             (click)="onOpenModal(experiencia, 'editar')"
             type="button"
-            class="ms-5"
+            class="ms-5 btn-primary"
             title="editar"
             data-bs-toggle="modal"
             data-bs-target="#modificarExperienciaModal"
@@ -42,7 +42,7 @@
           <button
             (click)="onOpenModal(experiencia, 'eliminar')"
             type="button"
-            class="ms-5"
+            class="ms-5 btn-primary"
             title="borrar"
             data-bs-toggle="modal"
             data-bs-target="#eliminarExperienciaModal"
