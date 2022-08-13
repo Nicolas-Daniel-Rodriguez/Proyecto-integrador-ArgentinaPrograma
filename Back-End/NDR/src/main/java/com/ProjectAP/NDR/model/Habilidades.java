@@ -1,6 +1,7 @@
 
 package com.ProjectAP.NDR.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class Habilidades {
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false, unique = true)
     private Long id;
     private String titulo;
     private String descripcion;

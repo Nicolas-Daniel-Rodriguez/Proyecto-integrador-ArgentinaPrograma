@@ -23,11 +23,8 @@ public class Persona {
     private String instagram;
     private String github;
     private String linkedin;
-    private String imgPortada;
-    private String imgPerfil;
     private String ocupacionCorta;
     private String ocupacion;
-    private String acercaDe;
     
     @JsonIgnoreProperties("persona")
     @OneToMany(cascade = CascadeType.ALL, targetEntity = Educacion.class)
@@ -49,10 +46,25 @@ public class Persona {
     @JoinColumn(name = "pr_fk", referencedColumnName = "id")
     private List<Proyectos> proyectosList;
     
+    @JsonIgnoreProperties("persona")
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = AcercaDe.class)
+    @JoinColumn(name = "Ac_fk", referencedColumnName = "id")
+    private List<AcercaDe> acercaDeList;
+    
+    @JsonIgnoreProperties("persona")
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = ImgPerfil.class)
+    @JoinColumn(name = "ImgPe_fk", referencedColumnName = "id")
+    private List<ImgPerfil> imgPerfilList;
+    
+    @JsonIgnoreProperties("persona")
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = ImgPortada.class)
+    @JoinColumn(name = "ImgPo_fk", referencedColumnName = "id")
+    private List<ImgPortada> imgPortadaList;
+    
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido, String pais, String telefono, String email, String instagram, String github, String linkedin, String imgPortada, String imgPerfil, String ocupacionCorta, String ocupacion, String acercaDe) {
+    public Persona(Long id, String nombre, String apellido, String pais, String telefono, String email, String instagram, String github, String linkedin, String ocupacionCorta, String ocupacion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -62,11 +74,8 @@ public class Persona {
         this.instagram = instagram;
         this.github = github;
         this.linkedin = linkedin;
-        this.imgPortada = imgPortada;
-        this.imgPerfil = imgPerfil;
         this.ocupacionCorta = ocupacionCorta;
         this.ocupacion = ocupacion;
-        this.acercaDe = acercaDe;
     }
 
     @Override
@@ -81,11 +90,8 @@ public class Persona {
                 ", instagram='" + instagram + '\'' +
                 ", github='" + github + '\'' +
                 ", linkedin='" + linkedin + '\'' +
-                ", imgPortada='" + imgPortada + '\'' +
-                ", imgPerfil='" + imgPerfil + '\'' +
                 ", ocupacionCorta='" + ocupacionCorta + '\'' +
                 ", ocupacion='" + ocupacion + '\'' +
-                ", acercaDe='" + acercaDe + '\'' +
                 '}';
     }
     

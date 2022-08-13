@@ -57,11 +57,8 @@ public class Controller {
         persona.setInstagram(per.getInstagram());
         persona.setGithub(per.getGithub());
         persona.setLinkedin(per.getLinkedin());
-        persona.setImgPortada(per.getImgPortada());
-        persona.setImgPerfil(per.getImgPerfil());
         persona.setOcupacionCorta(per.getOcupacionCorta());
         persona.setOcupacion(per.getOcupacion());
-        persona.setAcercaDe(per.getAcercaDe());
         
         persoServ.crearPersona(persona);
         return persona;       
