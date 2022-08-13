@@ -19,7 +19,6 @@ import com.ProjectAP.NDR.security.jwt.JwtEntryPoint;
 import com.ProjectAP.NDR.security.jwt.JwtTokenFilter;
 import com.ProjectAP.NDR.security.service.UserDetailsServiceImpl;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 
 @Configuration
 @EnableWebSecurity
