@@ -86,7 +86,7 @@
       </p>
     </div>
      <!-- Button Editar Acerca De -->
-     <div class="d-flex flex-row-reverse me-5" id="editar-acercade" *ngIf="isLogged">
+     <div class="d-flex flex-row-reverse me-5 mb-5" id="editar-acercade" *ngIf="isLogged">
       <button *ngFor="let AcercaDe of acercaDe"
         (click)="onOpenModalAcercaDe(AcercaDe, 'editar')"
         type="button"

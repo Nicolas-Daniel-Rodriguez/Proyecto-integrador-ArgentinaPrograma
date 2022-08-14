@@ -4,17 +4,19 @@
     <h3 class="ms-5 center fs-5" id="Proy">PROYECTOS:</h3>
     <app-card></app-card>
   </div>
-  <button
-    (click)="onOpenModal(null!, 'nuevo')"
-    type="button"
-    class="ms-5 btn-primary"
-    *ngIf="isLogged"
-    title="Nuevo"
-    data-bs-toggle="modal"
-    data-bs-target="#nuevoProyectoModal"
-  >
-    <i class="fa-solid fa-plus"></i>Nuevo Proyecto
-  </button>
+  <div class="ms-5 mb-3">
+    <button
+      (click)="onOpenModal(null!, 'nuevo')"
+      type="button"
+      class="ms-5 btn-primary"
+      *ngIf="isLogged"
+      title="Nuevo"
+      data-bs-toggle="modal"
+      data-bs-target="#nuevoProyectoModal"
+    >
+      <i class="fa-solid fa-plus"></i>Nuevo Proyecto
+    </button>
+  </div>
   <!-- Proyecto -->
   <ul>
     <li
@@ -39,17 +41,7 @@
       <button class="button">
         <a class="fs-6" [href]="proyecto.link">Ver Proyecto...</a>
       </button>
-      <div id="eliminar-editar-proyecto" *ngIf="isLogged">
-        <button
-          (click)="onOpenModal(proyecto, 'editar')"
-          type="button"
-          class="ms-5 btn-primary"
-          title="editar"
-          data-bs-toggle="modal"
-          data-bs-target="#modificarProyectoModal"
-        >
-          <i class="fa-solid fa-pen">Editar</i>
-        </button>
+      <div class="my-3 d-flex flex-row-reverse" id="eliminar-editar-proyecto" *ngIf="isLogged">  
         <button
           (click)="onOpenModal(proyecto, 'eliminar')"
           type="button"
@@ -59,6 +51,16 @@
           data-bs-target="#eliminarProyectoModal"
         >
           <i class="fa-solid fa-eraser">Eliminar</i>
+        </button>
+        <button
+          (click)="onOpenModal(proyecto, 'editar')"
+          type="button"
+          class="ms-5 btn-primary"
+          title="editar"
+          data-bs-toggle="modal"
+          data-bs-target="#modificarProyectoModal"
+        >
+          <i class="fa-solid fa-pen">Editar</i>
         </button>
       </div>
     </li>
@@ -87,7 +89,13 @@
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
           </button>
         </div>
         <div class="modal-body">
@@ -112,23 +120,18 @@
             </div>
             <div class="form-group">
               <label for="descripcion">Descripcion </label>
-              <input
+              <textarea
                 type="text"
                 ngModel
                 name="descripcion"
                 class="form-control"
                 required
-              />
+                rows="5"
+              ></textarea>
             </div>
             <div class="form-group">
               <label for="logoProy">Logo Proyecto</label>
-              <input
-                type="text"
-                ngModel
-                name="logoProy"
-                class="form-control"
-                required
-              />
+              <input type="text" ngModel name="logoProy" class="form-control" />
             </div>
             <div class="form-group">
               <label for="link">Link</label>
@@ -141,17 +144,12 @@
               />
             </div>
             <div class="form-group">
-              <label for="num">Numero</label>
+              <label hidden for="num">Numero</label>
               <input type="hidden" ngModel name="num" class="form-control" />
             </div>
             <div class="form-group">
               <label for="imgDemo">Imagén Ilustrativa del Proyecto</label>
-              <input
-                type="hidden"
-                ngModel
-                name="imgDemo"
-                class="form-control"
-              />
+              <input type="text" ngModel name="imgDemo" class="form-control" />
             </div>
             <div class="modal-footer">
               <button
@@ -198,12 +196,18 @@
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
           </button>
         </div>
         <div class="modal-body">
           <p class="fs-5">
-            Esta acción eliminará "{{ proyecto.titulo }}". ¿Desea continuar?
+            Esta acción eliminará el proyecto seleccionado. ¿Desea continuar?
           </p>
         </div>
         <div class="modal-footer">
@@ -244,51 +248,58 @@
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
           </button>
         </div>
         <div class="modal-body">
           <form #editForm="ngForm">
-            <input type="hidden" name="id" ngModel="{{ proyecto.id }} " />
+            <input type="hidden" name="id" ngModel />
             <label for="titulo">Título</label><br />
             <input
-              ngModel="{{ proyecto.titulo }}"
+              ngModel
               type="text"
               name="titulo"
               class="form-control"
             />
             <label for="descripcion">Descripcion</label><br />
-            <input
-              ngModel="{{ proyecto.descripcion }}"
+            <textarea
+              ngModel
               type="text"
               name="descripcion"
               class="form-control"
-            />
+              rows="5"
+            ></textarea>
             <label for="logoProy">Logo Proyecto</label><br />
             <input
-              ngModel="{{ proyecto.logoProy }}"
+              ngModel
               type="text"
               name="logoProy"
               class="form-control"
             />
             <label for="link">Link</label><br />
             <input
-              ngModel="{{ proyecto.link }}"
+              ngModel
               type="text"
               name="link"
               class="form-control"
             />
-            <label for="num">Numero</label><br />
+            <label hidden for="num">Numero</label><br />
             <input
-              ngModel="{{ proyecto.num }}"
+              ngModel
               type="hidden"
               name="num"
               class="form-control"
             />
             <label for="imgDemo">Imagén Ilustrativa del Proyecto</label><br />
             <input
-              ngModel="{{ proyecto.imgDemo }}"
-              type="hidden"
+              ngModel
+              type="text"
               name="imgDemo"
               class="form-control"
             />

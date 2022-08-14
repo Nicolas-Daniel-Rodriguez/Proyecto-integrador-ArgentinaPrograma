@@ -20,7 +20,7 @@ export class ExpLabComponent implements OnInit {
 
   name = new FormControl('');  
   
-  constructor(private experienciaService:experienciaService, private tokenService: TokenService) { }
+  constructor(private experienciaService:experienciaService, private tokenService: TokenService, ) { }
 
   ngOnInit(): void {
     this.getExperiencia();

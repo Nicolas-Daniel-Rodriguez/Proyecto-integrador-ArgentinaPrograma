@@ -118,7 +118,7 @@
             <div class="form-group">
               <label for="fechaInicio">Fecha de Inicio</label>
               <input
-                type="text"
+                type="month"
                 ngModel
                 name="fechaInicio"
                 class="form-control"
@@ -128,7 +128,7 @@
             <div class="form-group">
               <label for="fechaFin">Fecha de Finalización</label>
               <input
-                type="text"
+                type="month"
                 ngModel
                 name="fechaFin"
                 class="form-control"
@@ -242,38 +242,38 @@
         </div>
         <div class="modal-body">
           <form #editForm="ngForm">
-            <input type="hidden" name="id" ngModel="{{ educacion.id }} " />
+            <input type="hidden" name="id" ngModel  />
             <label for="titulo">Título</label><br />
             <input
-              ngModel="{{ educacion.titulo }}"
+              ngModel
               type="text"
               name="titulo"
               class="form-control"
             />
             <label for="lugarEstudio">Lugar de estudio</label><br />
             <input
-              ngModel="{{ educacion.lugarEstudio }}"
+              ngModel
               type="text"
               name="lugarEstudio"
               class="form-control"
             />
             <label for="fechInicio">Fecha de Inicio</label><br />
             <input
-              ngModel="{{ educacion.fechaInicio }}"
-              type="text"
+              ngModel
+              type="month"
               name="fechaInicio"
               class="form-control"
             />
             <label for="fechaFin">Fecha de Finalización</label><br />
             <input
-              ngModel="{{ educacion.fechaFin }}"
-              type="text"
+              ngModel
+              type="month"
               name="fechaFin"
               class="form-control"
             />
             <label for="certificado">Certificado</label><br />
             <input
-              ngModel="{{ educacion.certificado }}"
+              ngModel
               type="text"
               name="img"
               class="form-control"
