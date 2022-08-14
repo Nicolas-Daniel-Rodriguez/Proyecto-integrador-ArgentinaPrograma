@@ -27,11 +27,11 @@
         <p class="anchop fs-6">
           {{habilidad.descripcion}}
         </p>
-        <div id="eliminar-editar-habilidad" *ngIf="isLogged">
+        <div class="d-flex" id="eliminar-editar-habilidad" *ngIf="isLogged">
           <button
             (click)="onOpenModal(habilidad, 'editar')"
             type="button"
-            class="ms-5 btn-primary"
+            class="ms-3 btn-primary"
             title="editar"
             data-bs-toggle="modal"
             data-bs-target="#modificarHabilidadModal"

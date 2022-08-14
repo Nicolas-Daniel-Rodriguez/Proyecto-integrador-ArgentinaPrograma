@@ -3,7 +3,7 @@
     <p class="x" (click)="closeContact()">
       <img class="imgX" src="./../../../assets/X.svg" alt="Exit" />
     </p>
-    <img class="mt-3 mb-3 imgPerfil" [src]="persona.imgPerfil" alt="Perfil" />
+    <img *ngFor="let imgPerfil of imgperfil" class="mt-3 mb-3 imgPerfil" [src]="imgPerfil.imgPerfil" alt="Perfil" />
     <h1 class="fs-5">
       {{ persona.nombre }} <span>{{ persona.apellido }}</span>
     </h1>

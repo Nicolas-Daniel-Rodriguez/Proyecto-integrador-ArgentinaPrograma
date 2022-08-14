@@ -32,6 +32,9 @@
         class="imgPerfil" [src]="ImgPerfil.imgPerfil" alt="Perfil" />
         <div>
         <div>
+          <h2 class="fs-5">
+            {{ persona.ocupacionCorta }}
+          </h2>
           <h2 class="fs-6">
             {{ persona.ocupacion }}
           </h2>
@@ -81,21 +84,21 @@
       <p class="fs-6 ms-3">
         {{ acercade.acercaDe }}
       </p>
-        <!-- Button Editar Acerca De -->
-        <div class="d-flex flex-row-reverse me-5" id="editar-acercade" *ngIf="isLogged">
-          <button *ngFor="let AcercaDe of acercaDe"
-            (click)="onOpenModalAcercaDe(AcercaDe, 'editar')"
-            type="button"
-            class="ms-5 btn-primary"
-            title="editar"
-            data-bs-toggle="modal"
-            data-bs-target="#modificarAcercaDeModal"
-          >
-            <i class="fa-solid fa-pen">Editar</i>
-          </button>
-
-      </div>
     </div>
+     <!-- Button Editar Acerca De -->
+     <div class="d-flex flex-row-reverse me-5" id="editar-acercade" *ngIf="isLogged">
+      <button *ngFor="let AcercaDe of acercaDe"
+        (click)="onOpenModalAcercaDe(AcercaDe, 'editar')"
+        type="button"
+        class="ms-5 btn-primary"
+        title="editar"
+        data-bs-toggle="modal"
+        data-bs-target="#modificarAcercaDeModal"
+      >
+        <i class="fa-solid fa-pen">Editar</i>
+      </button>
+
+  </div>
     <!-- <a class="link mx-5 fs-6" href="">Ver más...</a> -->
   
 
@@ -252,12 +255,13 @@
        <form #editForm="ngForm">
          <input type="hidden" name="id" ngModel="{{ AcercaDe.id }} " />
          <label for="acercaDe">Acerca De</label><br />
-         <input
+         <textarea
            ngModel="{{ AcercaDe.acercaDe }}"
            type="text"
            name="acercaDe"
            class="form-control"
-         />
+           rows="5"
+         ></textarea>
          <br />
          <div class="modal-footer">
            <button
