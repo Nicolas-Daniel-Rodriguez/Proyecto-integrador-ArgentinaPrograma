@@ -215,6 +215,10 @@
                 name="certificado"
                 class="form-control"
                 formControlName="certificado"
+                [ngClass]="{
+                  'is-invalid': CertificadoF?.errors && CertificadoF?.touched,
+                  'is-valid': !CertificadoF?.errors && CertificadoF?.touched
+                }"
               />
               <div *ngIf="CertificadoF?.errors && CertificadoF?.touched">
                 <p class="text-danger">

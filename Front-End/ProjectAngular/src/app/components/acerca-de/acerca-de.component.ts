@@ -32,6 +32,9 @@ export class AcercadeComponent implements OnInit {
   modalContact: boolean = false;
 
   formAcF!: FormGroup;
+  formImgPerF!: FormGroup;
+  formImgPorF!: FormGroup;
+  formPersF!: FormGroup;
 
   constructor(private personaService: personaService, 
               private tokenService: TokenService,
@@ -42,6 +45,27 @@ export class AcercadeComponent implements OnInit {
 
                 this.formAcF = this.formBuilder.group({
                   acercaDe : ['', [Validators.maxLength(1500)]],
+                }); 
+
+                this.formImgPerF = this.formBuilder.group({
+                  imgPerfil : ['', [Validators.maxLength(100)]],
+                }); 
+
+                this.formImgPorF = this.formBuilder.group({
+                  imgPortada : ['', [Validators.maxLength(100)]],
+                }); 
+
+                this.formPersF = this.formBuilder.group({
+                  nombre: ['', [Validators.maxLength(50),Validators.required]],
+                  apellido: ['', [Validators.maxLength(50),Validators.required]],
+                  pais: ['', [Validators.maxLength(50),Validators.required]],
+                  telefono: ['', [Validators.maxLength(50),Validators.required, Validators.pattern("[0-9]{10}")]],
+                  email: ['', [Validators.maxLength(50), Validators.required, Validators.email]],
+                  instagram: ['', [Validators.maxLength(100)]],
+                  github: ['', [Validators.maxLength(100)]],
+                  linkedin: ['', [Validators.maxLength(100)]],
+                  ocupacionCorta: ['', [Validators.maxLength(100)]],
+                  ocupacion: ['', [Validators.maxLength(100)]],
                 }); 
                 
               }

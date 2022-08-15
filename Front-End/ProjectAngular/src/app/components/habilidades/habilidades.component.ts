@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { habilidadesService } from 'src/app/servicios/habilidades.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Habilidades } from '../../interfaces/habilidades/habilidades.component';
-import { FormControl, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
@@ -17,9 +17,16 @@ export class HabilidadesComponent implements OnInit {
   isLogged = false;
   roles!: string[];
 
-  name = new FormControl(''); 
+  formHab!: FormGroup;
   
-  constructor(private habilidadesService:habilidadesService, private tokenService: TokenService) { }
+  constructor(private habilidadesService:habilidadesService, private tokenService: TokenService, private formBuilder:FormBuilder) {
+    this.formHab = this.formBuilder.group({
+      titulo: ['', [Validators.maxLength(50),Validators.required]],
+      descripcion: ['', [Validators.maxLength(500),Validators.required]],
+      imgHab: ['', [Validators.maxLength(100)]],
+      porcentaje: ['', [Validators.maxLength(3),Validators.required]],
+    }); 
+   }
 
   ngOnInit(): void {
     this.getHabilidades();
@@ -43,7 +50,7 @@ export class HabilidadesComponent implements OnInit {
   }
 
   
-  public nuevaHabilidad(addForm: NgForm):void {
+  public nuevaHabilidad(addForm: any):void {
     document.getElementById('nueva-habilidad-modal')?.click();
     this.habilidadesService.nuevaHabilidad(addForm.value).subscribe(
       (response: Habilidades) => {
@@ -92,10 +99,12 @@ export class HabilidadesComponent implements OnInit {
     button.setAttribute('data-toggle', 'modal');
     if (mode === 'nuevo') {
       button.setAttribute('data-target', '#nuevaHabilidadModal');
+      this.formHab.reset();
     }
     if (mode === 'editar') {
       this.editHabilidad = habilidad;
       button.setAttribute('data-target', '#modificarHabilidadModal');
+      this.formHab.reset();
     }
     if (mode === 'eliminar') {
       this.elimHabilidad = habilidad;
@@ -103,5 +112,18 @@ export class HabilidadesComponent implements OnInit {
     }
     container?.appendChild(button);
     button.click();
+  }
+
+  get tituloF(){
+    return this.formHab.get("titulo");
+  }
+  get descripcionF(){
+    return this.formHab.get("descripcion");
+  }
+  get imgHabF(){
+    return this.formHab.get("imgHab");
+  }
+  get porcentajeF(){
+    return this.formHab.get("porcentaje");
   }
 }

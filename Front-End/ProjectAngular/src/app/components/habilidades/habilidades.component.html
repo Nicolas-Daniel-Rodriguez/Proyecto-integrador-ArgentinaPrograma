@@ -81,55 +81,103 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #addForm="ngForm" (ngSubmit)="nuevaHabilidad(addForm)">
-          <div class="form-group">
+        <form #addForm="ngForm" [formGroup]="formHab">
             <input
               type="hidden"
-              ngModel
               name="id"
               class="form-control"
               id="id"
-              placeholder="Id"
             />
             <label for="titulo">Título</label>
             <input
               type="text"
-              ngModel
               name="titulo"
               class="form-control"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="descripcion">Descripción </label>
+              formControlName="titulo"
+                  required
+                  [ngClass]="{
+                    'is-invalid': tituloF?.errors && tituloF?.touched,
+                    'is-valid': !tituloF?.errors && tituloF?.touched
+                  }"
+                />
+                <div>
+                  <p
+                    class="text-danger"
+                    *ngIf="tituloF?.errors && tituloF?.touched"
+                  >
+                    Este campo debe contener menos de 50 caracteres
+                  </p>
+                  <p
+                    class="text-danger"
+                    *ngIf="tituloF?.hasError('required') && tituloF?.touched"
+                  >
+                    Este campo es requerido
+                  </p>
+                </div>
+            <label for="descripcion"> Descripción </label>
             <textarea
               type="text"
-              ngModel
               name="descripcion"
               class="form-control"
               required
               rows="2"
+              formControlName="descripcion"
+                  [ngClass]="{
+                    'is-invalid': descripcionF?.errors && descripcionF?.touched,
+                    'is-valid': !descripcionF?.errors && descripcionF?.touched
+                  }"
             ></textarea>
-          </div>
-          <div class="form-group">
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="descripcionF?.errors && descripcionF?.touched"
+              >
+                Este campo debe contener menos de 500 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="
+                  descripcionF?.hasError('required') &&
+                  descripcionF?.touched
+                "
+              >
+                Este campo es requerido
+              </p>
+            </div>
             <label for="imgHab">Logo Habilidad</label>
             <input
               type="text"
-              ngModel
               name="imgHab"
               class="form-control"
+              formControlName="imgHab"
+              [ngClass]="{
+                'is-invalid': imgHabF?.errors && imgHabF?.touched,
+                'is-valid': !imgHabF?.errors && imgHabF?.touched
+              }"
             />
-          </div>
-          <div class="form-group">
+            <div *ngIf="imgHabF?.errors && imgHabF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 100 caracteres
+              </p>
+            </div>
             <label for="porcentaje">Porcentaje</label>
             <input
-              type="text"
-              ngModel
+              type="number"
+              min="1" max="100"
               name="porcentaje"
               class="form-control"
               required
+              formControlName="porcentaje"
+              [ngClass]="{
+                'is-invalid': porcentajeF?.errors && porcentajeF?.touched,
+                'is-valid': !porcentajeF?.errors && porcentajeF?.touched
+              }"
             />
-          </div>
+            <div *ngIf="porcentajeF?.errors && porcentajeF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 3 caracteres numéricos entre 1 y 100.
+              </p>
+            </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -140,6 +188,7 @@
               Cancelar
             </button>
             <button
+              (click)="nuevaHabilidad(addForm)"
               [disabled]="addForm.invalid"
               type="submit"
               class="btn btn-primary"
@@ -226,37 +275,98 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #editForm="ngForm">
-          <input type="hidden" name="id" ngModel />
-          <label for="titulo">Título</label><br />
-          <input
-            ngModel
-            type="text"
-            name="titulo"
-            class="form-control"
-          />
-          <label for="descripcion">Descripción</label><br />
-          <textarea
-            ngModel
-            type="text"
-            name="descripcion"
-            class="form-control"
-            rows="2"
-          ></textarea>
-          <label for="imgHab">Logo Habilidad</label><br />
-          <input
-            ngModel
-            type="text"
-            name="imgHab"
-            class="form-control"
-          />
-          <label for="porcentaje">Porcentaje</label><br />
-          <input
-            ngModel
-            type="text"
-            name="porcentaje"
-            class="form-control"
-          />
+        <form #editForm="ngForm" [formGroup]="formHab">
+          <input type="hidden" name="id" />
+          <label for="titulo">Título</label>
+            <input
+              type="text"
+              name="titulo"
+              class="form-control"
+              formControlName="titulo"
+                  required
+                  [ngClass]="{
+                    'is-invalid': tituloF?.errors && tituloF?.touched,
+                    'is-valid': !tituloF?.errors && tituloF?.touched
+                  }"
+                />
+                <div>
+                  <p
+                    class="text-danger"
+                    *ngIf="tituloF?.errors && tituloF?.touched"
+                  >
+                    Este campo debe contener menos de 50 caracteres
+                  </p>
+                  <p
+                    class="text-danger"
+                    *ngIf="tituloF?.hasError('required') && tituloF?.touched"
+                  >
+                    Este campo es requerido
+                  </p>
+                </div>
+            <label for="descripcion"> Descripción </label>
+            <textarea
+              type="text"
+              name="descripcion"
+              class="form-control"
+              required
+              rows="2"
+              formControlName="descripcion"
+                  [ngClass]="{
+                    'is-invalid': descripcionF?.errors && descripcionF?.touched,
+                    'is-valid': !descripcionF?.errors && descripcionF?.touched
+                  }"
+            ></textarea>
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="descripcionF?.errors && descripcionF?.touched"
+              >
+                Este campo debe contener menos de 500 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="
+                  descripcionF?.hasError('required') &&
+                  descripcionF?.touched
+                "
+              >
+                Este campo es requerido
+              </p>
+            </div>
+            <label for="imgHab">Logo Habilidad</label>
+            <input
+              type="text"
+              name="imgHab"
+              class="form-control"
+              formControlName="imgHab"
+              [ngClass]="{
+                'is-invalid': imgHabF?.errors && imgHabF?.touched,
+                'is-valid': !imgHabF?.errors && imgHabF?.touched
+              }"
+            />
+            <div *ngIf="imgHabF?.errors && imgHabF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 100 caracteres
+              </p>
+            </div>
+            <label for="porcentaje">Porcentaje</label>
+            <input
+              type="number"
+              min="1" max="100"
+              name="porcentaje"
+              class="form-control"
+              required
+              formControlName="porcentaje"
+              [ngClass]="{
+                'is-invalid': porcentajeF?.errors && porcentajeF?.touched,
+                'is-valid': !porcentajeF?.errors && porcentajeF?.touched
+              }"
+            />
+            <div *ngIf="porcentajeF?.errors && porcentajeF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 3 caracteres numéricos entre 1 y 100.
+              </p>
+            </div>
           <br />
           <div class="modal-footer">
             <button

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { proyectosService } from 'src/app/servicios/proyectos.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Proyectos } from '../../interfaces/proyectos/proyectos.component';
-import { FormControl, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
@@ -18,9 +18,17 @@ export class ProyectosComponent implements OnInit {
   roles!: string[];
   
 
-  name = new FormControl(''); 
+  formProy!: FormGroup;
   
-  constructor(private proyectosService:proyectosService, private tokenService: TokenService) { }
+  constructor(private proyectosService:proyectosService, private tokenService: TokenService, private formBuilder:FormBuilder) {
+    this.formProy = this.formBuilder.group({
+      titulo: ['', [Validators.maxLength(50),Validators.required]],
+      descripcion: ['', [Validators.maxLength(1500),Validators.required]],
+      logoProy: ['', [Validators.maxLength(100)]],
+      link: ['', [Validators.maxLength(100),Validators.required]],
+      imgDemo: ['', [Validators.maxLength(100)]],
+    }); 
+   }
 
   ngOnInit(): void {
     this.getProyectos();
@@ -44,7 +52,7 @@ export class ProyectosComponent implements OnInit {
   }
 
   
-  public nuevoProyecto(addForm: NgForm):void {
+  public nuevoProyecto(addForm: any):void {
     document.getElementById('nuevo-proyectos-modal')?.click();
     this.proyectosService.nuevoProyecto(addForm.value).subscribe(
       (response: Proyectos) => {
@@ -93,10 +101,12 @@ export class ProyectosComponent implements OnInit {
     button.setAttribute('data-toggle', 'modal');
     if (mode === 'nuevo') {
       button.setAttribute('data-target', '#nuevoProyectoModal');
+      this.formProy.reset();
     }
     if (mode === 'editar') {
       this.editProyecto = proyecto;
       button.setAttribute('data-target', '#modificarProyectoModal');
+      this.formProy.reset();
     }
     if (mode === 'eliminar') {
       this.elimProyecto = proyecto;
@@ -104,5 +114,21 @@ export class ProyectosComponent implements OnInit {
     }
     container?.appendChild(button);
     button.click();
+  }
+
+  get tituloF(){
+    return this.formProy.get("titulo");
+  }
+  get descripcionF(){
+    return this.formProy.get("descripcion");
+  }
+  get logoProyF(){
+    return this.formProy.get("logoProy");
+  }
+  get linkF(){
+    return this.formProy.get("link");
+  }
+  get imgDemoF(){
+    return this.formProy.get("imgDemo");
   }
 }
