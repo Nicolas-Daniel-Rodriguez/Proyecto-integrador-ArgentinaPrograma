@@ -82,15 +82,19 @@
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
           </button>
         </div>
         <div class="modal-body">
-          <form #addForm="ngForm" (ngSubmit)="nuevaEducacion(addForm)">
-            <div class="form-group">
+          <form #addForm="ngForm" [formGroup]="formEd">
               <input
                 type="hidden"
-                ngModel
                 name="id"
                 class="form-control"
                 id="id"
@@ -99,52 +103,124 @@
               <label for="titulo">Título</label>
               <input
                 type="text"
-                ngModel
                 name="titulo"
                 class="form-control"
+                formControlName="titulo"
                 required
+                [ngClass]="{
+                  'is-invalid': tituloF?.errors && tituloF?.touched,
+                  'is-valid': !tituloF?.errors && tituloF?.touched
+                }"
               />
-            </div>
-            <div class="form-group">
+              <div>
+                <p
+                  class="text-danger"
+                  *ngIf="tituloF?.errors && tituloF?.touched"
+                >
+                  Este campo debe contener menos de 50 caracteres
+                </p>
+                <p
+                  class="text-danger"
+                  *ngIf="tituloF?.hasError('required') && tituloF?.touched"
+                >
+                  Este campo es requerido
+                </p>
+              </div>
               <label for="lugarEstudio">Lugar de estudio </label>
               <input
                 type="text"
-                ngModel
                 name="lugarEstudio"
                 class="form-control"
+                formControlName="lugarEstudio"
+                [ngClass]="{
+                  'is-invalid': lugarEstudioF?.errors && lugarEstudioF?.touched,
+                  'is-valid': !lugarEstudioF?.errors && lugarEstudioF?.touched
+                }"
                 required
               />
-            </div>
-            <div class="form-group">
+              <div>
+                <p
+                  class="text-danger"
+                  *ngIf="lugarEstudioF?.errors && lugarEstudioF?.touched"
+                >
+                  Este campo debe contener menos de 100 caracteres
+                </p>
+                <p
+                  class="text-danger"
+                  *ngIf="
+                    lugarEstudioF?.hasError('required') &&
+                    lugarEstudioF?.touched
+                  "
+                >
+                  Este campo es requerido
+                </p>
+              </div>
               <label for="fechaInicio">Fecha de Inicio</label>
               <input
                 type="month"
-                ngModel
                 name="fechaInicio"
                 class="form-control"
+                formControlName="fechaInicio"
+                [ngClass]="{
+                  'is-invalid': FechaInicioF?.errors && FechaInicioF?.touched,
+                  'is-valid': !FechaInicioF?.errors && FechaInicioF?.touched
+                }"
                 required
               />
-            </div>
-            <div class="form-group">
+              <div>
+                <p
+                  class="text-danger"
+                  *ngIf="FechaInicioF?.errors && FechaInicioF?.touched"
+                >
+                  Este campo debe contener ser una fecha con mes y año.
+                </p>
+                <p
+                  class="text-danger"
+                  *ngIf="
+                    FechaInicioF?.hasError('required') && FechaInicioF?.touched
+                  "
+                >
+                  Este campo es requerido
+                </p>
+              </div>
               <label for="fechaFin">Fecha de Finalización</label>
               <input
                 type="month"
-                ngModel
                 name="fechaFin"
                 class="form-control"
+                formControlName="fechaFin"
+                [ngClass]="{
+                  'is-invalid': FechaFinF?.errors && FechaFinF?.touched,
+                  'is-valid': !FechaFinF?.errors && FechaFinF?.touched
+                }"
                 required
               />
-            </div>
-            <div class="form-group">
+              <div>
+                <p
+                  class="text-danger"
+                  *ngIf="FechaFinF?.hasError('required') && FechaFinF?.touched"
+                >
+                  Este campo es requerido
+                </p>
+                <p
+                  class="text-danger"
+                  *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
+                >
+                  Este campo debe contener ser una fecha con mes y año.
+                </p>
+              </div>
               <label for="certificado">Certificado</label>
               <input
                 type="text"
-                ngModel
                 name="certificado"
                 class="form-control"
-                
+                formControlName="certificado"
               />
-            </div>
+              <div *ngIf="CertificadoF?.errors && CertificadoF?.touched">
+                <p class="text-danger">
+                  Este campo debe contener menos de 100 caracteres
+                </p>
+              </div>
             <div class="modal-footer">
               <button
                 type="button"
@@ -155,6 +231,7 @@
                 Cancelar
               </button>
               <button
+                (click)="nuevaEducacion(addForm)"
                 [disabled]="addForm.invalid"
                 type="submit"
                 class="btn btn-primary"
@@ -190,13 +267,18 @@
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
           </button>
         </div>
         <div class="modal-body">
           <p class="fs-5">
-            Esta acción eliminará la educación seleccionada. ¿Desea
-            continuar?
+            Esta acción eliminará la educación seleccionada. ¿Desea continuar?
           </p>
         </div>
         <div class="modal-footer">
@@ -237,47 +319,138 @@
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
           </button>
         </div>
         <div class="modal-body">
-          <form #editForm="ngForm">
-            <input type="hidden" name="id" ngModel  />
+          <form #editForm="ngForm" [formGroup]="formEd">
+            <input type="hidden" name="id" />
             <label for="titulo">Título</label><br />
             <input
-              ngModel
               type="text"
               name="titulo"
               class="form-control"
+              formControlName="titulo"
+              [ngClass]="{
+                'is-invalid': tituloF?.errors && tituloF?.touched,
+                'is-valid': !tituloF?.errors && tituloF?.touched
+              }"
+              required
             />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="tituloF?.errors && tituloF?.touched"
+              >
+                Este campo debe contener menos de 50 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="tituloF?.hasError('required') && tituloF?.touched"
+              >
+                Este campo es requerido
+              </p>
+            </div>
             <label for="lugarEstudio">Lugar de estudio</label><br />
             <input
-              ngModel
               type="text"
               name="lugarEstudio"
               class="form-control"
+              formControlName="lugarEstudio"
+              [ngClass]="{
+                'is-invalid': lugarEstudioF?.errors && lugarEstudioF?.touched,
+                'is-valid': !lugarEstudioF?.errors && lugarEstudioF?.touched
+              }"
+              required
             />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="lugarEstudioF?.errors && lugarEstudioF?.touched"
+              >
+                Este campo debe contener menos de 100 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="
+                  lugarEstudioF?.hasError('required') && lugarEstudioF?.touched
+                "
+              >
+                Este campo es requerido
+              </p>
+            </div>
             <label for="fechInicio">Fecha de Inicio</label><br />
             <input
-              ngModel
               type="month"
               name="fechaInicio"
               class="form-control"
+              formControlName="fechaInicio"
+              [ngClass]="{
+                'is-invalid': FechaInicioF?.errors && FechaInicioF?.touched,
+                'is-valid': !FechaInicioF?.errors && FechaInicioF?.touched
+              }"
+              required
             />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="FechaInicioF?.errors && FechaInicioF?.touched"
+              >
+                Este campo debe contener ser una fecha con mes y año.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="
+                  FechaInicioF?.hasError('required') && FechaInicioF?.touched
+                "
+              >
+                Este campo es requerido
+              </p>
+            </div>
             <label for="fechaFin">Fecha de Finalización</label><br />
             <input
-              ngModel
               type="month"
               name="fechaFin"
               class="form-control"
+              formControlName="fechaFin"
+              [ngClass]="{
+                'is-invalid': FechaFinF?.errors && FechaFinF?.touched,
+                'is-valid': !FechaFinF?.errors && FechaFinF?.touched
+              }"
+              required
             />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="FechaFinF?.hasError('required') && FechaFinF?.touched"
+              >
+                Este campo es requerido
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
+              >
+                Este campo debe contener ser una fecha con mes y año, o "ACTUAL"
+              </p>
+            </div>
             <label for="certificado">Certificado</label><br />
             <input
-              ngModel
               type="text"
               name="img"
               class="form-control"
+              formControlName="certificado"
             />
+            <div *ngIf="CertificadoF?.errors && CertificadoF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 100 caracteres
+              </p>
+            </div>
             <br />
             <div class="modal-footer">
               <button

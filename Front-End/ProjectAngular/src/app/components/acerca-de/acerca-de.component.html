@@ -81,7 +81,7 @@
 
     <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
     <div *ngFor="let acercade of acercaDe" class="bordeIzq mx-5 my-3 mb-4">
-      <p class="fs-6 ms-3">
+      <p class="fs-6 ms-3 text-break">
         {{ acercade.acercaDe }}
       </p>
     </div>
@@ -252,16 +252,20 @@
        </button>
      </div>
      <div class="modal-body">
-       <form #editForm="ngForm">
-         <input type="hidden" name="id" ngModel="{{ AcercaDe.id }} " />
+       <form #editForm="ngForm" [formGroup]="formAcF">
+         <input type="hidden" name="id" />
          <label for="acercaDe">Acerca De</label><br />
          <textarea
-           ngModel="{{ AcercaDe.acercaDe }}"
            type="text"
            name="acercaDe"
            class="form-control"
            rows="5"
+           formControlName="acercaDe"
+           [ngClass]="{'is-invalid':AcercaDeF?.errors && AcercaDeF?.touched, 'is-valid': !AcercaDeF?.errors && AcercaDeF?.touched}"
          ></textarea>
+         <div *ngIf="AcercaDeF?.errors && AcercaDeF?.touched">
+          <p class="text-danger">Este campo debe contener menos de 1500 caracteres</p>
+         </div>
          <br />
          <div class="modal-footer">
            <button

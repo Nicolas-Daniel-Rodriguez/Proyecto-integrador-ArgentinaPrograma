@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { educacionService } from 'src/app/servicios/educacion.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Educacion } from '../../interfaces/educacion/educacion.component';
-import { FormControl, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
@@ -18,9 +18,18 @@ export class EducacionComponent implements OnInit {
   roles!: string[];
   
 
-  name = new FormControl(''); 
+  formEd!: FormGroup;
   
-  constructor(private educacionService: educacionService, private tokenService: TokenService) { }
+  constructor(private educacionService: educacionService, private tokenService: TokenService, private formBuilder:FormBuilder) { 
+
+    this.formEd = this.formBuilder.group({
+      titulo: ['', [Validators.maxLength(50),Validators.required]],
+      lugarEstudio: ['', [Validators.maxLength(100),Validators.required]],
+      fechaInicio: ['', [Validators.required]],
+      fechaFin: ['',[Validators.required]],
+      certificado: ['', [Validators.maxLength(100)]],
+    }); 
+  }
 
   ngOnInit(): void {
     this.getEducacion();
@@ -43,16 +52,15 @@ export class EducacionComponent implements OnInit {
     );
   }
 
-  public nuevaEducacion(addForm: NgForm):void {
+  public nuevaEducacion(addForm: any):void {
     document.getElementById('nueva-educacion-modal')?.click();
     this.educacionService.nuevaEducacion(addForm.value).subscribe(
       (response: Educacion) => {
         this.getEducacion();
-        addForm.reset();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
-        addForm.reset();
+        
       }
     )
     
@@ -92,10 +100,12 @@ export class EducacionComponent implements OnInit {
     button.setAttribute('data-toggle', 'modal');
     if (mode === 'nuevo') {
       button.setAttribute('data-target', '#nuevaEducacionModal');
+      this.formEd.reset();
     }
     if (mode === 'editar') {
       this.editEducacion = educacion;
       button.setAttribute('data-target', '#modificarEducacionModal');
+      this.formEd.reset();
     }
     if (mode === 'eliminar') {
       this.elimEducacion = educacion;
@@ -103,5 +113,21 @@ export class EducacionComponent implements OnInit {
     }
     container?.appendChild(button);
     button.click();
+  }
+
+  get tituloF(){
+    return this.formEd.get("titulo");
+  }
+  get lugarEstudioF(){
+    return this.formEd.get("lugarEstudio");
+  }
+  get FechaInicioF(){
+    return this.formEd.get("fechaInicio");
+  }
+  get FechaFinF(){
+    return this.formEd.get("fechaFin");
+  }
+  get CertificadoF(){
+    return this.formEd.get("certificado");
   }
 }

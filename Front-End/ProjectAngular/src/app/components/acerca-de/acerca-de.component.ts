@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../../interfaces/persona/persona.component';
 import { personaService } from 'src/app/servicios/persona.service';
 import { TokenService } from '../../servicios/token.service';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { acercaDeService } from '../../servicios/acerca-de.service';
 import { ImgPortadaService } from '../../servicios/img-portada.service';
 import { ImgPerfilService } from '../../servicios/img-perfil.service';
@@ -31,13 +31,20 @@ export class AcercadeComponent implements OnInit {
   
   modalContact: boolean = false;
 
-  name = new FormControl(''); 
+  formAcF!: FormGroup;
 
   constructor(private personaService: personaService, 
               private tokenService: TokenService,
               private acercaDeService: acercaDeService,
               private imgPerfilService: ImgPerfilService,
-              private imgPortadaService: ImgPortadaService) {}
+              private imgPortadaService: ImgPortadaService,
+              private formBuilder:FormBuilder) {
+
+                this.formAcF = this.formBuilder.group({
+                  acercaDe : ['', [Validators.maxLength(1500)]],
+                }); 
+                
+              }
 
   ngOnInit() {
     this.getPersonas();
@@ -125,6 +132,7 @@ export class AcercadeComponent implements OnInit {
     if (mode === 'editar') {
       this.editAcercaDe = acercaDe;
       button.setAttribute('data-target', '#modificarAcercaDeModal');
+      this.formAcF.reset();
     }
     container?.appendChild(button);
     button.click();
@@ -201,4 +209,9 @@ export class AcercadeComponent implements OnInit {
     container?.appendChild(button);
     button.click();
   }
+
+  get AcercaDeF(){
+    return this.formAcF.get("acercaDe");
+  }
+
 }
