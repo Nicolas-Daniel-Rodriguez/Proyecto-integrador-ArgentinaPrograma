@@ -23,7 +23,7 @@
         <div>
           <p class="fs-6 mb-1">{{ educacion.lugarEstudio }}</p>
           <p class="fechas text-start fs-6 mb-1">
-            {{ educacion.fechaInicio }} - {{ educacion.fechaFin }}
+            {{ educacion.fechaInicio }} - <span *ngIf=Ac>Actual</span> {{ educacion.fechaFin }}
           </p>
         </div>
         <img
@@ -183,32 +183,42 @@
                   Este campo es requerido
                 </p>
               </div>
-              <label for="fechaFin">Fecha de Finalización</label>
-              <input
-                type="month"
-                name="fechaFin"
-                class="form-control"
-                formControlName="fechaFin"
-                [ngClass]="{
-                  'is-invalid': FechaFinF?.errors && FechaFinF?.touched,
-                  'is-valid': !FechaFinF?.errors && FechaFinF?.touched
-                }"
-                required
-              />
-              <div>
-                <p
-                  class="text-danger"
-                  *ngIf="FechaFinF?.hasError('required') && FechaFinF?.touched"
-                >
-                  Este campo es requerido
-                </p>
-                <p
-                  class="text-danger"
-                  *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
-                >
-                  Este campo debe contener ser una fecha con mes y año.
-                </p>
+              <div *ngIf=!Ac>
+                <label for="fechaFin">Fecha de Finalización</label><br />
+                <input
+                  type="month"
+                  name="fechaFin"
+                  value="Actual"
+                  class="form-control"
+                  formControlName="fechaFin"
+                  [ngClass]="{
+                    'is-invalid': FechaFinF?.errors && FechaFinF?.touched,
+                    'is-valid': !FechaFinF?.errors && FechaFinF?.touched
+                  }"
+                />
+                <div>
+                  <p
+                    class="text-danger"
+                    *ngIf="FechaFinF?.hasError('required') && FechaFinF?.touched"
+                  >
+                    Este campo es requerido.
+                  </p>
+                  <p
+                    class="text-danger"
+                    *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
+                  >
+                    Este campo debe contener ser una fecha con mes y año.
+                  </p>
               </div>
+            </div>
+            
+            <label class="d-flex flex-row-reverse" for="actual">Actual
+            <input
+              type="checkbox"
+              name="actual"
+              (click)="actual()"
+            /> 
+          </label>
               <label for="certificado">Certificado</label>
               <input
                 type="text"
@@ -236,7 +246,6 @@
               </button>
               <button
                 (click)="nuevaEducacion(addForm)"
-                [disabled]="addForm.invalid"
                 type="submit"
                 class="btn btn-primary"
                 data-bs-dismiss="modal"
@@ -416,32 +425,41 @@
                 Este campo es requerido.
               </p>
             </div>
-            <label for="fechaFin">Fecha de Finalización</label><br />
-            <input
-              type="month"
-              name="fechaFin"
-              class="form-control"
-              formControlName="fechaFin"
-              [ngClass]="{
-                'is-invalid': FechaFinF?.errors && FechaFinF?.touched,
-                'is-valid': !FechaFinF?.errors && FechaFinF?.touched
-              }"
-              required
-            />
-            <div>
-              <p
-                class="text-danger"
-                *ngIf="FechaFinF?.hasError('required') && FechaFinF?.touched"
-              >
-                Este campo es requerido.
-              </p>
-              <p
-                class="text-danger"
-                *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
-              >
-                Este campo debe contener ser una fecha con mes y año.
-              </p>
+            <div *ngIf=!Ac>
+                <label for="fechaFin">Fecha de Finalización</label><br />
+                <input
+                  type="month"
+                  value="Actual"
+                  name="fechaFin"
+                  class="form-control"
+                  formControlName="fechaFin"
+                  [ngClass]="{
+                    'is-invalid': FechaFinF?.errors && FechaFinF?.touched,
+                    'is-valid': !FechaFinF?.errors && FechaFinF?.touched
+                  }"
+                />
+                <div>
+                  <p
+                    class="text-danger"
+                    *ngIf="FechaFinF?.hasError('required') && FechaFinF?.touched"
+                  >
+                    Este campo es requerido.
+                  </p>
+                  <p
+                    class="text-danger"
+                    *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
+                  >
+                    Este campo debe contener ser una fecha con mes y año.
+                  </p>
+              </div>
             </div>
+            
+            <label class="d-flex flex-row-reverse" for="actual">Actual
+            <input
+              type="checkbox"
+              name="actual"
+              (click)="actual()"
+            /></label>
             <label for="certificado">Certificado</label><br />
             <input
               type="text"
