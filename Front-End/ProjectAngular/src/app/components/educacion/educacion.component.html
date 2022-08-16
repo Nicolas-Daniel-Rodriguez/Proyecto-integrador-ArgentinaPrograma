@@ -222,7 +222,7 @@
               />
               <div *ngIf="CertificadoF?.errors && CertificadoF?.touched">
                 <p class="text-danger">
-                  Este campo debe contener menos de 100 caracteres
+                  Este campo debe contener menos de 100 caracteres.
                 </p>
               </div>
             <div class="modal-footer">
@@ -304,7 +304,6 @@
 
   <!-- Modal para editar Educacion -->
   <div
-    *ngFor="let educacion of educacion"
     class="modal fade"
     id="modificarEducacionModal"
     data-backdrop="static"
@@ -352,13 +351,13 @@
                 class="text-danger"
                 *ngIf="tituloF?.errors && tituloF?.touched"
               >
-                Este campo debe contener menos de 50 caracteres
+                Este campo debe contener menos de 50 caracteres.
               </p>
               <p
                 class="text-danger"
                 *ngIf="tituloF?.hasError('required') && tituloF?.touched"
               >
-                Este campo es requerido
+                Este campo es requerido.
               </p>
             </div>
             <label for="lugarEstudio">Lugar de estudio</label><br />
@@ -378,7 +377,7 @@
                 class="text-danger"
                 *ngIf="lugarEstudioF?.errors && lugarEstudioF?.touched"
               >
-                Este campo debe contener menos de 100 caracteres
+                Este campo debe contener menos de 100 caracteres.
               </p>
               <p
                 class="text-danger"
@@ -386,7 +385,7 @@
                   lugarEstudioF?.hasError('required') && lugarEstudioF?.touched
                 "
               >
-                Este campo es requerido
+                Este campo es requerido.
               </p>
             </div>
             <label for="fechInicio">Fecha de Inicio</label><br />
@@ -414,7 +413,7 @@
                   FechaInicioF?.hasError('required') && FechaInicioF?.touched
                 "
               >
-                Este campo es requerido
+                Este campo es requerido.
               </p>
             </div>
             <label for="fechaFin">Fecha de Finalización</label><br />
@@ -434,13 +433,13 @@
                 class="text-danger"
                 *ngIf="FechaFinF?.hasError('required') && FechaFinF?.touched"
               >
-                Este campo es requerido
+                Este campo es requerido.
               </p>
               <p
                 class="text-danger"
                 *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
               >
-                Este campo debe contener ser una fecha con mes y año, o "ACTUAL"
+                Este campo debe contener ser una fecha con mes y año.
               </p>
             </div>
             <label for="certificado">Certificado</label><br />
@@ -452,7 +451,7 @@
             />
             <div *ngIf="CertificadoF?.errors && CertificadoF?.touched">
               <p class="text-danger">
-                Este campo debe contener menos de 100 caracteres
+                Este campo debe contener menos de 100 caracteres.
               </p>
             </div>
             <br />

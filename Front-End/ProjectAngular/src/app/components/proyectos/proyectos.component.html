@@ -41,7 +41,11 @@
       <button class="button">
         <a class="fs-6" [href]="proyecto.link">Ver Proyecto...</a>
       </button>
-      <div class="my-3 d-flex flex-row-reverse" id="eliminar-editar-proyecto" *ngIf="isLogged">  
+      <div
+        class="my-3 d-flex flex-row-reverse"
+        id="eliminar-editar-proyecto"
+        *ngIf="isLogged"
+      >
         <button
           (click)="onOpenModal(proyecto, 'eliminar')"
           type="button"
@@ -100,73 +104,67 @@
         </div>
         <div class="modal-body">
           <form #addForm="ngForm" [formGroup]="formProy">
-              <input
-                type="hidden"
-                name="id"
-                class="form-control"
-                id="id"
-              />
-              <label for="titulo">Título</label>
-              <input
-                type="text"
-                name="titulo"
-                class="form-control"
-                formControlName="titulo"
-                  required
-                  [ngClass]="{
-                    'is-invalid': tituloF?.errors && tituloF?.touched,
-                    'is-valid': !tituloF?.errors && tituloF?.touched
-                  }"
-                />
-                <div>
-                  <p
-                    class="text-danger"
-                    *ngIf="tituloF?.errors && tituloF?.touched"
-                  >
-                    Este campo debe contener menos de 50 caracteres
-                  </p>
-                  <p
-                    class="text-danger"
-                    *ngIf="tituloF?.hasError('required') && tituloF?.touched"
-                  >
-                    Este campo es requerido
-                  </p>
-                </div>
-              <label for="descripcion">Descripcion </label>
-              <textarea
-                type="text"
-                name="descripcion"
-                class="form-control"
-                required
-                rows="5"
-                formControlName="descripcion"
-                [ngClass]="{
-                  'is-invalid': descripcionF?.errors && descripcionF?.touched,
-                  'is-valid': !descripcionF?.errors && descripcionF?.touched
-                }"
-          ></textarea>
-          <div>
-            <p
-              class="text-danger"
-              *ngIf="descripcionF?.errors && descripcionF?.touched"
-            >
-              Este campo debe contener menos de 1500 caracteres
-            </p>
-            <p
-              class="text-danger"
-              *ngIf="
-                descripcionF?.hasError('required') &&
-                descripcionF?.touched
-              "
-            >
-              Este campo es requerido
-            </p>
-          </div>
-              <label for="logoProy">Logo Proyecto</label>
-              <input 
-              type="text"  
-              name="logoProy" 
-              class="form-control" 
+            <input type="hidden" name="id" class="form-control" id="id" />
+            <label for="titulo">Título</label>
+            <input
+              type="text"
+              name="titulo"
+              class="form-control"
+              formControlName="titulo"
+              required
+              [ngClass]="{
+                'is-invalid': tituloF?.errors && tituloF?.touched,
+                'is-valid': !tituloF?.errors && tituloF?.touched
+              }"
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="tituloF?.errors && tituloF?.touched"
+              >
+                Este campo debe contener menos de 50 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="tituloF?.hasError('required') && tituloF?.touched"
+              >
+                Este campo es requerido
+              </p>
+            </div>
+            <label for="descripcion">Descripcion </label>
+            <textarea
+              type="text"
+              name="descripcion"
+              class="form-control"
+              required
+              rows="5"
+              formControlName="descripcion"
+              [ngClass]="{
+                'is-invalid': descripcionF?.errors && descripcionF?.touched,
+                'is-valid': !descripcionF?.errors && descripcionF?.touched
+              }"
+            ></textarea>
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="descripcionF?.errors && descripcionF?.touched"
+              >
+                Este campo debe contener menos de 1500 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="
+                  descripcionF?.hasError('required') && descripcionF?.touched
+                "
+              >
+                Este campo es requerido
+              </p>
+            </div>
+            <label for="logoProy">Logo Proyecto</label>
+            <input
+              type="text"
+              name="logoProy"
+              class="form-control"
               formControlName="logoProy"
               [ngClass]="{
                 'is-invalid': logoProyF?.errors && logoProyF?.touched,
@@ -178,30 +176,30 @@
                 Este campo debe contener menos de 100 caracteres
               </p>
             </div>
-              <label for="link">Link</label>
-              <input
-                type="text"
-                name="link"
-                class="form-control"
-                required
-                formControlName="link"
-                [ngClass]="{
-                  'is-invalid': linkF?.errors && linkF?.touched,
-                  'is-valid': !linkF?.errors && linkF?.touched
-                }"
-              />
-              <div *ngIf="linkF?.errors && linkF?.touched">
-                <p class="text-danger">
-                  Este campo debe contener menos de 100 caracteres
-                </p>
-              </div>
-              <label hidden for="num">Numero</label>
-              <input type="hidden" name="num" class="form-control"/>
-              <label for="imgDemo">Imagén Ilustrativa del Proyecto</label>
-              <input 
-              type="text" 
-              name="imgDemo" 
-              class="form-control" 
+            <label for="link">Link</label>
+            <input
+              type="text"
+              name="link"
+              class="form-control"
+              required
+              formControlName="link"
+              [ngClass]="{
+                'is-invalid': linkF?.errors && linkF?.touched,
+                'is-valid': !linkF?.errors && linkF?.touched
+              }"
+            />
+            <div *ngIf="linkF?.errors && linkF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 100 caracteres
+              </p>
+            </div>
+            <label hidden for="num">Numero</label>
+            <input type="hidden" name="num" class="form-control" />
+            <label for="imgDemo">Imagén Ilustrativa del Proyecto</label>
+            <input
+              type="text"
+              name="imgDemo"
+              class="form-control"
               formControlName="imgDemo"
               [ngClass]="{
                 'is-invalid': imgDemoF?.errors && imgDemoF?.touched,
@@ -324,66 +322,65 @@
           <form #editForm="ngForm" [formGroup]="formProy">
             <input type="hidden" name="id" />
             <label for="titulo">Título</label>
-              <input
-                type="text"
-                name="titulo"
-                class="form-control"
-                formControlName="titulo"
-                  required
-                  [ngClass]="{
-                    'is-invalid': tituloF?.errors && tituloF?.touched,
-                    'is-valid': !tituloF?.errors && tituloF?.touched
-                  }"
-                />
-                <div>
-                  <p
-                    class="text-danger"
-                    *ngIf="tituloF?.errors && tituloF?.touched"
-                  >
-                    Este campo debe contener menos de 50 caracteres
-                  </p>
-                  <p
-                    class="text-danger"
-                    *ngIf="tituloF?.hasError('required') && tituloF?.touched"
-                  >
-                    Este campo es requerido
-                  </p>
-                </div>
-              <label for="descripcion">Descripcion </label>
-              <textarea
-                type="text"
-                name="descripcion"
-                class="form-control"
-                required
-                rows="5"
-                formControlName="descripcion"
-                [ngClass]="{
-                  'is-invalid': descripcionF?.errors && descripcionF?.touched,
-                  'is-valid': !descripcionF?.errors && descripcionF?.touched
-                }"
-          ></textarea>
-          <div>
-            <p
-              class="text-danger"
-              *ngIf="descripcionF?.errors && descripcionF?.touched"
-            >
-              Este campo debe contener menos de 1500 caracteres
-            </p>
-            <p
-              class="text-danger"
-              *ngIf="
-                descripcionF?.hasError('required') &&
-                descripcionF?.touched
-              "
-            >
-              Este campo es requerido
-            </p>
-          </div>
-              <label for="logoProy">Logo Proyecto</label>
-              <input 
-              type="text"  
-              name="logoProy" 
-              class="form-control" 
+            <input
+              type="text"
+              name="titulo"
+              class="form-control"
+              formControlName="titulo"
+              required
+              [ngClass]="{
+                'is-invalid': tituloF?.errors && tituloF?.touched,
+                'is-valid': !tituloF?.errors && tituloF?.touched
+              }"
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="tituloF?.errors && tituloF?.touched"
+              >
+                Este campo debe contener menos de 50 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="tituloF?.hasError('required') && tituloF?.touched"
+              >
+                Este campo es requerido
+              </p>
+            </div>
+            <label for="descripcion">Descripcion </label>
+            <textarea
+              type="text"
+              name="descripcion"
+              class="form-control"
+              required
+              rows="5"
+              formControlName="descripcion"
+              [ngClass]="{
+                'is-invalid': descripcionF?.errors && descripcionF?.touched,
+                'is-valid': !descripcionF?.errors && descripcionF?.touched
+              }"
+            ></textarea>
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="descripcionF?.errors && descripcionF?.touched"
+              >
+                Este campo debe contener menos de 1500 caracteres
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="
+                  descripcionF?.hasError('required') && descripcionF?.touched
+                "
+              >
+                Este campo es requerido
+              </p>
+            </div>
+            <label for="logoProy">Logo Proyecto</label>
+            <input
+              type="text"
+              name="logoProy"
+              class="form-control"
               formControlName="logoProy"
               [ngClass]="{
                 'is-invalid': logoProyF?.errors && logoProyF?.touched,
@@ -395,30 +392,30 @@
                 Este campo debe contener menos de 100 caracteres
               </p>
             </div>
-              <label for="link">Link</label>
-              <input
-                type="text"
-                name="link"
-                class="form-control"
-                required
-                formControlName="link"
-                [ngClass]="{
-                  'is-invalid': linkF?.errors && linkF?.touched,
-                  'is-valid': !linkF?.errors && linkF?.touched
-                }"
-              />
-              <div *ngIf="linkF?.errors && linkF?.touched">
-                <p class="text-danger">
-                  Este campo debe contener menos de 100 caracteres
-                </p>
-              </div>
-              <label hidden for="num">Numero</label>
-              <input type="hidden" name="num" class="form-control"/>
-              <label for="imgDemo">Imagén Ilustrativa del Proyecto</label>
-              <input 
-              type="text" 
-              name="imgDemo" 
-              class="form-control" 
+            <label for="link">Link</label>
+            <input
+              type="text"
+              name="link"
+              class="form-control"
+              required
+              formControlName="link"
+              [ngClass]="{
+                'is-invalid': linkF?.errors && linkF?.touched,
+                'is-valid': !linkF?.errors && linkF?.touched
+              }"
+            />
+            <div *ngIf="linkF?.errors && linkF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 100 caracteres
+              </p>
+            </div>
+            <label hidden for="num">Numero</label>
+            <input type="hidden" name="num" class="form-control" />
+            <label for="imgDemo">Imagén Ilustrativa del Proyecto</label>
+            <input
+              type="text"
+              name="imgDemo"
+              class="form-control"
               formControlName="imgDemo"
               [ngClass]="{
                 'is-invalid': imgDemoF?.errors && imgDemoF?.touched,

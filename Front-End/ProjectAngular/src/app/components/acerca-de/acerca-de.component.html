@@ -2,17 +2,22 @@
   <app-contacto></app-contacto>
 </div>
 
-<section *ngFor="let persona of personas" >
-  <img *ngFor="let imgPortada of imgPortada"
+<section *ngFor="let persona of personas">
+  <img
+    *ngFor="let imgPortada of imgPortada"
     class="imgPortada bordeInf"
     [src]="imgPortada.imgPortada"
     alt="Imágen de Portada"
   />
 
   <!-- Boton Editar Imagen de Portada -->
-  <div class="d-flex flex-row-reverse me-5" id="editar-imgportada" *ngIf="isLogged">
+  <div
+    class="d-flex flex-row-reverse me-5"
+    id="editar-imgportada"
+    *ngIf="isLogged"
+  >
     <button
-    *ngFor="let ImgPortada of imgPortada"
+      *ngFor="let ImgPortada of imgPortada"
       (click)="onOpenModalImgPortada(ImgPortada, 'editar')"
       type="button"
       class="ms-5 btn btn-primary mt-2"
@@ -24,13 +29,17 @@
     </button>
   </div>
 
-    <!-- Acerca de -->
-    <div class="cuerpo">
-      <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
-        <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
-        <img *ngFor="let ImgPerfil of imgPerfil"
-        class="imgPerfil" [src]="ImgPerfil.imgPerfil" alt="Perfil" />
-        <div>
+  <!-- Acerca de -->
+  <div class="cuerpo">
+    <div class="d-flex justify-content-between mx-5 mt-4 mb-3">
+      <!-- Data binding property binding [propiedad ej. class, src]="bbdd.imgPerfil" -->
+      <img
+        *ngFor="let ImgPerfil of imgPerfil"
+        class="imgPerfil"
+        [src]="ImgPerfil.imgPerfil"
+        alt="Perfil"
+      />
+      <div>
         <div>
           <h2 class="fs-5">
             {{ persona.ocupacionCorta }}
@@ -43,373 +52,589 @@
           Información de Contacto
         </p>
       </div>
-      </div>
-
-      <!-- Button Editar Imagen de Perfil -->
-      <div id="editar-imgPerfil" *ngIf="isLogged">
-        <button *ngFor="let ImgPerfil of imgPerfil"
-          (click)="onOpenModalImgPerfil(ImgPerfil, 'editar')"
-          type="button"
-          class="ms-5 btn btn-primary fs-6 mb-2"
-          title="editar"
-          data-bs-toggle="modal"
-          data-bs-target="#modificarImgPerfilModal"
-        >
-          <i class="fa-solid fa-pen">Editar Foto de Perfil</i>
-        </button>
-      </div>
-
     </div>
-    <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
-    <h1 class="ms-5 fs-4 my-2">
-      {{ persona.nombre }} <span>{{ persona.apellido }}</span>
-    </h1>
 
-    <!-- Button Editar Nombre y Apellido  + id-->
-    <div id="editar-persona" *ngIf="isLogged">
+    <!-- Button Editar Imagen de Perfil -->
+    <div id="editar-imgPerfil" *ngIf="isLogged">
       <button
-        (click)="onOpenModal(persona, 'editar')"
+        *ngFor="let ImgPerfil of imgPerfil"
+        (click)="onOpenModalImgPerfil(ImgPerfil, 'editar')"
         type="button"
-        class="ms-5 btn-primary"
+        class="ms-5 btn btn-primary fs-6 mb-2"
         title="editar"
         data-bs-toggle="modal"
-        data-bs-target="#modificarPersonaModal"
+        data-bs-target="#modificarImgPerfilModal"
       >
-        <i class="fa-solid fa-pen">Editar Datos Personales</i>
+        <i class="fa-solid fa-pen">Editar Foto de Perfil</i>
       </button>
     </div>
-
-    <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
-    <div *ngFor="let acercade of acercaDe" class="bordeIzq mx-5 my-3 mb-4">
-      <p class="fs-6 ms-3 text-break">
-        {{ acercade.acercaDe }}
-      </p>
-    </div>
-     <!-- Button Editar Acerca De -->
-     <div class="d-flex flex-row-reverse me-5 mb-5" id="editar-acercade" *ngIf="isLogged">
-      <button *ngFor="let AcercaDe of acercaDe"
-        (click)="onOpenModalAcercaDe(AcercaDe, 'editar')"
-        type="button"
-        class="ms-5 btn-primary"
-        title="editar"
-        data-bs-toggle="modal"
-        data-bs-target="#modificarAcercaDeModal"
-      >
-        <i class="fa-solid fa-pen">Editar</i>
-      </button>
-
   </div>
-    <!-- <a class="link mx-5 fs-6" href="">Ver más...</a> -->
-  
+  <!-- Data binding interpolacion {{}} solo sirve para valores de cadena -->
+  <h1 class="ms-5 fs-4 my-2">
+    {{ persona.nombre }} <span>{{ persona.apellido }}</span>
+  </h1>
+
+  <!-- Button Editar Nombre y Apellido  + id-->
+  <div id="editar-persona" *ngIf="isLogged">
+    <button
+      (click)="onOpenModal(persona, 'editar')"
+      type="button"
+      class="ms-5 btn-primary"
+      title="editar"
+      data-bs-toggle="modal"
+      data-bs-target="#modificarPersonaModal"
+    >
+      <i class="fa-solid fa-pen">Editar Datos Personales</i>
+    </button>
+  </div>
+
+  <h3 class="mt-4 mx-5 fs-5"><span class="">ACERCA DE:</span></h3>
+  <div *ngFor="let acercade of acercaDe" class="bordeIzq mx-5 my-3 mb-4">
+    <p class="fs-6 ms-3 text-break">
+      {{ acercade.acercaDe }}
+    </p>
+  </div>
+  <!-- Button Editar Acerca De -->
+  <div
+    class="d-flex flex-row-reverse me-5 mb-5"
+    id="editar-acercade"
+    *ngIf="isLogged"
+  >
+    <button
+      *ngFor="let AcercaDe of acercaDe"
+      (click)="onOpenModalAcercaDe(AcercaDe, 'editar')"
+      type="button"
+      class="ms-5 btn-primary"
+      title="editar"
+      data-bs-toggle="modal"
+      data-bs-target="#modificarAcercaDeModal"
+    >
+      <i class="fa-solid fa-pen">Editar</i>
+    </button>
+  </div>
+  <!-- <a class="link mx-5 fs-6" href="">Ver más...</a> -->
 
   <!-- Modal para editar Persona -->
   <div
-  class="modal fade mt-5"
-  id="modificarPersonaModal"
-  data-backdrop="static"
-  data-keyboard="false"
-  tabindex="-1"
-  aria-labelledby="modificarPersonaModal"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content fondo">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">
-          Editar
-        </h5>
-        <button
-          type="button"
-          class="close botonMenu"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form #editForm="ngForm">
-          <input type="hidden" name="id" ngModel="{{ persona.id }} " />
-          <label for="nombre">Nombre</label><br />
-          <input
-            ngModel="{{ persona.nombre }}"
-            type="text"
-            name="nombre"
-            class="form-control"
-          />
-          <label for="apellido">Apellido</label><br />
-          <input
-            ngModel="{{ persona.apellido }}"
-            type="text"
-            name="apellido"
-            class="form-control"
-          />
-          <label for="pais">País</label><br />
-          <input
-            ngModel="{{ persona.pais }}"
-            type="text"
-            name="pais"
-            class="form-control"
-          />
-          <label for="telefono">Teléfono</label><br />
-          <input
-            ngModel="{{ persona.telefono }}"
-            type="text"
-            name="telefono"
-            class="form-control"
-          />
-          <label for="email">Email</label><br />
-          <input
-            ngModel="{{ persona.email }}"
-            type="text"
-            name="email"
-            class="form-control"
-          />
-          <label for="instagram">Instagram</label><br />
-          <input
-            ngModel="{{ persona.instagram }}"
-            type="text"
-            name="instagram"
-            class="form-control"
-          />
-          <label for="github">Github</label><br />
-          <input
-            ngModel="{{ persona.github }}"
-            type="text"
-            name="github"
-            class="form-control"
-          />
-          <label for="linkedin">Linkedin</label><br />
-          <input
-            ngModel="{{ persona.linkedin }}"
-            type="text"
-            name="linkedin"
-            class="form-control"
-          />
-          <label for="ocupacionCorta">Ocupacion Principal</label><br />
-          <input
-            ngModel="{{ persona.ocupacionCorta }}"
-            type="text"
-            name="ocupacionCorta"
-            class="form-control"
-          />
-          <label for="ocupacion">Otros Cargos</label><br />
-          <input
-            ngModel="{{ persona.ocupacion }}"
-            type="text"
-            name="ocupacion"
-            class="form-control"
-          />
-          <br />
-          <div class="modal-footer">
-            <button
-              id="modificar-persona-modal"
-              type="button"
-              class="btn btn-danger"
-              data-bs-dismiss="modal"
-            >
-              Cancelar
-            </button>
-            <button
-              (click)="modificarPersona(editPersona.id, editForm.value)"
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Guardar cambios
-            </button>
-          </div>
-        </form>
+    class="modal fade mt-5"
+    id="modificarPersonaModal"
+    data-backdrop="static"
+    data-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="modificarPersonaModal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Editar</h5>
+          <button
+            type="button"
+            class="close botonMenu"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
+          </button>
+        </div>
+        <div class="modal-body" >
+          <form #editFormPers="ngForm" [formGroup]="formPersF">
+            <input type="hidden" name="id" />
+            <label for="nombre">Nombre</label><br />
+            <input
+              type="text"
+              name="nombre"
+              class="form-control"
+              formControlName="nombre"
+              [ngClass]="{
+                'is-invalid': NombreF?.errors && NombreF?.touched,
+                'is-valid': !NombreF?.errors && NombreF?.touched
+              }"
+              required
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="NombreF?.errors && NombreF?.touched"
+              >
+                Este campo debe contener menos de 50 caracteres.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="NombreF?.hasError('required') && NombreF?.touched"
+              >
+                Este campo es requerido.
+              </p>
+            </div>
+            <label for="apellido">Apellido</label><br />
+            <input
+              type="text"
+              name="apellido"
+              class="form-control"
+              formControlName="apellido"
+              [ngClass]="{
+                'is-invalid': ApellidoF?.errors && ApellidoF?.touched,
+                'is-valid': !ApellidoF?.errors && ApellidoF?.touched
+              }"
+              required
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="ApellidoF?.errors && ApellidoF?.touched"
+              >
+                Este campo debe contener menos de 50 caracteres.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="ApellidoF?.hasError('required') && ApellidoF?.touched"
+              >
+                Este campo es requerido.
+              </p>
+            </div>
+            <label for="pais">País</label><br />
+            <input
+              type="text"
+              name="pais"
+              class="form-control"
+              formControlName="pais"
+              [ngClass]="{
+                'is-invalid': PaisF?.errors && PaisF?.touched,
+                'is-valid': !PaisF?.errors && PaisF?.touched
+              }"
+              required
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="PaisF?.errors && PaisF?.touched"
+              >
+                Este campo debe contener menos de 50 caracteres.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="PaisF?.hasError('required') && PaisF?.touched"
+              >
+                Este campo es requerido.
+              </p>
+            </div>
+            <label for="telefono">Teléfono</label><br />
+            <input
+              type="number"
+              pattern="[0-9]{10}"
+              name="telefono"
+              class="form-control"
+              formControlName="telefono"
+              [ngClass]="{
+                'is-invalid': TelefonoF?.errors && TelefonoF?.touched,
+                'is-valid': !TelefonoF?.errors && TelefonoF?.touched
+              }"
+              required
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="TelefonoF?.errors && TelefonoF?.touched"
+              >
+                Este campo puede contener hasta 10 caracteres numéricos.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="TelefonoF?.hasError('required') && TelefonoF?.touched"
+              >
+                Este campo es requerido.
+              </p>
+            </div>
+            <label for="email">Email</label><br />
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              formControlName="email"
+              [ngClass]="{
+                'is-invalid': EmailF?.errors && EmailF?.touched,
+                'is-valid': !EmailF?.errors && EmailF?.touched
+              }"
+              required
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="EmailF?.hasError('email') && EmailF?.touched"
+              >
+                Ingrese un email válido.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="EmailF?.hasError('required') && EmailF?.touched"
+              >
+                Este campo es requerido.
+              </p>
+            </div>
+            <label for="instagram">Instagram</label><br />
+            <input
+              type="text"
+              name="instagram"
+              class="form-control"
+              formControlName="instagram"
+              [ngClass]="{
+                'is-invalid': InstagramF?.errors && InstagramF?.touched,
+                'is-valid': !InstagramF?.errors && InstagramF?.touched
+              }"
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="InstagramF?.errors && InstagramF?.touched"
+              >
+                Este campo debe contener menos de 100 caracteres.
+              </p>
+            </div>
+            <label for="github">Github</label><br />
+            <input
+              type="text"
+              name="github"
+              class="form-control"
+              formControlName="github"
+              [ngClass]="{
+                'is-invalid': GithubF?.errors && GithubF?.touched,
+                'is-valid': !GithubF?.errors && GithubF?.touched
+              }"
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="GithubF?.errors && GithubF?.touched"
+              >
+                Este campo debe contener menos de 100 caracteres.
+              </p>
+            </div>
+            <label for="linkedin">Linkedin</label><br />
+            <input
+              type="text"
+              name="linkedin"
+              class="form-control"
+              formControlName="linkedin"
+              [ngClass]="{
+                'is-invalid': LinkedinF?.errors && LinkedinF?.touched,
+                'is-valid': !LinkedinF?.errors && LinkedinF?.touched
+              }"
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="LinkedinF?.errors && LinkedinF?.touched"
+              >
+                Este campo debe contener menos de 100 caracteres.
+              </p>
+            </div>
+            <label for="ocupacionCorta">Ocupacion Principal</label><br />
+            <input
+              type="text"
+              name="ocupacionCorta"
+              class="form-control"
+              formControlName="ocupacionCorta"
+              [ngClass]="{
+                'is-invalid': OcupacionCortaF?.errors && OcupacionCortaF?.touched,
+                'is-valid': !OcupacionCortaF?.errors && OcupacionCortaF?.touched
+              }"
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="OcupacionCortaF?.errors && OcupacionCortaF?.touched"
+              >
+                Este campo debe contener menos de 100 caracteres.
+              </p>
+            </div>
+            <label for="ocupacion">Otros Cargos</label><br />
+            <input
+              type="text"
+              name="ocupacion"
+              class="form-control"
+              formControlName="ocupacion"
+              [ngClass]="{
+                'is-invalid': OcupacionF?.errors && OcupacionF?.touched,
+                'is-valid': !OcupacionF?.errors && OcupacionF?.touched
+              }"
+            />
+            <div>
+              <p
+                class="text-danger"
+                *ngIf="OcupacionF?.errors && OcupacionF?.touched"
+              >
+                Este campo debe contener menos de 100 caracteres.
+              </p>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <button
+                id="modificar-persona-modal"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                (click)="modificarPersona(editPersona.id, editFormPers.value)"
+                [disabled]=""
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Guardar cambios
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
- <!-- Modal para editar AcercaDe -->
- <div
- *ngFor="let AcercaDe of acercaDe"
- class="modal fade mt-5"
- id="modificarAcercaDeModal"
- data-backdrop="static"
- data-keyboard="false"
- tabindex="-1"
- aria-labelledby="modificarAcercaDeModal"
- aria-hidden="true"
->
- <div class="modal-dialog">
-   <div class="modal-content fondo">
-     <div class="modal-header">
-       <h5 class="modal-title" id="staticBackdropLabel">
-         Editar
-       </h5>
-       <button
-         type="button"
-         class="close botonMenu"
-         data-bs-dismiss="modal"
-         aria-label="Close"
-       >
-         <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
-       </button>
-     </div>
-     <div class="modal-body">
-       <form #editForm="ngForm" [formGroup]="formAcF">
-         <input type="hidden" name="id" />
-         <label for="acercaDe">Acerca De</label><br />
-         <textarea
-           type="text"
-           name="acercaDe"
-           class="form-control"
-           rows="5"
-           formControlName="acercaDe"
-           [ngClass]="{'is-invalid':AcercaDeF?.errors && AcercaDeF?.touched, 'is-valid': !AcercaDeF?.errors && AcercaDeF?.touched}"
-         ></textarea>
-         <div *ngIf="AcercaDeF?.errors && AcercaDeF?.touched">
-          <p class="text-danger">Este campo debe contener menos de 1500 caracteres</p>
-         </div>
-         <br />
-         <div class="modal-footer">
-           <button
-             id="modificar-acercade-modal"
-             type="button"
-             class="btn btn-danger"
-             data-bs-dismiss="modal"
-           >
-             Cancelar
-           </button>
-           <button
-             (click)="modificarAcercaDe(editAcercaDe.id, editForm.value)"
-             type="button"
-             class="btn btn-primary"
-             data-bs-dismiss="modal"
-           >
-             Guardar cambios
-           </button>
-         </div>
-       </form>
-     </div>
-   </div>
- </div>
-</div>
+  <!-- Modal para editar AcercaDe -->
+  <div
+    class="modal fade mt-5"
+    id="modificarAcercaDeModal"
+    data-backdrop="static"
+    data-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="modificarAcercaDeModal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Editar</h5>
+          <button
+            type="button"
+            class="close botonMenu"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editFormAc="ngForm" [formGroup]="formAcF">
+            <input type="hidden" name="id" />
+            <label for="acercaDe">Acerca De</label><br />
+            <textarea
+              type="text"
+              name="acercaDe"
+              class="form-control"
+              rows="5"
+              formControlName="acercaDe"
+              required
+              [ngClass]="{
+                'is-invalid': AcercaDeF?.errors && AcercaDeF?.touched,
+                'is-valid': !AcercaDeF?.errors && AcercaDeF?.touched
+              }"
+            ></textarea>
+            <div *ngIf="AcercaDeF?.errors && AcercaDeF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 1500 caracteres
+              </p>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <button
+                id="modificar-acercade-modal"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                (click)="modificarAcercaDe(editAcercaDe.id, editFormAc.value)"
+                [disabled]="AcercaDeF?.hasError('required')"
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Guardar cambios
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
- <!-- Modal para editar ImgPerfil -->
- <div
- *ngFor="let ImgPerfil of imgPerfil"
- class="modal fade mt-5"
- id="modificarImgPerfilModal"
- data-backdrop="static"
- data-keyboard="false"
- tabindex="-1"
- aria-labelledby="modificarImgPerfilModal"
- aria-hidden="true"
->
- <div class="modal-dialog">
-   <div class="modal-content fondo">
-     <div class="modal-header">
-       <h5 class="modal-title" id="staticBackdropLabel">
-         Editar
-       </h5>
-       <button
-         type="button"
-         class="close botonMenu"
-         data-bs-dismiss="modal"
-         aria-label="Close"
-       >
-         <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
-       </button>
-     </div>
-     <div class="modal-body">
-       <form #editForm="ngForm">
-         <input type="hidden" name="id" ngModel="{{ ImgPerfil.id }} " />
-           <label for="imgPerfil">Imágen de Perfil</label><br />
-           <input
-             ngModel="{{ ImgPerfil.imgPerfil }}"
-             type="text"
-             name="imgPerfil"
-             class="form-control"
-           />
-         <br />
-         <div class="modal-footer">
-           <button
-             id="modificar-imgperfil-modal"
-             type="button"
-             class="btn btn-danger"
-             data-bs-dismiss="modal"
-           >
-             Cancelar
-           </button>
-           <button
-             (click)="modificarImgPerfil(editImgPerfil.id, editForm.value)"
-             type="button"
-             class="btn btn-primary"
-             data-bs-dismiss="modal"
-           >
-             Guardar cambios
-           </button>
-         </div>
-       </form>
-     </div>
-   </div>
- </div>
-</div>
+  <!-- Modal para editar ImgPerfil -->
+  <div
+    class="modal fade mt-5"
+    id="modificarImgPerfilModal"
+    data-backdrop="static"
+    data-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="modificarImgPerfilModal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Editar</h5>
+          <button
+            type="button"
+            class="close botonMenu"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editFormImgPer="ngForm" [formGroup]="formImgPerF">
+            <input type="hidden" name="id" />
+            <label for="imgPerfil">Imágen de Perfil</label><br />
+            <input
+              type="text"
+              name="imgPerfil"
+              class="form-control"
+              formControlName="imgPerfil"
+              required
+              [ngClass]="{
+                'is-invalid': ImgPerfilF?.errors && ImgPerfilF?.touched,
+                'is-valid': !ImgPerfilF?.errors && ImgPerfilF?.touched
+              }"
+            />
+            <div *ngIf="ImgPerfilF?.errors && ImgPerfilF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 100 caracteres.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="ImgPerfilF?.hasError('required') && ImgPerfilF?.touched"
+              >
+                Este campo es requerido
+              </p>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <button
+                id="modificar-imgperfil-modal"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                (click)="modificarImgPerfil(editImgPerfil.id, editFormImgPer.value)"
+                [disabled]="ImgPerfilF?.hasError('required')"
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Guardar cambios
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
- <!-- Modal para editar ImgPortada -->
- <div
- *ngFor="let ImgPortada of imgPortada"
- class="modal fade mt-5"
- id="modificarImgPortadaModal"
- data-backdrop="static"
- data-keyboard="false"
- tabindex="-1"
- aria-labelledby="modificarImgPortadaModal"
- aria-hidden="true"
->
- <div class="modal-dialog">
-   <div class="modal-content fondo">
-     <div class="modal-header">
-       <h5 class="modal-title" id="staticBackdropLabel">
-         Editar
-       </h5>
-       <button
-         type="button"
-         class="close botonMenu"
-         data-bs-dismiss="modal"
-         aria-label="Close"
-       >
-         <span aria-hidden="true"><img class="imgX" width="80%" src="../../../assets/X.svg" alt="X"></span>
-       </button>
-     </div>
-     <div class="modal-body">
-       <form #editForm="ngForm">
-         <input type="hidden" name="id" ngModel="{{ ImgPortada.id }} " />
-           <label for="imgPortada">Imágen de Portada</label><br />
-           <input
-             ngModel="{{ ImgPortada.imgPortada }}"
-             type="text"
-             name="imgPortada"
-             class="form-control"
-           />
-         <br />
-         <div class="modal-footer">
-           <button
-             id="modificar-imgportada-modal"
-             type="button"
-             class="btn btn-danger"
-             data-bs-dismiss="modal"
-           >
-             Cancelar
-           </button>
-           <button
-             (click)="modificarImgPortada(editImgPortada.id, editForm.value)"
-             type="button"
-             class="btn btn-primary"
-             data-bs-dismiss="modal"
-           >
-             Guardar cambios
-           </button>
-         </div>
-       </form>
-     </div>
-   </div>
- </div>
-</div>
+  <!-- Modal para editar ImgPortada -->
+  <div
+    class="modal fade mt-5"
+    id="modificarImgPortadaModal"
+    data-backdrop="static"
+    data-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="modificarImgPortadaModal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Editar</h5>
+          <button
+            type="button"
+            class="close botonMenu"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true"
+              ><img
+                class="imgX"
+                width="80%"
+                src="../../../assets/X.svg"
+                alt="X"
+            /></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editFormImgPor="ngForm" [formGroup]="formImgPorF">
+            <input type="hidden" name="id" />
+            <label for="imgPortada">Imágen de Portada</label><br />
+            <input
+              type="text"
+              name="imgPortada"
+              class="form-control"
+              formControlName="imgPortada"
+              required
+              [ngClass]="{
+                'is-invalid': ImgPortadaF?.errors && ImgPortadaF?.touched,
+                'is-valid': !ImgPortadaF?.errors && ImgPortadaF?.touched
+              }"
+            />
+            <div *ngIf="ImgPortadaF?.errors && ImgPortadaF?.touched">
+              <p class="text-danger">
+                Este campo debe contener menos de 100 caracteres.
+              </p>
+              <p
+                class="text-danger"
+                *ngIf="
+                  ImgPortadaF?.hasError('required') && ImgPortadaF?.touched
+                "
+              >
+                Este campo es requerido
+              </p>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <button
+                id="modificar-imgportada-modal"
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                (click)="modificarImgPortada(editImgPortada.id, editFormImgPor.value)"
+                [disabled]="ImgPortadaF?.hasError('required')"
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Guardar cambios
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

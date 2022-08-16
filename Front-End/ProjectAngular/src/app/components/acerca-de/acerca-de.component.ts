@@ -44,15 +44,15 @@ export class AcercadeComponent implements OnInit {
               private formBuilder:FormBuilder) {
 
                 this.formAcF = this.formBuilder.group({
-                  acercaDe : ['', [Validators.maxLength(1500)]],
+                  acercaDe : ['', [Validators.maxLength(1500),Validators.required]],
                 }); 
 
                 this.formImgPerF = this.formBuilder.group({
-                  imgPerfil : ['', [Validators.maxLength(100)]],
+                  imgPerfil : ['', [Validators.maxLength(100),Validators.required]],
                 }); 
 
                 this.formImgPorF = this.formBuilder.group({
-                  imgPortada : ['', [Validators.maxLength(100)]],
+                  imgPortada : ['', [Validators.maxLength(100),Validators.required]],
                 }); 
 
                 this.formPersF = this.formBuilder.group({
@@ -120,6 +120,7 @@ export class AcercadeComponent implements OnInit {
     if (mode === 'editar') {
       this.editPersona = persona;
       button.setAttribute('data-target', '#modificarPersonaModal');
+      this.formPersF.reset();
     }
     container?.appendChild(button);
     button.click();
@@ -174,6 +175,7 @@ export class AcercadeComponent implements OnInit {
   }
 
   public modificarImgPerfil(id : number, imgPerfil: ImgPerfil):void {
+    console.log(id,imgPerfil)
     this.imgPerfilService.modificarImgPerfil(id, imgPerfil).subscribe(
     (response: ImgPerfil) => {
       this.getImgPerfil();
@@ -193,6 +195,7 @@ export class AcercadeComponent implements OnInit {
     if (mode === 'editar') {
       this.editImgPerfil = imgPerfil;
       button.setAttribute('data-target', '#modificarImgPerfilModal');
+      this.formImgPerF.reset();
     }
     container?.appendChild(button);
     button.click();
@@ -229,6 +232,7 @@ export class AcercadeComponent implements OnInit {
     if (mode === 'editar') {
       this.editImgPortada = imgPortada;
       button.setAttribute('data-target', '#modificarImgPortadaModal');
+      this.formImgPorF.reset();
     }
     container?.appendChild(button);
     button.click();
@@ -237,5 +241,40 @@ export class AcercadeComponent implements OnInit {
   get AcercaDeF(){
     return this.formAcF.get("acercaDe");
   }
-
+  get ImgPerfilF(){
+    return this.formImgPerF.get("imgPerfil");
+  }
+  get ImgPortadaF(){
+    return this.formImgPorF.get("imgPortada");
+  }
+  get NombreF(){
+    return this.formPersF.get("nombre");
+  }
+  get ApellidoF(){
+    return this.formPersF.get("apellido");
+  }
+  get PaisF(){
+    return this.formPersF.get("pais");
+  }
+  get TelefonoF(){
+    return this.formPersF.get("telefono");
+  }
+  get EmailF(){
+    return this.formPersF.get("email");
+  }
+  get InstagramF(){
+    return this.formPersF.get("instagram");
+  }
+  get GithubF(){
+    return this.formPersF.get("github");
+  }
+  get LinkedinF(){
+    return this.formPersF.get("linkedin");
+  }
+  get OcupacionCortaF(){
+    return this.formPersF.get("ocupacionCorta");
+  }
+  get OcupacionF(){
+    return this.formPersF.get("ocupacion");
+  }
 }
