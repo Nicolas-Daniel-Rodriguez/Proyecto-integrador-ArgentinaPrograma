@@ -126,7 +126,8 @@
                 </div>
                 <label for="fechaInicio">Fecha de Inicio</label>
                 <input
-                  type="month"
+                  type="text"
+                  placeholder="mm/aaaa"
                   name="fechaInicio"
                   class="form-control"
                   formControlName="fechaInicio"
@@ -155,7 +156,8 @@
                 </div>
                 <label for="fechaFin">Fecha de Finalización</label>
                 <input
-                  type="month"
+                  type="text"
+                  placeholder="mm/aaaa - Actual"
                   name="fechaFin"
                   class="form-control"
                   formControlName="fechaFin"
@@ -177,7 +179,7 @@
                   <p
                     class="text-danger"
                     *ngIf="
-                      FechaFinF?.hasError('fechaFin') && FechaFinF?.touched
+                      FechaFinF?.errors && FechaFinF?.touched
                     "
                   >
                     Este campo debe contener ser una fecha con mes y año.
@@ -372,7 +374,8 @@
                 </div>
                 <label for="fechaInicio">Fecha de Inicio</label>
                 <input
-                  type="month"
+                  type="text"
+                  placeholder="mm/aaaa"
                   name="fechaInicio"
                   class="form-control"
                   formControlName="fechaInicio"
@@ -401,7 +404,8 @@
                 </div>
                 <label for="fechaFin">Fecha de Finalización</label>
                 <input
-                  type="month"
+                  type="text"
+                  placeholder="mm/aaaa - Actual"
                   name="fechaFin"
                   class="form-control"
                   formControlName="fechaFin"
@@ -423,7 +427,7 @@
                   <p
                     class="text-danger"
                     *ngIf="
-                      FechaFinF?.hasError('fechaFin') && FechaFinF?.touched
+                      FechaFinF?.errors && FechaFinF?.touched
                     "
                   >
                     Este campo debe contener ser una fecha con mes y año.

@@ -17,7 +17,7 @@ export class EducacionComponent implements OnInit {
   isLogged = false;
   roles!: string[];
   
-  Ac: boolean = false;
+
   formEd!: FormGroup;
   
   constructor(private educacionService: educacionService, private tokenService: TokenService, private formBuilder:FormBuilder) { 
@@ -100,13 +100,11 @@ export class EducacionComponent implements OnInit {
     if (mode === 'nuevo') {
       button.setAttribute('data-target', '#nuevaEducacionModal');
       this.formEd.reset();
-      this.Ac=false;
     }
     if (mode === 'editar') {
       this.editEducacion = educacion;
       button.setAttribute('data-target', '#modificarEducacionModal');
       this.formEd.reset();
-      this.Ac=false;
     }
     if (mode === 'eliminar') {
       this.elimEducacion = educacion;
@@ -130,9 +128,5 @@ export class EducacionComponent implements OnInit {
   }
   get CertificadoF(){
     return this.formEd.get("certificado");
-  }
-
-  public actual():void{
-    this.Ac=!this.Ac;
   }
 }

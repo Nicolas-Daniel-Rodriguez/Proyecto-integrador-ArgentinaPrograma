@@ -23,7 +23,7 @@
         <div>
           <p class="fs-6 mb-1">{{ educacion.lugarEstudio }}</p>
           <p class="fechas text-start fs-6 mb-1">
-            {{ educacion.fechaInicio }} - <span *ngIf=Ac>Actual</span> {{ educacion.fechaFin }}
+            {{ educacion.fechaInicio }} - {{ educacion.fechaFin }}
           </p>
         </div>
         <img
@@ -157,7 +157,8 @@
               </div>
               <label for="fechaInicio">Fecha de Inicio</label>
               <input
-                type="month"
+                type="text"
+                placeholder="mm/aaaa"
                 name="fechaInicio"
                 class="form-control"
                 formControlName="fechaInicio"
@@ -183,10 +184,10 @@
                   Este campo es requerido
                 </p>
               </div>
-              <div *ngIf=!Ac>
                 <label for="fechaFin">Fecha de Finalización</label><br />
                 <input
-                  type="month"
+                  type="text"
+                  placeholder="mm/aaaa - Actual"
                   name="fechaFin"
                   value="Actual"
                   class="form-control"
@@ -205,20 +206,11 @@
                   </p>
                   <p
                     class="text-danger"
-                    *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
+                    *ngIf="FechaFinF?.errors && FechaFinF?.touched"
                   >
                     Este campo debe contener ser una fecha con mes y año.
                   </p>
-              </div>
-            </div>
-            
-            <label class="d-flex flex-row-reverse" for="actual">Actual
-            <input
-              type="checkbox"
-              name="actual"
-              (click)="actual()"
-            /> 
-          </label>
+              </div>           
               <label for="certificado">Certificado</label>
               <input
                 type="text"
@@ -399,8 +391,9 @@
             </div>
             <label for="fechInicio">Fecha de Inicio</label><br />
             <input
-              type="month"
+              type="text"
               name="fechaInicio"
+              placeholder="mm/aaaa"
               class="form-control"
               formControlName="fechaInicio"
               [ngClass]="{
@@ -425,12 +418,11 @@
                 Este campo es requerido.
               </p>
             </div>
-            <div *ngIf=!Ac>
                 <label for="fechaFin">Fecha de Finalización</label><br />
                 <input
-                  type="month"
-                  value="Actual"
+                  type="text"
                   name="fechaFin"
+                  placeholder="mm/aaaa - Actual"
                   class="form-control"
                   formControlName="fechaFin"
                   [ngClass]="{
@@ -447,19 +439,11 @@
                   </p>
                   <p
                     class="text-danger"
-                    *ngIf="FechaFinF?.hasError('fechaFin') && FechaFinF?.touched"
+                    *ngIf="FechaFinF?.errors && FechaFinF?.touched"
                   >
                     Este campo debe contener ser una fecha con mes y año.
                   </p>
               </div>
-            </div>
-            
-            <label class="d-flex flex-row-reverse" for="actual">Actual
-            <input
-              type="checkbox"
-              name="actual"
-              (click)="actual()"
-            /></label>
             <label for="certificado">Certificado</label><br />
             <input
               type="text"
