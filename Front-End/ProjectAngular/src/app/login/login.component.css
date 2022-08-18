@@ -46,7 +46,7 @@ h1 {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input {
   font-family: 'Encode Sans Expanded';
   font-style: normal;
   font-weight: 400;
@@ -59,6 +59,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
   background:#D8D8D8;
 }
+
 
 /* Set a style for all buttons */
 button {

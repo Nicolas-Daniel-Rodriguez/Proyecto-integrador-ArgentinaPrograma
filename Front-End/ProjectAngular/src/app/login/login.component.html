@@ -39,26 +39,12 @@
           required
         />
 
-        <div class="">
-          <div class="d-flex justify-content-between contPswCheck">
-            <label>
-              <input
-                class="fs-6"
-                type="checkbox"
-                checked="checked"
-                name="remember"
-              />
-              Recuerdame
-            </label>
 
-            <a class="fs-6 psw" href="#">Olvide mi contraseña</a>
-          </div>
-        </div>
-        <button class="fs-5" type="submit">Ingresar</button>
+        <button class="fs-5 mt-2" type="submit">Ingresar</button>
       </div>
     </form>
     <div *ngIf="form.submitted && isLoginFail" class="alert alert-danger mt-3">
-      Error de login
+      Usuario o Contraseña Invalidos.
     </div>
   </ng-template>
 </div>

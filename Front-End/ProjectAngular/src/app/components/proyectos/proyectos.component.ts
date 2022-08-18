@@ -22,7 +22,7 @@ export class ProyectosComponent implements OnInit {
   
   constructor(private proyectosService:proyectosService, private tokenService: TokenService, private formBuilder:FormBuilder) {
     this.formProy = this.formBuilder.group({
-      titulo: ['', [Validators.maxLength(50),Validators.required]],
+      titulo: ['', [Validators.maxLength(100),Validators.required]],
       descripcion: ['', [Validators.maxLength(1500),Validators.required]],
       logoProy: ['', [Validators.maxLength(100)]],
       link: ['', [Validators.maxLength(100),Validators.required]],
