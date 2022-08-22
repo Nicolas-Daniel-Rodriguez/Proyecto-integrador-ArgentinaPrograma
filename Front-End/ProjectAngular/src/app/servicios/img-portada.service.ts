@@ -6,7 +6,7 @@ import { ImgPortada } from '../interfaces/img-portada/img-portada.component';
 
 @Injectable()
 export class ImgPortadaService {
-private apiBaseUrl = "http://localhost:8080"  
+private apiBaseUrl = "https://intense-woodland-84122.herokuapp.com"  
 
 constructor(private http: HttpClient) { }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-08-2022 a las 20:09:29
+-- Tiempo de generación: 23-08-2022 a las 01:23:20
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -265,7 +265,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `nombre`, `nombre_usuario`, `password`) VALUES
-(1, 'ndr126@abc.gob.ar', 'admin', 'admin', '$2a$10$.cl.nIgXKi14oQHGVFbHQuT8.kjcUB55IZtEiWGZ77zV21mQlbhIy');
+(1, 'ndr126@abc.gob.ar', 'admin12', 'admin12', '$2a$10$.cl.nIgXKi14oQHGVFbHQuT8.kjcUB55IZtEiWGZ77zV21mQlbhIy'),
+(2, 'nikoo853@gmail.com', 'admin', 'admin', '$2a$10$TT2iMFD3BzwS4FGLhqTvQOvw2lA3Utqf0TK55g/TIKn8jKhcFqf9G');
 
 -- --------------------------------------------------------
 
@@ -284,7 +285,9 @@ CREATE TABLE `usuario_rol` (
 
 INSERT INTO `usuario_rol` (`id_usuario`, `rol_id`) VALUES
 (1, 1),
-(1, 2);
+(1, 2),
+(2, 1),
+(2, 2);
 
 --
 -- Índices para tablas volcadas
@@ -382,7 +385,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

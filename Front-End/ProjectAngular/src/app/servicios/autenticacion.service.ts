@@ -11,7 +11,7 @@ import { NuevoUsuario } from '../interfaces/nuevo-usuario/nuevo-usuario.componen
 })
 export class AutenticacionService {
   
-  url = "http://localhost:8080/auth/"
+  url = "https://intense-woodland-84122.herokuapp.com/auth/"
 
 
   constructor(private httpClient: HttpClient) { }

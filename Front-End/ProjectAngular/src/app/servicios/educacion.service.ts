@@ -8,7 +8,7 @@ import { Educacion } from '../interfaces/educacion/educacion.component';
 
 @Injectable()
 export class educacionService {
-private apiBaseUrl = "http://localhost:8080"  
+private apiBaseUrl = "https://intense-woodland-84122.herokuapp.com"  
 
 constructor(private http: HttpClient) { }
 

@@ -8,7 +8,7 @@ import { Experiencia } from '../interfaces/experiencia/experiencia.component';
 
 @Injectable()
 export class experienciaService {
-private apiBaseUrl = "http://localhost:8080"  
+private apiBaseUrl = "https://intense-woodland-84122.herokuapp.com"  
 
 constructor(private http: HttpClient) { }
 

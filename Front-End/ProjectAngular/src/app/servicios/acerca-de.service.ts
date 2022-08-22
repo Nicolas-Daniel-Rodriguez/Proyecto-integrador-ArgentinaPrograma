@@ -6,7 +6,7 @@ import { AcercaDe } from '../interfaces/acerca-de/acerca-de.component';
 
 @Injectable()
 export class acercaDeService {
-private apiBaseUrl = "http://localhost:8080" 
+private apiBaseUrl = "https://intense-woodland-84122.herokuapp.com" 
 
 constructor(private http: HttpClient) { }
 
