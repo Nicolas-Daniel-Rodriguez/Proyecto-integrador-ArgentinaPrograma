@@ -8,7 +8,7 @@ import { Proyectos } from '../interfaces/proyectos/proyectos.component';
 
 @Injectable()
 export class proyectosService {
-private apiBaseUrl = environment.apiBaseUrl  
+private apiBaseUrl = "http://localhost:8080" 
 
 constructor(private http: HttpClient) { }
 

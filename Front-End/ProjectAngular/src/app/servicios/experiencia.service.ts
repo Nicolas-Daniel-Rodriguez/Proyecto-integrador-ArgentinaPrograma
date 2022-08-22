@@ -8,7 +8,7 @@ import { Experiencia } from '../interfaces/experiencia/experiencia.component';
 
 @Injectable()
 export class experienciaService {
-private apiBaseUrl = environment.apiBaseUrl  
+private apiBaseUrl = "http://localhost:8080"  
 
 constructor(private http: HttpClient) { }
 

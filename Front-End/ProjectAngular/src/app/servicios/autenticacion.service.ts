@@ -11,7 +11,8 @@ import { NuevoUsuario } from '../interfaces/nuevo-usuario/nuevo-usuario.componen
 })
 export class AutenticacionService {
   
-  url = environment.apiAuthUrl;;
+  url = "http://localhost:8080/auth/"
+
 
   constructor(private httpClient: HttpClient) { }
 

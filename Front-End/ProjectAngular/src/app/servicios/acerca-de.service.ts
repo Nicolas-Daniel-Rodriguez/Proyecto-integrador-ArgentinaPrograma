@@ -6,7 +6,7 @@ import { AcercaDe } from '../interfaces/acerca-de/acerca-de.component';
 
 @Injectable()
 export class acercaDeService {
-private apiBaseUrl = environment.apiBaseUrl  
+private apiBaseUrl = "http://localhost:8080" 
 
 constructor(private http: HttpClient) { }
 

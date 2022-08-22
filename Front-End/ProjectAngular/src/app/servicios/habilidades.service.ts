@@ -8,7 +8,7 @@ import { Habilidades } from '../interfaces/habilidades/habilidades.component';
 
 @Injectable()
 export class habilidadesService {
-private apiBaseUrl = environment.apiBaseUrl  
+private apiBaseUrl = "http://localhost:8080"  
 
 constructor(private http: HttpClient) { }
 
