@@ -10,7 +10,7 @@ import { personaService } from './servicios/persona.service';
   providers: [personaService]
 })
 export class AppComponent{
-  title = 'ProjectAngular';
+  title = 'Portfolio Nicolas D. Rodriguez';
  constructor(private personaService: personaService){}
 
  ngOnInit(){
