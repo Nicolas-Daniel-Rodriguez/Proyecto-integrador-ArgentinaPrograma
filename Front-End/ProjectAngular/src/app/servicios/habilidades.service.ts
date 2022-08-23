@@ -8,7 +8,7 @@ import { Habilidades } from '../interfaces/habilidades/habilidades.component';
 
 @Injectable()
 export class habilidadesService {
-private apiBaseUrl = "https://intense-woodland-84122.herokuapp.com"  
+private apiBaseUrl = "https://nicolas-d-rodriguez.herokuapp.com"  
 
 constructor(private http: HttpClient) { }
 
