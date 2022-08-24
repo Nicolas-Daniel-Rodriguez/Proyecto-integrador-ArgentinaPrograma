@@ -114,6 +114,12 @@
             "imgSkill": "./assets/java.svg",
             "porc": "70"
         },
+	{
+            "titulo": "Spring Boot",
+            "descripcion": "Se utilizó para la creación de este proyecto junto con java en el back-end.",
+            "imgSkill": "./assets/springboot.png",
+            "porc": "70"
+        },
         {
             "titulo": "MYSQL",
             "descripcion": "La base de datos fue creada y gestionada con MYSQL.",
