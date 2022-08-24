@@ -25,11 +25,11 @@
 <p></p>
 <h2>Swagger Screenshots:</h2>
 <p></p>
-<img src="https://github.com/Nicolas-Daniel-Rodriguez/Proyecto-integrador-ArgentinaPrograma/blob/4c860553756b918412c5e58d34a9e8543a44dc6d/Screen%201.png?raw=true" alt="Swagger-screenshot" width="600" height="400/">
+<img src="https://github.com/Nicolas-Daniel-Rodriguez/Proyecto-integrador-ArgentinaPrograma/blob/main/Swagger%201.png?raw=true" alt="Swagger-screenshot" width="600" height="400/">
 <p></p>
-<img src="https://github.com/Nicolas-Daniel-Rodriguez/Proyecto-integrador-ArgentinaPrograma/blob/main/Screen%202.png?raw=true" alt="Swagger-screenshot" width="600" height="400/">
+<img src="https://github.com/Nicolas-Daniel-Rodriguez/Proyecto-integrador-ArgentinaPrograma/blob/main/Swagger%202.png?raw=true" alt="Swagger-screenshot" width="600" height="400/">
 <p></p>
-<img src="https://github.com/Nicolas-Daniel-Rodriguez/Proyecto-integrador-ArgentinaPrograma/blob/main/Screen%203.png?raw=true" alt="Swagger-screenshot" width="600" height="400/">
+<img src="https://github.com/Nicolas-Daniel-Rodriguez/Proyecto-integrador-ArgentinaPrograma/blob/main/Swagger%203.png?raw=true" alt="Swagger-screenshot" width="600" height="400/">
 <p></p>
   
 <h2>🧐 Features</h2>
