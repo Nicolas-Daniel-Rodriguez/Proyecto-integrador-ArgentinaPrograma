@@ -86,26 +86,62 @@
         },
         {
             "titulo": "Javascript",
-            "descripcion": "El comportamiento y ejecución de eventos de este portfolio fue realizado con JavaScript.",
+            "descripcion": "El comportamiento y lógica de este portfolio incluyen JavaScript.",
             "imgSkill": "./assets/Javascript.svg",
             "porc": "60"
         },
         {
             "titulo": "Bootstrap",
-            "descripcion": "El login y diseño de xxxxxx de este portfolio fue realizado con Bootstrap.",
+            "descripcion": "Los diseños generales y modales de este portfolio fue realizado con Bootstrap.",
             "imgSkill": "./assets/Bootstrap.png",
             "porc": "75"
         },
         {
             "titulo": "TypeScript",
-            "descripcion": "La conexión de xxxxxxx de este portfolio fue realizado con TypeScript.",
+            "descripcion": "El comportamiento y ejecución de eventos de este portfolio fue realizado con TypeScript.",
             "imgSkill": "./assets/Typescript.png",
             "porc": "70"
         },
         {
             "titulo": "Angular",
-            "descripcion": "El esqueleto y maquetación general de este portfolio fue realizado con HTML5 en Visual Studio Code.",
+            "descripcion": "Se utilizó Angular para todo el desarrollo de la SPA de este portfolio.",
             "imgSkill": "./assets/Angular.svg",
+            "porc": "70"
+        },
+	{
+            "titulo": "Java",
+            "descripcion": "El back-end de este portfolio fue desarrollado con java.",
+            "imgSkill": "./assets/java.svg",
+            "porc": "70"
+        },
+        {
+            "titulo": "MYSQL",
+            "descripcion": "La base de datos fue creada y gestionada con MYSQL.",
+            "imgSkill": "./assets/mysql.svg",
+            "porc": "60"
+        },
+        {
+            "titulo": "Git",
+            "descripcion": "El proyecto fue cargado con git utilizando puntos de restauración y ramas de trabajo.",
+            "imgSkill": "./assets/git.svg",
+            "porc": "90"
+        },
+        {
+            "titulo": "Figma",
+            "descripcion": "El diseño y prototipo del proyecto fue pensado con esta herramienta.",
+            "imgSkill": "./assets/figma.svg",
+            "porc": "75"
+        },
+        {
+            "titulo": "Photoshop",
+            "descripcion": "Conocimiento general del programa, ediciones de fotos y logos.",
+            "imgSkill": "./assets/photoshop.svg",
+            "porc": "70"
+        },
+        {
+            "titulo": "Adobe Ilustrator",
+            "descripcion": "Conocimiento del programa, manejo de herramientas, creación de logos.",
+            "imgSkill": "./assets/ai.svg",
             "porc": "70"
         }
         
